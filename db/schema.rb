@@ -10,10 +10,88 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_154021) do
+ActiveRecord::Schema.define(version: 2019_11_25_172916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "days", force: :cascade do |t|
+    t.string "weekday"
+    t.time "opening_hours"
+    t.time "closing_hours"
+    t.bigint "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_days_on_store_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state", default: "pending"
+    t.float "amount"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "product_orders", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "order_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_product_orders_on_order_id"
+    t.index ["product_id"], name: "index_product_orders_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.integer "stock"
+    t.float "discount"
+    t.bigint "store_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["store_id"], name: "index_products_on_store_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "stars"
+    t.integer "price_range"
+    t.bigint "store_id"
+    t.bigint "order_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_reviews_on_order_id"
+    t.index ["store_id"], name: "index_reviews_on_store_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "picture"
+    t.string "website"
+    t.integer "phone"
+    t.float "longitude"
+    t.float "latitude"
+    t.string "state", default: "pending"
+    t.string "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_stores_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +101,22 @@ ActiveRecord::Schema.define(version: 2019_11_25_154021) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "photo"
+    t.string "role", default: "user"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "days", "stores"
+  add_foreign_key "orders", "users"
+  add_foreign_key "product_orders", "orders"
+  add_foreign_key "product_orders", "products"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "stores"
+  add_foreign_key "reviews", "orders"
+  add_foreign_key "reviews", "stores"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "stores", "users"
 end
