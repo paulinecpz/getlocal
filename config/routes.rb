@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'stores/index'
+  get 'stores/show'
+  get 'stores/new'
+  get 'stores/create'
+  get 'stores/edit'
+  get 'stores/update'
+  get 'stores/destroy'
   devise_for :users
   root to: 'pages#home'
 
