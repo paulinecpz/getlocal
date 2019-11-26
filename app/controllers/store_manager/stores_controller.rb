@@ -1,4 +1,4 @@
-class StoresController < ApplicationController
+class StoreManager::StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -25,26 +25,22 @@ class StoresController < ApplicationController
   end
 
   def show
-
   end
 
-  def new
-    @store = Store.new
-    authorize @store
+  def edit
   end
 
-  def create
-    @store = Store.new(store_params)
-    @store.user = current_user
-    authorize @store
-    if @store.save
-      current_user.role = 'store_manager'
-      current_user.save
-      create_pictures
-      redirect_to store_path(@store), notice: 'Store was successfully created'
+  def update
+    if @store.update(store_params)
+      redirect_to store_path(@store), notice: 'Store was successfully updated'
     else
-      render :new
+      render :edit
     end
+  end
+
+  def destroy
+    @store.destroy
+    redirect_to stores_path, notice: 'Store was successfully destroyed'
   end
 
   private

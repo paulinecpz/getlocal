@@ -6,14 +6,14 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
-  resources :stores do
+  resources :stores, only: [:index, :show, :new, :create] do
     resources :products, only: :show do
       resources :orders, only: [:new, :create]
     end
   end
   get "dashboard", to: "pages#dashboard"
 
-  namespace :user do
+  namespace :store_manager do
     resources :stores do
       resources :days, only: [:edit,:update]
       resources :products
