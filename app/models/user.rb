@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :stores
   has_many :orders
   has_many :reviews
+  mount_uploader :photo, PhotoUploader
+
 end

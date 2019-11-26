@@ -1,0 +1,52 @@
+
+<div class="m-3">
+
+<!-- Search -->
+  <br>
+  <div class="container w-50" id= "search-bar-index">
+  <%= form_tag stores_path, method: :get do %>
+  <%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  placeholder: "Find a store"
+  %>
+  <%= submit_tag "Search", class: "btn btn-success", id: "search-bar" %>
+  <% end %>
+  </div>
+
+<!-- Gmap -->
+<div class="content">
+
+  <div class="cards">
+
+      <% @stores.each do |store| %>
+
+      <div class="card-store" id="index-card">
+
+        <% if store.picture.blank? %>
+        <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=950&q=80" />
+        <% else %><%= cl_image_tag store.picture %>
+        <% end %>
+        <div class="card-store-infos">
+          <div>
+            <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
+            <p><%= store.address %></p>
+          </div>
+          <% if store.user.photo.nil? %>
+          <%= image_tag "https://www.biography.com/.image/t_share/MTY3MDUxMjkzMjI1OTIwMTcz/brad-pitt-attends-the-premiere-of-20th-century-foxs--square.jpg", class: "card-store-user avatar-bordered" %>
+          <% else %>
+          <%=cl_image_tag(store.user.photo, class: "card-store-user avatar-bordered")%>
+          <% end %><!--       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-store-user avatar-bordered" /> -->
+        </div>
+      </div>
+      <% end %>
+
+  </div>
+
+        <div
+        id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  </div>
+</div>
