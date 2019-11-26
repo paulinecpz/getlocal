@@ -8,4 +8,5 @@ class Store < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true
+  has_many :pictures, dependent: :destroy
 end

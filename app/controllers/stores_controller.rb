@@ -25,6 +25,7 @@ class StoresController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -37,7 +38,8 @@ class StoresController < ApplicationController
     @store.user = current_user
     authorize @store
     if @store.save
-      redirect_to stores_path, notice: 'Store was successfully created'
+      create_pictures
+      redirect_to store_path(@store), notice: 'Store was successfully created'
     else
       render :new
     end
@@ -67,6 +69,13 @@ class StoresController < ApplicationController
   end
 
   def store_params
-    params.require(:store).permit(:name, :address, :description, :website, :phone, :user_id)
+    params.require(:store).permit(:name, :address, :description, :website, :phone, :user_id, :picture)
+  end
+
+  def create_pictures
+    photos = params.dig(:store, :pictures) || []
+    photos.each do |photo|
+      @store.pictures.create(photo: photo)
+    end
   end
 end
