@@ -38,7 +38,7 @@ class StoresController < ApplicationController
     @store.user = current_user
     authorize @store
     if @store.save
-      redirect_to stores_path, notice: 'Store was successfully created'
+      redirect_to store_path(@store), notice: 'Store was successfully created'
     else
       render :new
     end

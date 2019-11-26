@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'pundit'
 gem 'bootsnap', require: false
 gem 'devise'
