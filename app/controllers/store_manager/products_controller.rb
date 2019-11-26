@@ -9,6 +9,8 @@ class StoreManager::ProductsController < ApplicationController
   def new
     @store = Store.find(params[:store_id])
     @product = Product.new
+    @product.store = @store
+    authorize @product
   end
 
   def create
