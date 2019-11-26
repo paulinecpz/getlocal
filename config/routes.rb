@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :orders, only: [:show] do
     resources :reviews, only: [:new, :create]
   end
-  get "dashboard", to "pages#dashboard", as: :dashboard
 
   resources :stores, only: [:index, :show] do
     resources :products, only: :show do
@@ -19,5 +18,6 @@ Rails.application.routes.draw do
       resources :products
     end
   end
+  get "dashboard", to: "pages#dashboard", as: :dashboard
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
