@@ -30,7 +30,7 @@ puts("creating stores and users")
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       password: "password",
-      photo: Faker::Avatar.image(slug: "my-own-slug", format: "jpg", set: "set4", bgset: "bg1")
+      # photo: Faker::Avatar.image(slug: "my-own-slug", bgset: "bg1")
       )
   end
 
