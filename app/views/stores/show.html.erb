@@ -10,3 +10,10 @@
 <p><%= @store.website %></p>
 <p><%= @store.phone %></p>
 </div>
+
+<% if @store.user == current_user %>
+<%= link_to 'Edit', edit_store_manager_store_path(@store), class: "btn btn-outline-success" %>
+<%= link_to 'Add product', new_store_manager_store_product_path(@store), class: "btn btn-outline-success" %>
+<% else %>
+<%= 'You are buyer' %>
+<% end %>
