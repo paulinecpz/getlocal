@@ -25,6 +25,7 @@ class StoresController < ApplicationController
   end
 
   def show
+
   end
 
   def new
