@@ -1,6 +1,4 @@
 <div class="container">
-
-  <div class="container">
     <% @store.pictures.each do |picture| %>
       <!-- `picture` here is an instance of the Picture model -->
       <%= cl_image_tag(picture.photo, width: 400, height: 300, crop: :fill) %>
