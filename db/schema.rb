@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_172916) do
+ActiveRecord::Schema.define(version: 2019_11_26_153757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_172916) do
     t.string "address"
     t.string "picture"
     t.string "website"
-    t.integer "phone"
+    t.text "phone"
     t.float "longitude"
     t.float "latitude"
     t.string "state", default: "pending"
