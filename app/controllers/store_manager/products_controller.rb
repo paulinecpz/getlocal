@@ -16,7 +16,8 @@ class StoreManager::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @store = Store.find(params[:store_id])
-    @product.store_id = @store.id
+    @product.store = @store
+    authorize @product
     if @product.save
       redirect_to store_path(@store)
     else

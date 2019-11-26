@@ -10,11 +10,11 @@ class StorePolicy < ApplicationPolicy
   end
 
   def new?
-    record.user == current_user
+    record.user = user
   end
 
   def create?
-    true
+    record.user = user
   end
 
   def edit?
