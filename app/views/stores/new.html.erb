@@ -30,7 +30,10 @@
   <div class="form-inputs">
     <%= f.input :phone, :label => "Phone number: " %>
   </div>
+  <div class="form-inputs">
 
+    <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
+    </div>
 
 
 
