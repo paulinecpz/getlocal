@@ -4,7 +4,7 @@ class StoresController < ApplicationController
 
   def index
     @stores = policy_scope(Store).order(:name)
-    @stores = Store.geocoded
+    # @stores = Store.geocoded
 
     # @markers = @stores.map do |store|
     #   {
@@ -15,12 +15,12 @@ class StoresController < ApplicationController
     #   }
     # end
     # @stores = policy_scope(store).order(:name)
-    if params[:query].present?
-      condition = "address @@ :query OR name @@ :query"
-      @stores = policy_scope(Store).where(condition, query: "%#{params[:query]}%")
-    else
-      @stores = policy_scope(Store).order(:name)
-    end
+    # if params[:query].present?
+    #   condition = "address @@ :query OR name @@ :query"
+    #   @stores = policy_scope(Store).where(condition, query: "%#{params[:query]}%")
+    # else
+    #   @stores = policy_scope(Store).order(:name)
+    # end
     # @stores = Garden.search_by_address_and_name(params[:query])
   end
 
@@ -37,7 +37,7 @@ class StoresController < ApplicationController
     @store.user = current_user
     authorize @store
     if @store.save
-      redirect_to user_stores_path, notice: 'Store was successfully created'
+      redirect_to stores_path, notice: 'Store was successfully created'
     else
       render :new
     end
@@ -67,6 +67,6 @@ class StoresController < ApplicationController
   end
 
   def store_params
-    params.require(:store).permit(:name, :address, :description, :photo, :price_per_day, :user_id)
+    params.require(:store).permit(:name, :address, :description, :website, :phone, :user_id)
   end
 end
