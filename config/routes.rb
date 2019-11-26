@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :orders, only: [:new, :create]
     end
   end
+
   get "dashboard", to: "pages#dashboard"
 
   namespace :store_manager do

@@ -9,8 +9,6 @@ class StoreManager::ProductsController < ApplicationController
   def new
     @store = Store.find(params[:store_id])
     @product = Product.new
-    @category = Category.first
-    @product.category = @category
     @product.store = @store
     authorize @product
   end
@@ -20,7 +18,6 @@ class StoreManager::ProductsController < ApplicationController
     @store = Store.find(params[:store_id])
     @product.store = @store
     authorize @product
-
     if @product.save
       redirect_to store_path(@store)
     else
