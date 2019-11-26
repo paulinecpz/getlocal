@@ -3,4 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    # current_user.stores
+    # current_user.orders
+    # current_user.reviews
+
+  end
 end
