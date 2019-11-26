@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :admin do
+  namespace :user do
     resources :stores do
       resources :days, only: [:edit,:update]
       resources :products
