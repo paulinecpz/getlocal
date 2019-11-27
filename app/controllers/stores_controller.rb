@@ -21,6 +21,12 @@ class StoresController < ApplicationController
     else
       @stores = policy_scope(Store).order(:name)
     end
+
+    if params[:category_id].present?
+      store_from_category_ids = Product.where(category_id: params[:category_id]).pluck(:store_id)
+      @stores = @stores.where(id: store_from_category_ids)
+    end
+
     # @stores = Store.search_by_address_and_name(params[:query])
   end
 
