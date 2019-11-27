@@ -41,7 +41,6 @@ class StoreManager::ProductsController < ApplicationController
 
   def destroy
     authorize @product
-
     @product.destroy
     redirect_to store_manager_store_path(@store), notice: 'Product was successfully destroyed'
   end
