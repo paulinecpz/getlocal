@@ -1,28 +1,32 @@
 <div class="container">
 
-<h2><%= @store.name.capitalize %></h2>
-<div card-store>
+	<h2><%= @store.name.capitalize %></h2>
 
-        <% if cl_image_tag @store.picture? %>
-        <%= cl_image_tag @store.picture %>
-        <% elsif cl_image_tag @store.picture.blank? %>
-        <%= image_tag @store.picture %>
-        <% else%>
-        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" %>
-        <% end %>
-</div>
-<p><%= @store.address %></p>
-<p><%= @store.description %></p>
-<p><%= @store.website %></p>
-<p><%= @store.phone %></p>
+	<div class="card-category">
 
-  
-<% if @store.user == current_user %>
-<%= link_to 'Edit', edit_store_manager_store_path(@store), class: "btn btn-outline-success" %>
-<%= link_to 'Add product', new_store_manager_store_product_path(@store), class: "btn btn-outline-success" %>
-<% else %>
-<%= 'You are buyer' %>
-<% end %>
+
+		<% if @store.picture.present? %>
+	 		<% if cl_image_tag @store.picture.blank? %>
+	    	<%= image_tag @store.picture, height: 300, width: 400, crop: :fill  %>
+	    	<% else %> 
+	    	<%= cl_image_tag @store.picture, height: 300, width: 400, crop: :fill  %>
+	    	<% end %>
+		<% else %>
+	    <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", height: 300, width: 400, crop: :fill %>
+	    <% end %>
+
+		<p><strong>Address: </strong><%= @store.address %></p>
+		<p><strong>Description: </strong><%= @store.description %></p>
+		<p><strong>Website: </strong><%= @store.website %></p>
+		<p><strong>Phone number: </strong><%= @store.phone %></p>
+
+		<% if @store.user == current_user %>
+		<%= link_to 'Edit', edit_store_manager_store_path(@store), class: "btn btn-outline-success" %>
+		<%= link_to 'Add product', new_store_manager_store_product_path(@store), class: "btn btn-outline-success" %>
+		<% end %>
+		<%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
+
+	</div>
 
 
 <h2>Product available</h2>
