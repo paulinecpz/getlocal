@@ -1,0 +1,26 @@
+<h1>MANAGER </h1>
+
+<h2>STORE</h2>
+<%= link_to 'Edit', edit_store_manager_store_path(@store), class: "btn btn-outline-success" %>
+<%= link_to 'Add product', new_store_manager_store_product_path(@store), class: "btn btn-outline-success" %>
+
+
+<h3>Products</h3>
+<table>
+  <% @store.products.each do |product| %>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.stock %></td>
+      <td><%= link_to 'Edit', edit_store_manager_store_product_path(@store, product) %></td>
+      <td><%= link_to 'Destroy', store_manager_store_product_path(@store, product) %></td>
+    </tr>
+  <% end %>
+</table>

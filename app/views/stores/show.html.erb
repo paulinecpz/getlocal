@@ -5,45 +5,42 @@
 	<div class="card-category">
 
 
-		<% if @store.picture.present? %>
-	 		<% if cl_image_tag @store.picture.blank? %>
-	    	<%= image_tag @store.picture, height: 300, width: 400, crop: :fill  %>
-	    	<% else %> 
-	    	<%= cl_image_tag @store.picture, height: 300, width: 400, crop: :fill  %>
-	    	<% end %>
-		<% else %>
+		<% if @store.pictures.present? %>
+      <% @store.pictures.each do |picture| %>
+        <!-- `picture` here is an instance of the Picture model -->
+        <%= cl_image_tag(picture.photo, width: 400, height: 300, crop: :fill) %>
+        <% end %>
+	 <% else %>
 	    <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", height: 300, width: 400, crop: :fill %>
-	    <% end %>
+	 <% end %>
 
 		<p><strong>Address: </strong><%= @store.address %></p>
 		<p><strong>Description: </strong><%= @store.description %></p>
 		<p><strong>Website: </strong><%= @store.website %></p>
 		<p><strong>Phone number: </strong><%= @store.phone %></p>
 
-		<% if @store.user == current_user %>
-		<%= link_to 'Edit', edit_store_manager_store_path(@store), class: "btn btn-outline-success" %>
-		<%= link_to 'Add product', new_store_manager_store_product_path(@store), class: "btn btn-outline-success" %>
+		<% if @store.is_owner?(current_user) %>
+      <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
 		<% end %>
 		<%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 
 	</div>
 
-
-<h2>Product available</h2>
-<% @store.products.each do |product| %>
-<table>
-  <tr>
-  <th>Product</th>
-  <th>Price</th>
-  <th>Stock</th>
-  </tr>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.price %></td>
-    <td><%= product.stock %></td>
-  </tr>
-</table>
-<% end %>
+  <h2>Product available</h2>
+  <table>
+    <% @store.products.each do |product| %>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Stock</th>
+      </tr>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.stock %></td>
+      </tr>
+    <% end %>
+  </table>
 
 </div>
 

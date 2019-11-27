@@ -1,27 +1,24 @@
 <div class="container">
-
-<h1>Add my Store</h1>
-
-<%= simple_form_for([:store_manager, @store]) do |f| %>
-<% if @store.errors.any? %>
+  <h1>Add my Store</h1>
+  <%= simple_form_for([:store_manager, @store]) do |f| %>
+  <% if @store.errors.any? %>
   <div class="errors-container">
     <ul>
       <% @store.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
     </ul>
   </div>
-<% end %>
+  <% end %>
   <%# f.error_notification %>
   <%# f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
   <div class="form-inputs">
     <%= f.input :name, :label => "Name of your store: " %>
   </div>
   <div class="form-inputs">
     <%= f.input :address, :label => "Address: " %>
   </div>
-    <div class="form-inputs">
+  <div class="form-inputs">
     <%= f.input :description,  :label => "Description: " %>
   </div>
   <div class="form-inputs">
@@ -30,15 +27,10 @@
   <div class="form-inputs">
     <%= f.input :phone, :label => "Phone number: " %>
   </div>
-
-
-    <!-- [...] -->
-
+  <!-- [...] -->
   <div class="form-actions">
     <%= f.submit  "submit my store", class: "btn btn-success" %>
   </div>
-<% end %>
-<%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
+  <% end %>
+  <%= link_to 'Back', store_manager_store_path(@store), class: "btn btn-outline-success" %>
 </div>
-
-

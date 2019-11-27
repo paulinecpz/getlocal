@@ -9,4 +9,9 @@ class Store < ApplicationRecord
   validates :address, presence: true
   validates :description, presence: true
   has_many :pictures, dependent: :destroy
+
+
+  def is_owner?(user)
+    self.user == user
+  end
 end
