@@ -15,7 +15,7 @@
     <% end %>
   </div>
   <br>
-  
+
 <!-- Gmap -->
 <div class="content">
 
@@ -42,11 +42,17 @@
             <p><%= store.address %></p>
           </div>
 
-          <% if store.user.photo.blank? %>
+
+          <% if store.user.photo.present? %>
+            <% if cl_image_tag store.user.photo.blank? %>
+            <%= image_tag store.user.photo, class: "card-trip-user avatar-bordered" %>
+            <% else %> 
+            <%= cl_image_tag store.user.photo, class: "card-trip-user avatar-bordered" %>
+            <% end %>
+          <% else %>
           <%= image_tag "https://www.biography.com/.image/t_share/MTY3MDUxMjkzMjI1OTIwMTcz/brad-pitt-attends-the-premiere-of-20th-century-foxs--square.jpg", class: "card-trip-user avatar-bordered" %>
-         <% else %>
-         <%=cl_image_tag(store.user.photo, class: "card-trip-user avatar-bordered")%>
-         <% end %>
+          <% end %>
+
         </div>
       </div>
       <% end %>

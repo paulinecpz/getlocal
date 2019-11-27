@@ -30,7 +30,7 @@ puts("creating stores and users")
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       password: "password",
-      # photo: Faker::Avatar.image(slug: "my-own-slug", bgset: "bg1")
+      photo: Faker::Avatar.image(slug: "my-own-slug", bgset: "bg1")
       )
   end
 
@@ -53,10 +53,11 @@ puts("creating stores and users")
 
 puts("create categories")
 
-Category.create(name: "vegetables")
-Category.create(name: "fruits")
-Category.create(name: "meat")
-Category.create(name: "other")
+Category.create(name: "Vegetables")
+Category.create(name: "Fruits")
+Category.create(name: "Meat")
+Category.create(name: "Fish")
+Category.create(name: "Other")
 
 
 puts("seed finished")
