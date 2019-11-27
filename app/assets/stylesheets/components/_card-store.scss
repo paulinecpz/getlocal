@@ -49,4 +49,42 @@
 }
 
 
+.card-store-manager {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+  height: 500px;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.card-store-manager > img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-store-manager h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-store-manager p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-store-manager .card-store-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
 
