@@ -2,7 +2,7 @@
 
 <h1>Add my Store</h1>
 
-<%= simple_form_for(@store) do |f| %>
+<%= simple_form_for([:store_manager, @store]) do |f| %>
 <% if @store.errors.any? %>
   <div class="errors-container">
     <ul>
@@ -30,8 +30,6 @@
   <div class="form-inputs">
     <%= f.input :phone, :label => "Phone number: " %>
   </div>
-
-
 
 
     <!-- [...] -->
