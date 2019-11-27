@@ -20,7 +20,7 @@
       <td><%= product.price %></td>
       <td><%= product.stock %></td>
       <td><%= link_to 'Edit', edit_store_manager_store_product_path(@store, product) %></td>
-      <td><%= link_to 'Destroy', store_manager_store_product_path(@store, product) %></td>
+      <td><%= link_to 'Destroy', store_manager_store_product_path(@store, product), method: :delete %></td>
     </tr>
   <% end %>
 </table>
