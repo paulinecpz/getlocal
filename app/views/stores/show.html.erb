@@ -27,6 +27,24 @@
 		<%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 
 	</div>
+
+
+<h2>Product available</h2>
+<% @store.products.each do |product| %>
+<table>
+  <tr>
+  <th>Product</th>
+  <th>Price</th>
+  <th>Stock</th>
+  </tr>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.price %></td>
+    <td><%= product.stock %></td>
+  </tr>
+</table>
+<% end %>
+
 </div>
 
 

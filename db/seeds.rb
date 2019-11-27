@@ -51,8 +51,13 @@ puts("creating stores and users")
       )
   end
 
+puts("create categories")
 
-
+Category.create(name: "vegetables")
+Category.create(name: "fruits")
+Category.create(name: "meat")
+Category.create(name: "other")
 
 
 puts("seed finished")
+
