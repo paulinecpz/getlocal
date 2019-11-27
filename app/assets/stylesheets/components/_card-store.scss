@@ -2,12 +2,17 @@
 .card-store {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+  height: 300px;
+  width: 60vh;
+  justify-content: space-around;
   border-radius: 20px;
 }
 
 .card-store > img {
-  height: 200px;
+  height: 220px;
   width: 100%;
   object-fit: cover;
 }
@@ -35,6 +40,12 @@
   position: relative;
 }
 
-.card-store .card-store-infos h2 {
-  color: #3A7A34;
+.link-green {
+  color: green;
 }
+
+.link-green:hover {
+  color: black;
+  text-decoration: none;
+}
+
