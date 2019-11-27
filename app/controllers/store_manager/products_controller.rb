@@ -1,4 +1,7 @@
 class StoreManager::ProductsController < ApplicationController
+  before_action :set_store, only: [:create, :new, :edit, :destroy, :update]
+  before_action :set_product, only: [:edit, :destroy, :update]
+
   def index
     @products = Product.where(product_params)
   end
@@ -7,7 +10,6 @@ class StoreManager::ProductsController < ApplicationController
   end
 
   def new
-    @store = Store.find(params[:store_id])
     @product = Product.new
     @product.store = @store
     authorize @product
@@ -15,23 +17,23 @@ class StoreManager::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @store = Store.find(params[:store_id])
     @product.store = @store
     authorize @product
     if @product.save
-      redirect_to store_path(@store)
+      redirect_to store_manager_store_path(@store)
     else
       render :new
     end
   end
 
   def edit
-    @product = Product.new(product_params)
+    authorize @product
   end
 
   def update
+    authorize @product
     if @product.update(product_params)
-      redirect_to store_manager_store_product_path(@product), notice: 'Product was successfully updated'
+      redirect_to store_manager_store_path(@store), notice: 'Product was successfully updated'
     else
       render :edit
     end
@@ -39,13 +41,20 @@ class StoreManager::ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    @store = Store.find(params[:store_id])
-    redirect_to stores_path(@store), notice: 'Product was successfully destroyed'
+    redirect_to store_manager_store_path(@store), notice: 'Product was successfully destroyed'
   end
 
   private
 
   def product_params
     params.require(:product).permit(:name, :stock, :price, :category_id)
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def set_store
+    @store = Store.find(params[:store_id])
   end
 end
