@@ -10,8 +10,8 @@ class StoresController < ApplicationController
       {
         lat: store.latitude,
         lng: store.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { store: store })
-        # image_url: helpers.asset_url('https://cdn.mos.cms.futurecdn.net/05ea615f11e300b074e248aa7378ff64.jpg')
+        infoWindow: render_to_string(partial: "info_window", locals: { store: store }),
+        image_url: helpers.asset_url('pin.png')
       }
     end
     # @stores = policy_scope(store).order(:name)
