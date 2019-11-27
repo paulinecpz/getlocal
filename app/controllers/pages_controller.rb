@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    current_user.first_name
     # current_user.stores
     # current_user.orders
     # current_user.reviews
