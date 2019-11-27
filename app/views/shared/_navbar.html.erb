@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "pages#home", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://github.com/paulinecpz/GETLOCAL/blob/master/app/assets/images/logo.jpg?raw=true" %>
     <%= image_tag "https://github.com/paulinecpz/GETLOCAL/blob/master/app/assets/images/GetLocal.png?raw=true", id: "getlocal" %>
     <% end %>
@@ -13,7 +13,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
@@ -25,20 +25,20 @@
                 <img class="user-img" src='https://avatarfiles.alphacoders.com/547/54795.jpg'>
               </span>
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                  <h3><%=current_user.first_name%></h3>
+                  <div class= "h5-name"><h5><%=current_user.first_name%> <%=current_user.last_name%></h5></div>
                   <div class="list">
-                <ul class="navbar-nav mr-auto">
+                <ul class="menu-list">
                 <li class="item-menu">
-                  <%= link_to "My Profile", "#", class: "nav-link" %>
+                  <%= link_to "My Profile", edit_user_registration_path, class: "nav-link" %>
                 </li>
                 <li class="item-menu">
-                  <%= link_to "My Orders", "#", class: "nav-link" %>
+                  <%= link_to "My Orders", store_manager_stores_path, class: "nav-link" %>
                 </li>
                 <li class="item-menu">
-                  <%= link_to "My Stores", "#", class: "nav-link" %>
+                  <%= link_to "My Stores", store_manager_stores_path, class: "nav-link" %>
                 </li>
                 <li class="item-menu">
-                  <%= link_to "Log Out", "#", class: "nav-link" %>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
                 </li>
               </ul>
               </div>

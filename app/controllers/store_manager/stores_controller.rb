@@ -25,7 +25,6 @@ class StoreManager::StoresController < ApplicationController
   end
 
   def show
-
   end
 
   def edit

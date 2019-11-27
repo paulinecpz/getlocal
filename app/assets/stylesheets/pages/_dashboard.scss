@@ -10,22 +10,21 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-
 }
 
-.item-menu li{
+.menu-list li {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #3f8105;
+  color: #3c7d29;
   display: block;
   transition: 0.3s;
   margin-left: auto;
   margin-right: auto;
 }
 
-.item-menu li:hover {
-  color: #f1f1f1;
+.menu-list li:hover {
+  color: #3c7d29;
   text-decoration: none;
   margin-left: auto;
   margin-right: auto;
@@ -37,6 +36,8 @@
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  color: #3c7d29;
+  text-decoration: none;
 }
 
 @media screen and (max-height: 450px) {
@@ -56,10 +57,11 @@
   margin-bottom: 25px;
 }
 
-.user-photo h3 {
+.h5-name h5 {
   display: block;
-  margin-left: auto;
+  margin-left: 75px;
   margin-right: auto;
-  width: 50%;
+  border-radius: 50%;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
-
