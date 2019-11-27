@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :remember_me, :avatar, :avatar_cache])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :description, :username, :avatar, :avatar_cache, :remove_avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :first_name, :last_name ,:description, :username, :avatar, :avatar_cache, :remove_avatar])
   end
 
   # Uncomment when you *really understand* Pundit!
@@ -24,6 +24,9 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "You are not authorized to perform this action."
     redirect_to(root_path)
   end
+
+
+
 
   private
 
