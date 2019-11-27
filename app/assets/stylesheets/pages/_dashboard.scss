@@ -10,13 +10,15 @@
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  content-align: center;
+
 }
 
 .menu-list li {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #3c7d29;
+  text-color: #3c7d29;
   display: block;
   transition: 0.3s;
   margin-left: auto;
@@ -44,7 +46,8 @@
   .sidenav {padding-top: 15px;
             right:0;
   }
-  .sidenav a {font-size: 18px;}
+  .sidenav a {font-size: 18px;
+  }
 }
 
 .user-img{
@@ -65,3 +68,4 @@
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
