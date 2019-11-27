@@ -1,1 +1,37 @@
+<div class="container-fluid">
 <h1>My stores</h1>
+<div class="row">
+  <% @stores.each do |store| %>
+  <div class="col-10">
+    <div class="card">
+      <br>
+      <% if store.picture.present? %>
+      <% if cl_image_tag store.picture.blank? %>
+      <%= image_tag store.picture %>
+      <% else %>
+      <%= cl_image_tag store.picture %>
+      <% end %>
+      <% else %>
+      <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" %>
+      <% end %>
+      <div class="card-store-infos2">
+        <div>
+          <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
+          <p><%= store.address %></p>
+        </div>
+        <% if store.user.photo.present? %>
+        <% if cl_image_tag store.user.photo.blank? %>
+        <%= image_tag store.user.photo, class: "card-trip-user avatar-bordered" %>
+        <% else %>
+        <%= cl_image_tag store.user.photo, class: "card-trip-user avatar-bordered" %>
+        <% end %>
+        <% else %>
+        <%= link_to 'Edit', "#", class: 'btn btn-outline-success' %>
+        <%= image_tag "https://www.biography.com/.image/t_share/MTY3MDUxMjkzMjI1OTIwMTcz/brad-pitt-attends-the-premiere-of-20th-century-foxs--square.jpg", class: "card-trip-user avatar-bordered" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
