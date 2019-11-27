@@ -1,7 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
-    <div class="container d-flex justify-content-around">
-      <h1>Get local products near you.</h1>
-      <div class="banner-card">
+    <div class="container">
+      <div><h1>Get local products near you.</h1></div>
+      <div class="container d-flex justify-content-center">
+      <div class="container column-lg-2 column md-2">
+        <%= image_tag "https://avatarfiles.alphacoders.com/547/54795.jpg", class: "profile-image"%>
+        <div class= "profile-name">
+          <h2><%=current_user.first_name%> <%=current_user.last_name%></h2>
+        </div>
+      </div>
+      <div class="banner-card column-lg-6 column md-6">
         <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -41,11 +48,11 @@
             <%= f.button :submit, "Update Profile",class: "btn btn-success"%>
           </div>
         <% end %>
-        <div class="first"><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-warning" %></p></div>
-
-
+        <div class="first">
+          <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-outline-warning" %></div>
         <div class="second"><%= link_to "Back", :back,class: "btn btn-outline-success"%></div>
-
+      </div>
+       </div>
       </div>
     </div>
   </div>
