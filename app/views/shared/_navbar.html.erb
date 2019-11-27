@@ -18,14 +18,32 @@
         <li class="nav-item">
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= image_tag "https://avatarfiles.alphacoders.com/547/54795.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: 'font-size:30px;cursor:pointer', onclick: 'openNav()'%>
+          <div id="mySidenav" class="sidenav">
+            <div class="user-photo">
+              <span class="photo">
+                <img class="user-img" src='https://avatarfiles.alphacoders.com/547/54795.jpg'>
+              </span>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <h3><%=current_user.first_name%></h3>
+                  <div class="list">
+                <ul class="navbar-nav mr-auto">
+                <li class="item-menu">
+                  <%= link_to "My Profile", users_edit_path, class: "nav-link" %>
+                </li>
+                <li class="item-menu">
+                  <%= link_to "My Orders", "#", class: "nav-link" %>
+                </li>
+                <li class="item-menu">
+                  <%= link_to "My Stores", "#", class: "nav-link" %>
+                </li>
+                <li class="item-menu">
+                  <%= link_to "Log Out", "#", class: "nav-link" %>
+                </li>
+              </ul>
+              </div>
+            </div>
           </div>
-        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
@@ -34,3 +52,5 @@
     </ul>
   </div>
 </div>
+
+
