@@ -9,3 +9,71 @@
   width: 100%;
   object-fit: cover;
 }
+
+.content {
+  display: flex;
+  margin: 10px 0px 0px 0px;
+}
+
+
+.sidebar {
+  height: 300px;
+  width: 100vh;
+  position: sticky;
+  top: 70px;
+  margin: 15px 0px 0px 0px;
+  position: sticky;
+  top: 70px;
+}
+
+.products {
+  overflow: hidden;
+  background: white;
+  height: 70%;
+  width: 100vh;
+}
+
+
+.store-infos {
+  padding: 16px;
+  position: relative;
+}
+
+
+.store-infos h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/*Media Queries*/
+
+// /*Smallest device*/
+// @media (min-width: 100px) and (max-width: 575px) {
+//   .products-info {
+//     grid-template-columns: 1fr;
+//   }
+//   .sidenav {
+//     display: none;
+//   }
+// }
+
+// /*Small devices (landscape phones, 576px and up)*/
+// @media (min-width: 576px) {
+//   .products-info {
+//     grid-template-columns: 1fr;
+//   }
+//   .sidenav {
+//     display: block;
+//   }
+// }
+
+// /*Medium devices (tablets, 768px and up)*/
+// @media (min-width: 1200px) {
+//   .products-info {
+//     grid-template-columns: 1fr 1fr;
+//   }
+//   .sidenav {
+//     display: block;
+//   }
+// }

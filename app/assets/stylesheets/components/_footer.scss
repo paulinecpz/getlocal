@@ -1,5 +1,5 @@
 .footer {
-  background: #F4F4F4;
+  background: #DDDDDD;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,9 +18,19 @@
   font-size: 24px;
   padding: 0px 10px;
 }
+
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
+.footer .fa-carrot {
+  color:#D6590F ;
+}
+
+#store-manager-link a{
+  color: #1FA535
+}
+
+#store-manager-link a:hover{
+  font-size: 20px;
+  font-style: bold
 }
