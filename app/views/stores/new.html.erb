@@ -1,43 +1,56 @@
-<div class="container">
-
-<h1>Add my Store</h1>
-
-<%= simple_form_for(@store) do |f| %>
-<% if @store.errors.any? %>
-  <div class="errors-container">
-    <ul>
-      <% @store.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="banner-lg" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <h1 class="text-center">Promote your local products.</h1>
+  <br>
+  <div class="container d-flex justify-content-around">
+    <div class="banner-card-lg">
+      <h2>Add my Store</h2>
+      <%= simple_form_for(@store) do |f| %>
+      <% if @store.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @store.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-    </ul>
-  </div>
-<% end %>
-  <%# f.error_notification %>
-  <%# f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :name, :label => "Name of your store: " %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :address, :label => "Address: " %>
-  </div>
-    <div class="form-inputs">
-    <%= f.input :description,  :label => "Description: " %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :website, :label => "Website: " %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :phone, :label => "Phone number: " %>
-  </div>
-  <div class="form-inputs">
-    <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
+      <%# f.error_notification %>
+      <%# f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="form-inputs">
+        <%= f.input :name, :label => "Name of your store: " %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :address, :label => "Address: " %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :description,  :label => "Description: " %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :website, :label => "Website: " %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :phone, :label => "Phone number: " %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :description, :label => "List the local/fresh/organic you have :" %>
+      </div>
+      <div class="form-inputs">
+        <%= f.input :description, :label => "Where does your product come from ? " %>
+      </div>
+      <div class="form-inputs">
+        <p>Does your store sell at least 50% of loca products ? <%= check_box_tag '', 'yes', false  %></p>
+      </div>
+      <br>
+      <div class="form-inputs">
+        <h5><%= f.input :pictures, as: :file, input_html: { multiple: true }, :label => "Upload up to 4 pictures of your store" %></h5>
+      </div>
+      <br>
+      <div class="form-actions">
+        <%= f.submit  "submit my store", class: "btn btn-success" %>
+      </div>
+      <% end %>
+      <br>
+      <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
     </div>
- <div class="form-actions">
-    <%= f.submit  "submit my store", class: "btn btn-success" %>
   </div>
-<% end %>
-<%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 </div>
-
-
