@@ -13,6 +13,7 @@ class StoresController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { store: store }),
         image_url: helpers.asset_url('pin.png')
       }
+
     end
     # @stores = policy_scope(store).order(:name)
     if params[:query].present?
@@ -31,6 +32,14 @@ class StoresController < ApplicationController
   end
 
   def show
+    
+    @markers = {
+        lat: @store.latitude,
+        lng: @store.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { store: @store }),
+        image_url: helpers.asset_url('pin.png')
+      }
+      @markers = [@markers]
   end
 
   def new
