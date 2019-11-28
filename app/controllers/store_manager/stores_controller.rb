@@ -6,6 +6,11 @@ class StoreManager::StoresController < ApplicationController
   end
 
   def show
+    authorize ProductOrder
+    return unless @product_order.nil?
+
+    @product_order = ProductOrder.new
+    @product_order.save
   end
 
   def edit
