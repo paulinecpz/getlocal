@@ -6,9 +6,10 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-  has_many :stores
-  has_many :orders
+  has_many :stores, dependent: :destroy
+  has_many :orders, dependent: :destroy
   has_many :reviews
+  has_many :product_orders, through: :orders
   mount_uploader :photo, PhotoUploader
 
 end
