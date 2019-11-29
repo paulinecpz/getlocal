@@ -67,10 +67,10 @@
                 <a class="nav-link" href="#reviews">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="more-info">More info</a>
+                <a class="nav-link" href="#more-info">More info</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="location">Location</a>
+                <a class="nav-link"style="background-color: transparent;" href="#location">Location</a>
               </li>
             </div>
           </ul>
@@ -83,7 +83,7 @@
       ​
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="products">Products</h4>
-        <p>...<div class="store-info">
+        <p><div class="store-info">
           <div class= "store-products">
             <table>
               <% @store.products.each do |product| %>
@@ -96,6 +96,7 @@
                 <td><%= product.name %></td>
                 <td><%= product.price %></td>
                 <td><%= product.stock %></td>
+                <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
               </tr>
               <% end %>
             </table>
@@ -109,19 +110,12 @@
             <p><strong>Phone number: </strong><%= @store.phone %></p>
             <p><strong>Address: </strong><%= @store.address %></p>
             <!-- map -->
-            <h4 id="location">Location</h4>
-            <div
+          <h4 id="location">Location</h4>
+            <p><div
               id="map"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
-            </div>
-            ​
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
+            </div></p>
           </div></p>
         </div>
       </div>
@@ -133,7 +127,7 @@
         <div class="col-15">
           <div class="table-responsive">
             <table class="table table-striped">
-              <h2 class="text-center">Your Cart</h2>
+              <h3 class="text-center">Your Cart</h3>
               <thead>
                 <tr>
                   <!--                             <th scope="col"> </th>
