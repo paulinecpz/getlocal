@@ -8,12 +8,16 @@
 require 'faker'
 
 puts("deleting stores")
-
-
-# Review.destroy_all
-Store.destroy_all
-# Order.destroy_all
+ProductOrder.destroy_all
+Order.destroy_all
 User.destroy_all
+Store.destroy_all
+Product.destroy_all
+Category.destroy_all
+p "DB clean"
+# Review.destroy_all
+
+# Order.destroy_all
 
 User.create(first_name: "Paulo", last_name: "Lewagon", email:"paulo@paulo.com", password:"password", role: "admin")
 User.create(first_name: "Pauline", last_name: "Lewagon", email:"pauline@pauline.com", password:"password", role: "admin")
@@ -38,6 +42,7 @@ puts("creating stores and users")
   User.all.each { |user| ids << user.id  }
   pictures = ["1.jpg","2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.jpg","20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg" ]
 
+
   20.times do
     Store.create!(name: Faker::Company.name,
       address: Faker::Address.full_address,
@@ -50,6 +55,8 @@ puts("creating stores and users")
       user_id: ids.sample
       )
   end
+  store_ids =[]
+  Store.all.each { |store| store_ids << store.id  }
 
 puts("create categories")
 
@@ -59,6 +66,30 @@ Category.create(name: "Meat")
 Category.create(name: "Fish")
 Category.create(name: "Other")
 
+category_ids =[]
+Category.all.each { |category| category_ids << category.id  }
+puts("create products")
+
+
+50.times do
+  Product.create!(name: Faker::Food.fruits,
+    price: rand(10),
+    stock: rand(100..500),
+    discount: rand(),
+    store_id: store_ids.sample,
+    category_id: category_ids.sample
+    )
+end
+
+50.times do
+  Product.create!(name: Faker::Food.vegetables,
+    price: rand(10),
+    stock: rand(100..500),
+    discount: rand(),
+    store_id: store_ids.sample,
+    category_id: category_ids.sample
+    )
+end
 
 puts("seed finished")
 

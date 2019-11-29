@@ -3,7 +3,7 @@ class Store < ApplicationRecord
   has_many :products
   has_many :days
   has_many :reviews
-  has_many :orders, through: :products, through: :product_orders
+  has_many :product_orders, through: :products
   has_many :categories, through: :products
 
   validates :name, presence: true
@@ -17,5 +17,4 @@ class Store < ApplicationRecord
   def is_owner?(user)
     self.user == user
   end
-
 end

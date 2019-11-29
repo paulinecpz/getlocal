@@ -1,4 +1,4 @@
-class StoreManager::ProductsController < ApplicationController
+class ProductsController < ApplicationController
   before_action :set_store, only: [:create, :new, :edit, :destroy, :update]
   before_action :set_product, only: [:edit, :destroy, :update]
 
