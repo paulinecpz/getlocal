@@ -26,3 +26,21 @@
   display: flex;
   justify-content : spacebetween;
 }
+
+.container-form {
+  justify-content: space-between;
+}
+#query {
+  width: 400px;
+  margin-right: 10px;
+}
+
+#category_id {
+  width: 200px;
+  margin-right: 10px;
+
+}
+
+form {
+  display: flex;
+}
