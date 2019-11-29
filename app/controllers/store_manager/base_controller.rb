@@ -1,5 +1,5 @@
 class StoreManager::BaseController < ApplicationController
-  before_filter :restrict_user_by_role
+  before_action :restrict_user_by_role
   # edit valid roles here
   VALID_ROLES = ['store_manager']
   protected
