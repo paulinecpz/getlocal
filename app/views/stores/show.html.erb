@@ -10,7 +10,11 @@
   <div class= "content">
     ​
     <div class="products">
-      <h2><%= @store.name.capitalize %></h2>
+      <h2><%= @store.name.capitalize %>
+      <% if @store.is_owner?(current_user) %>
+      <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
+      <% end %>
+      </h2>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -32,9 +36,6 @@
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
               <% end %>
               <br>
-              <% if @store.is_owner?(current_user) %>
-              <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
-              <% end %>
             </div>
           </div>
           <div class="carousel-item">
