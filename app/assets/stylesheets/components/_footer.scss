@@ -27,11 +27,14 @@
 }
 
 #store-manager-link a{
-  color: #3A7A34
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+
 }
 
 #store-manager-link a:hover{
-  font-size: 20px;
-  font-style: bold;
+  font-size: 25px;
+  font-weight: bold;
   text-decoration: none
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2" height="297mm" width="210mm" version="1.2">
+  <g id="layer1">
+    <g id="layer1-4" stroke="#000" transform="translate(-146.99 -243.04)">
+      <path id="path2986" stroke-width="4.1839" fill="#dca27a" d="m415.72 496.84v-56.083l8.9657-8.768h98.451l9.2596 9.7328v55.225h-13.323v-51.419h-90.169v51.259z"/>
+      <path id="rect2999-1" stroke-linejoin="round" stroke-width="5" fill="#a06f4e" d="m323.94 495.6h312.62c6.2183 0 11.224 5.0061 11.224 11.224v384.95c0 6.2183-5.0061 11.224-11.224 11.224h-312.62c-6.2183 0-11.224-5.0061-11.224-11.224v-384.95c0-6.2183 5.006-11.224 11.224-11.224z"/>
+      <path id="rect5065" stroke-width="5" fill="#b98659" d="m317.15 498.81 48.207 14.145 1.6571 25.947c0.14124 2.2115 5.6629 4.2783 5.6629 6.4943v392.02c0 2.216-7.0538 2.7809-7.7414 0.67427-20.109-15.609-31.45-23.459-49.032-37.182-1.7469-1.3635-2.7528-3.8626-2.7528-6.0786v-392.02c0-2.216 1.784-4 4-4z"/>
+      <path id="rect5065-0" stroke-width="6" fill="#a06f4e" d="m648.42 519.19 42.106 18.961c2.0206 0.90991 4 1.784 4 4v392.02c0 2.216-3.3123 6.1066-4 4-23.172-25.013-20.762-24.26-46.236-41.998 0.16089-2.2102-4.002-1.784-4-4l0.35849-393.1c0.0754 6.4775 7.8112 17.95 7.7714 20.113z"/>
+      <path id="path2986-7" stroke-width="4.1839" fill="#dca27a" d="m470.45 540.19v-56.083l8.9657-8.768h98.451l9.2596 9.7328v55.225h-13.323v-51.419h-90.169v51.259z"/>
+      <rect id="rect2999" stroke-linejoin="round" ry="11.224" height="407.4" width="335.07" y="533.85" x="366.19" stroke-width="5" fill="#dca27a"/>
+      <path id="path3776" stroke-width="4" fill="none" d="m314.7 897.09 42.195-18.707 7.6908 58.2"/>
+      <path id="path3778" stroke-width="4" fill="none" d="m356.68 878.18 7.4829-363.75"/>
+    </g>
+    <path id="path3204" stroke-linejoin="bevel" d="m394.29 385.22-62.857 108.87h-125.71l-62.857-108.87 62.857-108.87h125.71z" fill-rule="evenodd" transform="translate(125.71 95)" stroke="#579300" stroke-width="14" fill="#fff"/>
+    <text id="text5350" stroke-linejoin="round" style="word-spacing:0px;letter-spacing:0px" font-weight="bold" fill="#000000" xml:space="preserve" transform="scale(.97404 1.0267)" line-height="125%" stroke="#ffffff" font-size="89.432px" y="494.62366" x="317.77679" font-family="Sans" stroke-width="3.7263">
+      <tspan id="tspan5352" y="494.62366" x="317.77679" stroke-width="3.7263">BIO</tspan>
+    </text>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>organic bag</dc:title>
+        <dc:date>2012-03-29T15:43:41</dc:date>
+        <dc:description>a paper bag with an organic (food) logo on it</dc:description>
+        <dc:source>http://openclipart.org/detail/169214/organic-bag-by-k4r573n</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>k4r573n</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>bag</rdf:li>
+            <rdf:li>bio</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>einkaufen</rdf:li>
+            <rdf:li>essen</rdf:li>
+            <rdf:li>food</rdf:li>
+            <rdf:li>organic</rdf:li>
+            <rdf:li>shop</rdf:li>
+            <rdf:li>shopping</rdf:li>
+            <rdf:li>tasche</rdf:li>
+            <rdf:li>t&#xC3;&#xBC;te</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

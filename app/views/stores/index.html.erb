@@ -2,14 +2,13 @@
   <!-- Search -->
   <br>
   <div class="container w-50">
-    <%= form_tag stores_path, method: :get do %>
+    <%= form_tag stores_path, method: :get %>
     <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a store"
     %>
     <%= submit_tag "Search", class: "btn btn-success", id: "search-bar" %>
-    <% end %>
   </div>
   <br>
   <!-- Gmap -->
@@ -17,29 +16,18 @@
     <div class="cards">
       <% @stores.each do |store| %>
       <div class="card-store">
-        <% if store.picture.present? %>
-        <% if cl_image_tag store.picture.blank? %>
-        <%= image_tag store.picture %>
-        <% else %>
-        <%= cl_image_tag store.picture %>
-        <% end %>
-        <% else %>
-        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" %>
-        <% end %>
+             <% if cl_image_tag store.pictures.present? %>
+              <% store.pictures.each do |picture| %>
+              <%= cl_image_tag(picture.photo) %>
+              <% end %>
+              <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+              <% end %>
         <div class="card-store-infos">
           <div>
             <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
             <p><%= store.address %></p>
           </div>
-          <% if store.user.photo.present? %>
-          <% if cl_image_tag store.user.photo.blank? %>
-          <%= image_tag store.user.photo, class: "avatar-bordered" %>
-          <% else %>
-          <%= cl_image_tag store.user.photo, class: "avatar-bordered" %>
-          <% end %>
-          <% else %>
-          <%= image_tag "https://www.biography.com/.image/t_share/MTY3MDUxMjkzMjI1OTIwMTcz/brad-pitt-attends-the-premiere-of-20th-century-foxs--square.jpg", class: "card-trip-user avatar-bordered" %>
-          <% end %>
         </div>
       </div>
       <% end %>
