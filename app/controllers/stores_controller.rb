@@ -31,11 +31,15 @@ class StoresController < ApplicationController
     # @stores = Store.search_by_address_and_name(params[:query])
   end
 
+  def vegetables_stores
+    @stores = policy_scope(Store).where(:category => 'vegetables')
+  end
+
   def show
     @product_orders = ProductOrder.joins(:product).where(:products => {:store => @store})
     # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
 
-    
+
     @markers = {
         lat: @store.latitude,
         lng: @store.longitude,
