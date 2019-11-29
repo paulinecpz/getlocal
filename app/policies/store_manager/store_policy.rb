@@ -1,4 +1,4 @@
-class StorePolicy < ApplicationPolicy
+class StoreManager::StorePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
