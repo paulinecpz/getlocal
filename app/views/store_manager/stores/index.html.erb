@@ -26,7 +26,7 @@
           <%= cl_image_tag store.user.photo, class: "card-trip-user avatar-bordered" %>
           <% end %>
           <% else %>
-          <%= link_to 'Edit', "#", class: 'btn btn-outline-success' %>
+          <%= link_to 'Edit', edit_store_manager_store_path(store), class: 'btn btn-outline-success' %>
           <%= image_tag "https://www.biography.com/.image/t_share/MTY3MDUxMjkzMjI1OTIwMTcz/brad-pitt-attends-the-premiere-of-20th-century-foxs--square.jpg", class: "card-trip-user avatar-bordered" %>
           <% end %>
         </div>
