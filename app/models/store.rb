@@ -1,6 +1,6 @@
 class Store < ApplicationRecord
   belongs_to :user
-  has_many :products
+  has_many :products, dependent: :destroy
   has_many :days
   has_many :reviews
   has_many :product_orders, through: :products
