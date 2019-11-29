@@ -1,6 +1,6 @@
 
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
-  <div class="container d-flex justify-content-around">
+  <div class="container-home d-flex justify-content-around">
     <h1>Get local products near you.</h1>
     <div class="banner-home-card">
       <%= form_tag stores_path, method: :get do %>
@@ -14,5 +14,31 @@
       <%= submit_tag "Search", class: "btn btn-success", id: "search-bar" %>
       <% end %>
     </div>
+  </div>
+</div>
+
+<!-- code a "How it works" section -->
+<div class="container-home">
+  <h2 class="text-center"><i class="fas fa-carrot"></i>  How it works <i class="fas fa-carrot"></i></h2>
+  <div class="cards-home">
+
+    <div class="card-home">
+      <%= image_tag "store1.svg", class: "text-center home-pics", id: "goods-store" %>
+      <h4><%= link_to "Find a Store", stores_path %></h4>
+      <p>First, search for a store around you that sells local products</p>
+    </div>
+
+    <div class="card-home">
+      <%= image_tag "order2.svg", class: "text-center home-pics" %>
+      <h4><%= link_to "Make an order", stores_path %></h4>
+      <p>Then, select your fresh products and pay on the website</p>
+    </div>
+
+    <div class="card-home">
+      <%= image_tag "basket.svg", class: "text-center home-pics", id: "vegetables-basket" %>
+      <h4><%= link_to "Collect your items", stores_path %></h4>
+      <p>Finally, get the directions and pick up your products directly at the store</p>
+    </div>
+
   </div>
 </div>
