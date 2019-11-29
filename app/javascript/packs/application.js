@@ -11,3 +11,4 @@ import { initAutocomplete } from '../plugins/init_autocomplete.js';
 
 initMapbox();
 initAutocomplete();
+

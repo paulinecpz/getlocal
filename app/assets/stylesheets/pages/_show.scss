@@ -1,10 +1,4 @@
-.card-store {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-store > img {
+.carousel-indicators > img {
   height: 400px;
   width: 100%;
   object-fit: cover;
@@ -13,26 +7,60 @@
 .content {
   display: flex;
   margin: 10px 0px 0px 0px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 
-.sidebar {
-  height: 300px;
-  width: 100vh;
+#sidebar-products {
+  height: 100%;
+  overflow: hidden;
   position: sticky;
-  top: 70px;
-  margin: 15px 0px 0px 0px;
-  position: sticky;
-  top: 70px;
+  top: 75px;
+  margin: 45px 0px 0px 10px;
 }
+
+.table td th {
+padding:4px;
+}
+
+.table-responsive .col-4{
+width:10vh;
+}
+
+.table-responsive .col-3{
+width:0;
+}
+
+.table-responsive .col-2{
+width:0;
+}
+// table .col-4 {
+// width:10px;
+// }
+
+
+
+.table-responsive{
+border: 4px solid #3A7A34;
+padding-top: 10px;
+ border-radius: 20px;
+
+}
+
+.table-responsive h2{
+	color: #3A7A34;
+}
+#checkout-button {
+border-radius: 0px}
 
 .products {
-  overflow: hidden;
-  background: white;
-  height: 70%;
+  height: 100%;
   width: 100vh;
+  overflow: hidden;
+  flex-grow: 1;
+  position: relative
 }
-
 
 .store-infos {
   padding: 16px;
@@ -45,6 +73,7 @@
   font-weight: bold;
   margin: 0;
 }
+
 
 /*Media Queries*/
 
@@ -77,3 +106,75 @@
 //     display: block;
 //   }
 // }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#map {
+  height: 300px;
+  width: 100%;
+  margin: 15px 0px 0px 0px;
+}
+
+.card-map {
+  overflow: hidden;
+  background: white;
+  height: 250px;
+  width: 200px;
+}
+
+.card-map > img {
+  height: 70%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-map .card-map-infos {
+  padding: 16px;
+  position: relative;
+}
+
+
+.card-map h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#navbar-product-infos{	
+overflow: hidden;
+position: sticky;
+top: 70px;
+}
+
+
+
+#titles-product-infos{
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.nav-pills{
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+
+}
+.navbar .navbar-light .bg-light #navbar-example2 {	
+overflow: hidden;
+position: sticky;
+top: 70px;
+}
+
+#navbar-example2 a{
+color: #3A7A34;
+font-weight: bold;
+}
+
