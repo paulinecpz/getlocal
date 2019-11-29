@@ -1,7 +1,40 @@
-#rui {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+.card-mystore {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 1;
+  height: 300px;
+  width: 60vh;
+  justify-content: space-around;
+  border-radius: 20px;
+  flex-grow:1
+}
+
+.card-mystore > img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-mystore h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-mystore p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-mystore .card-mystore-infos {
+
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
 }

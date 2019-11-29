@@ -85,7 +85,7 @@
                 <td><%= product.name %></td>
                 <td><%= product.price %></td>
                 <td><%= product.stock %></td>
-                <td><%= link_to ‘Add to my cart’, store_product_product_orders_path(@store, product), method: :post %></td>
+                <td><%= link_to 'Add to my cart', store_product_product_orders_path(@store, product), method: :post %></td>
               </tr>
               <% end %>
             </table>
@@ -127,71 +127,18 @@
       </div>
 
   </div>
-</div>
-
-
-
-
-
-
-
-<div class="container">
-    <h2><%= @store.name.capitalize %></h2>
-
-
+  <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 
 </div>
 
-<div class="container">
-
-  <div class="store-card">
-
-    <div class="store-info">
-
-      <div class= "store-products">
-        <h2>Product available</h2>
-        <table>
-          <% @store.products.each do |product| %>
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Stock</th>
-          </tr>
-          <tr>
-            <td><%= product.name %></td>
-            <td><%= product.price %></td>
-            <td><%= product.stock %></td>
-            <td><%= link_to 'Add to cart',  %></td>
-          </tr>
-          <% end %>
-        </table>
-      </div>
-
-      <div class= "store-reviews"></div>
-            <h2>Reviews</h2>
-
-      <div class= "store-info">
-
-            <h2>More info about <%= @store.name %></h2>
-
-            <p><strong>Description: </strong><%= @store.description %></p>
-            <p><strong>Website: </strong><%= @store.website %></p>
-            <p><strong>Phone number: </strong><%= @store.phone %></p>
-            <p><strong>Address: </strong><%= @store.address %></p>
-
-          <!-- map -->
-
-      </div>
-    </div>
-  </div>
-
-  <div class="order">
-  </div>
 
 
-      <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 
-</div>
+
+
+
+
+
 
 
 
