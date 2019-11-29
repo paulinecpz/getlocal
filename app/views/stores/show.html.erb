@@ -1,16 +1,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-
-
-
 <div class="container">
+  <h2><%= @store.name.capitalize %></h2>
   <div class= "content">
-
-    <div class="products">
-      <h2><%= @store.name.capitalize %></h2>
+    <div class="product">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -22,17 +14,17 @@
             <!--       <img src="..." class="d-block w-100" alt="...">
             -->
             <div class="d-block w-100">
-
-
               <% if @store.pictures.present? %>
-
+              <% if cl_image_tag pictures.photo.blank? %>
+              <%= image_tag @store.picture %>
+              <% else %>
               <% @store.pictures.each do |picture| %>
               <%= cl_image_tag(picture.photo) %>
               <% end %>
-              <%# end %>
+              <% end %>
               <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-              <%# end %>
+              <% end %>
               <br>
               <% if @store.is_owner?(current_user) %>
               <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
@@ -56,35 +48,23 @@
         </a>
       </div>
       <br>
-
-
-
       <!-- nav bar infos -->
-      <div id="navbar-product-infos">
-        <nav id="navbar-example2" class="navbar navbar-light bg-light">
-          <ul class="nav nav-pills">
-            <div id="titles-product-infos">
-            <li class="nav-item">
-              <a class="nav-link" href="#products">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#reviews">Reviews</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#more-info">More info</a>
-            </li>
-            </div>
-          </ul>
-        </nav>
-      </div>
-
-      <br><br>
-
-
-
+      <nav id="navbar-example2" class="navbar navbar-light bg-light">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#more-info">More info</a>
+          </li>
+        </ul>
+      </nav>
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="products">Products</h4>
-        <p>...<div class="store-info">
+        <p><div class="store-info">
           <div class= "store-products">
             <table>
               <% @store.products.each do |product| %>
@@ -97,7 +77,6 @@
                 <td><%= product.name %></td>
                 <td><%= product.price %></td>
                 <td><%= product.stock %></td>
-                <td><%= link_to 'Add to my cart', store_product_product_orders_path(@store, product), method: :post %></td>
               </tr>
               <% end %>
             </table>
@@ -106,7 +85,7 @@
           <p>...</p>
           <h4 id="more-info">More info</h4>
           <p><div class= "store-info">
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
+            <p><strong>Description: </strong><%= @store.description %></p>
             <p><strong>Website: </strong><%= @store.website %></p>
             <p><strong>Phone number: </strong><%= @store.phone %></p>
             <p><strong>Address: </strong><%= @store.address %></p>
@@ -114,6 +93,7 @@
           </div></p>
         </div>
       </div>
+
       <div class="sidebar">
         <div class="sidenav">
           <div class= "store-info">
@@ -136,156 +116,89 @@
           </div>
         </div>
       </div>
-    </div>
+
   </div>
-  <div class="container">
+</div>
+
+
+
+
+
+
+
+<div class="container">
     <h2><%= @store.name.capitalize %></h2>
+
+
     <div id="store-picture" class="img-fluid" alt="Responsive image">
-      <!--  <% if @store.pictures.present? %>
+
+     <!--  <% if @store.pictures.present? %>
       <% @store.pictures.each do |picture| %>
       <%= cl_image_tag(picture.photo) %>
       <% end %>
       <% else %>
       <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" %>
       <% end %> -->
+
       <br>
+
       <% if @store.is_owner?(current_user) %>
       <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
       <% end %>
+
     </div>
-  </div>
-  <div class="container">
-    <div class="store-card">
-      <div class="store-info">
-        <div class= "store-products">
-          <h2>Product available</h2>
-          <table>
-            <% @store.products.each do |product| %>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Stock</th>
-            </tr>
-            <tr>
-              <td><%= product.name %></td>
-              <td><%= product.price %></td>
-              <td><%= product.stock %></td>
-            </tr>
-            <% end %>
-          </table>
-        </div>
-        <div class= "store-reviews"></div>
-        <h2>Reviews</h2>
-        <div class= "store-info">
-          <h2>More info about <%= @store.name %></h2>
-          <p><strong>Description: </strong><%= @store.description %></p>
-          <p><strong>Website: </strong><%= @store.website %></p>
-          <p><strong>Phone number: </strong><%= @store.phone %></p>
-          <p><strong>Address: </strong><%= @store.address %></p>
+</div>
+
+<div class="container">
+
+  <div class="store-card">
+
+    <div class="store-info">
+
+      <div class= "store-products">
+        <h2>Product available</h2>
+        <table>
+          <% @store.products.each do |product| %>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Stock</th>
+          </tr>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.stock %></td>
+            <td><%= link_to 'Add to cart',  %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+
+      <div class= "store-reviews"></div>
+            <h2>Reviews</h2>
+
+      <div class= "store-info">
+
+            <h2>More info about <%= @store.name %></h2>
+
+            <p><strong>Description: </strong><%= @store.description %></p>
+            <p><strong>Website: </strong><%= @store.website %></p>
+            <p><strong>Phone number: </strong><%= @store.phone %></p>
+            <p><strong>Address: </strong><%= @store.address %></p>
+
           <!-- map -->
-        </div>
+
       </div>
     </div>
-    <div class="order">
-    </div>
-    <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
- <% if user_signed_in? %>
-  <h1>Test 1</h1>
-  <% if current_user.product_orders.present? %>
-  <% current_user.product_orders.joins(:product).where(:products => {:store_id => @store.id}).each do |item| %>
-  <p> <%= item.product.name %></p>
-  <p><%= item.quantity %></p>
-  <p><%= item.order %></p>
-  <% end %>
-  <% else %>
-  <p>Your cart is empty</p>
-  <% end %>
-</div>
-<% end %>
-
-
-              <div
-                id="map"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
-              </div>
-
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-          </div></p>
-        </div>
-      </div>
-
-
-
-
-<div class="row" id="sidebar-products">
-        <div class="col-15">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                  <h2 class="text-center">Your Cart</h2>
-                    <thead>
-                        <tr>
-<!--                             <th scope="col"> </th>
- -->                            <th class="col-3">Product</th>
-<!--                             <th scope="col">Available</th>
- -->                            <th class="text-center col-2">Quantity</th>
-                            <th class="text-right col-3">Price</th>
-                            <th class="text-center col-4"> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-<!--                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
- -->                            <td class="col-3">Carrots</td>
-<!--                             <td>In stock</td>
- -->                            <td class="col-2"><input class="form-control" type="text" value="12" /></td>
-                            <td class="text-right col-3">2,9 €</td>
-                            <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-<!--                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
- -->                            <td class="col-3">Tomatoes</td>
-<!--                             <td>In stock</td>
- -->                            <td class="col-2"><input class="form-control" type="text" value="10" /></td>
-                            <td class="text-right col-3">3,9 €</td>
-                            <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-<!--                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
- -->                            <td class="col-3">Banana</td>
-<!--                             <td>In stock</td>
- -->                            <td class="col-2"><input class="form-control" type="text" value="6" /></td>
-                            <td class="text-right col-3">1,4 €</td>
-                            <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-<!--                             <td></td>
- -->                            <td class="col-3"></td>
-<!--                             <td></td>
- -->                            <td class="text-right col-2"><strong>Total</strong></td>
-                            <td class="text-center col-3"><strong>8,2 €</strong></td>
-                            <td class="col-4"></td>
-                        </tr>
-                    </tbody>
-                </table>
-              <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
-            </div>
-        </div>
-     </div>
   </div>
-        <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
+
+  <div class="order">
+  </div>
 
 
-
-
+      <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 
 </div>
-
 
 
 
