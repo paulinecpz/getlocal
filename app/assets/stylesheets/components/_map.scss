@@ -8,12 +8,26 @@
 }
 
 
-#map {
+#map-index {
   height: 100vh;
   width: 100vh;
   position: sticky;
   top: 70px;
+  margin: 0px 10px 0px 3px;
+}
+
+#map-index h3{
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+  margin: 10px 
+}
+
+#map {
+  height: 70%;
+  width: 100%;
   margin: 15px 0px 0px 0px;
+  border-radius: 20px
 }
 
 .card-map {
@@ -48,7 +62,7 @@
   .cards {
     grid-template-columns: 1fr;
   }
-  #map {
+  #map-index{
     display: none;
   }
 }
@@ -58,7 +72,7 @@
   .cards {
     grid-template-columns: 1fr;
   }
-  #map {
+  #map-index {
     display: block;
   }
 }
@@ -68,7 +82,7 @@
   .cards {
     grid-template-columns: 1fr 1fr;
   }
-  #map {
+  #map-index{
     display: block;
   }
 }

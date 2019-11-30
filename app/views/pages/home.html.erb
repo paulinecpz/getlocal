@@ -15,6 +15,13 @@
       <% end %>
     </div>
   </div>
+
+    <div class="container-home container-form" id="geolocation">
+    <%= form_tag stores_path, method: :get do %>
+    <%= submit_tag "Find local stores around me", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
 </div>
 
 <!-- code a "How it works" section -->
@@ -39,6 +46,8 @@
       <h4><%= link_to "Collect your items", stores_path %></h4>
       <p>Finally, get the directions to the storeand and go pick up your fresh products</p>
     </div>
-
+  </div>
+    <div
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   </div>
 </div>

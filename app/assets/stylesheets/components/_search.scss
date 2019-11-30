@@ -24,7 +24,7 @@
 
 .collapse .navbar-collapse {
   display: flex;
-  justify-content : spacebetween;
+  justify-content : space-between;
 }
 
 .container-form {
@@ -38,6 +38,13 @@
 #category_id {
   width: 200px;
   margin-right: 10px;
+
+}
+
+#container_search{
+    display: flex;
+    justify-content: left;
+  margin: 30px 0px 20px 0px
 
 }
 

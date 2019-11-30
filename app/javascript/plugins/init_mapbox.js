@@ -3,6 +3,8 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 
 const mapElement = document.getElementById('map');
+const geoTracker = document.getElementById('geolocation');
+
 
 const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
@@ -38,6 +40,9 @@ const fitMapToMarkers = (map, markers) => {
 
 
 
+
+
+
 const initMapbox = () => {
   if (mapElement) {
     const map = buildMap();
@@ -46,7 +51,40 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
                                           mapboxgl: mapboxgl }));
+    // initGeotracker();
+
+    // const geolocate = new mapboxgl.GeolocateControl({
+    //       positionOptions: {
+    //       enableHighAccuracy: true
+    //       },
+    //       trackUserLocation: true
+    //       });
+    // map.addControl(geolocate)
+
   }
 };
 
+const initGeotracker = () => {
+  if (geoTracker) {
+      geoTracker.addEventListener('submit', (event) => {
+      // prevent form's default behavior
+        event.preventDefault();
+          const map = buildMap();
+          const geolocate = new mapboxgl.GeolocateControl({
+
+          positionOptions: {
+          enableHighAccuracy: true
+          },
+          trackUserLocation: true
+          });
+          map.addControl(geolocate);
+
+        map.on('load', function(){
+          geolocate.trigger();
+        });
+      });
+  }
+};
+
+export { initGeotracker };
 export { initMapbox };

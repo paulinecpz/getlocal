@@ -1,43 +1,57 @@
 <div class="m-3">
-  <!-- Search -->
-  <br>
-
-  <div class="container container-form">
-    <%= form_tag stores_path, method: :get do %>
-
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a store"
-    %>
-    <%= submit_tag "Search", class: "btn btn-success", id: "search-bar" %>
-    <% end %>
-  </div>
-  <br>
   <!-- Gmap -->
-  <div class="content">
-    <div class="cards">
-      <% @stores.each do |store| %>
-      <div class="card-store">
-             <% if cl_image_tag store.pictures.present? %>
-              <% store.pictures.each do |picture| %>
-              <%= cl_image_tag(picture.photo) %>
-              <% end %>
-              <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-              <% end %>
-        <div class="card-store-infos">
+
+    <div class="m-3">
+        <div id="container_search">
           <div>
-            <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
-            <p><%= store.address %></p>
+          <%= form_tag stores_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search for a store, city, category.."
+          %>
+          <%= submit_tag "Search", class: "btn btn-success"%>
+          <% end %>
+          </div>
+          <h3 class= "text-center ml-3">  or </h3>
+          <div class="text-center ml-3" id="geolocation">
+            <%= form_tag stores_path, method: :get do %>
+            <%= submit_tag "See all the local stores Around You!", class: "btn btn-primary" %>
+            <% end %>
           </div>
         </div>
-      </div>
-      <% end %>
+<!--         <div>
+          <h2 class= "text-center">Explore the GetLocal map</h2>
+        </div> -->
     </div>
-    <div
-      id="map"
-      data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <div class="content">
+    <div class="cards">
+
+        <% @stores.each do |store| %>
+        <div class="card-store">
+          <% if cl_image_tag store.pictures.present? %>
+          <% store.pictures.each do |picture| %>
+          <%= cl_image_tag(picture.photo) %>
+          <% end %>
+          <% else %>
+          <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+          <% end %>
+          <div class="card-store-infos">
+            <div>
+              <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
+              <p><%= store.address %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div id = "map-index">
+        <div id="map"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+        <h3 class= "text-center">Explore the GetLocal map</h3>
+      </div>
+    </div>
   </div>
-</div>
