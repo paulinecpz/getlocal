@@ -19,6 +19,15 @@ class StoresController < ApplicationController
     if params[:query].present?
       condition = "address @@ :query OR name @@ :query"
       @stores = policy_scope(Store).where(condition, query: "%#{params[:query]}%")
+        
+        @markers = @stores.map do |store|
+        {
+          lat: store.latitude,
+          lng: store.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { store: store }),
+          image_url: helpers.asset_url('pin.png')
+        }
+      end
     else
       @stores = policy_scope(Store).order(:name)
     end
@@ -38,7 +47,6 @@ class StoresController < ApplicationController
   def show
     @product_orders = ProductOrder.joins(:product).where(:products => {:store => @store})
     # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
-
 
     @markers = {
         lat: @store.latitude,
