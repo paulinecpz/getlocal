@@ -45,9 +45,9 @@ class StoresController < ApplicationController
   end
 
   def show
+
     @product_orders = ProductOrder.joins(:product).where(:products => {:store => @store})
     # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
-
     @markers = {
         lat: @store.latitude,
         lng: @store.longitude,
@@ -55,7 +55,6 @@ class StoresController < ApplicationController
         image_url: helpers.asset_url('pin.png')
       }
       @markers = [@markers]
-
   end
 
   def new

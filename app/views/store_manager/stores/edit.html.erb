@@ -27,6 +27,8 @@
   <div class="form-inputs">
     <%= f.input :phone, :label => "Phone number: " %>
   </div>
+ <%= f.input :pictures, as: :file, input_html: { multiple: true }, :label => "Upload up to 4 pictures of your store" %>
+
   <!-- [...] -->
   <div class="form-actions">
     <%= f.submit  "Update my store", class: "btn btn-success" %>
