@@ -59,7 +59,7 @@
 
 /*Smallest device*/
 @media (min-width: 100px) and (max-width: 575px) {
-  .cards {
+  .cards-store {
     grid-template-columns: 1fr;
   }
   #map-index{
@@ -69,7 +69,7 @@
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
-  .cards {
+  .cards-store {
     grid-template-columns: 1fr;
   }
   #map-index {
@@ -79,7 +79,7 @@
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 1200px) {
-  .cards {
+  .cards-store {
     grid-template-columns: 1fr 1fr;
   }
   #map-index{
