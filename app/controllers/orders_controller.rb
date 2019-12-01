@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
+    # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
   end
 
   def new
