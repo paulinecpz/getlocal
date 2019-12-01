@@ -30,7 +30,11 @@
 }
 
 .banner-home-card #search-bar {
-margin: 0 auto;
+  margin: 0 auto;
+}
+
+.banner-home-card > form {
+  display: flex;
 }
 
 
@@ -95,3 +99,4 @@ a:hover {
 .container-home .fa-carrot {
   color:#D6590F ;
 }
+
