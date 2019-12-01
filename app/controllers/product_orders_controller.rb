@@ -26,6 +26,13 @@ class ProductOrdersController < ApplicationController
     redirect_to store_path(@store)
   end
 
+  def destroy
+    authorize @product_order
+    @store = Store.find(params[:store_id])
+    @product_order.destroy
+    redirect_to store_path(@store), notice: 'Product was successfully destroyed'
+  end
+
   private
 
   def set_product_order
