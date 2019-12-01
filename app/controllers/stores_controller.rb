@@ -19,7 +19,7 @@ class StoresController < ApplicationController
     if params[:query].present?
       condition = "address @@ :query OR name @@ :query"
       @stores = policy_scope(Store).where(condition, query: "%#{params[:query]}%")
-        
+
         @markers = @stores.map do |store|
         {
           lat: store.latitude,
@@ -71,7 +71,7 @@ class StoresController < ApplicationController
       current_user.role = 'store_manager'
       current_user.save
       create_pictures
-      redirect_to store_path(@store), notice: 'Store was successfully created'
+      redirect_to store_manager_store_path(@store), notice: 'Store was successfully created'
     else
       render :new
     end

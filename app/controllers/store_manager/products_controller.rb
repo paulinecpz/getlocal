@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class StoreManager::ProductsController < ApplicationController
   before_action :set_store, only: [:create, :new, :edit, :destroy, :update]
   before_action :set_product, only: [:edit, :destroy, :update]
 
@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :stock, :price, :category_id)
+    params.require(:product).permit(:name, :stock, :price, :category_id, :discount)
   end
 
   def set_product
