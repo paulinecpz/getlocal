@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row" id="sidebar-products">
+    <div class="col-15">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <h3 class="text-center">Your Cart</h3>
+          <thead>
+            <tr>
+              <th class="col-3">Product</th>
+              <th class="text-center col-2">Quantity</th>
+              <th class="text-right col-3">Price</th>
+              <th class="text-center col-4"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @order.product_orders.each do |product| %>
+            <tr>
+              <td class="col-3"><%= product.product.name %></td>
+              <td class="col-2"><input class="form-control" type="text" value="<%= product.quantity %>" /></td>
+              <td class="text-right col-3"><%= product.product.price %></td>
+              <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+            </tr>
+            <%  product_order = order.product_orders %>
+            <tr>
+              <td class="col-3">TOTAL</td>
+              <td class="col-2"><input class="form-control" type="text" value="" /></td>
+              <td class="text-right col-3"></td>
+              <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
+
+</div>
+​</div>
+​

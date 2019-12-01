@@ -30,7 +30,7 @@ class ProductOrdersController < ApplicationController
     authorize @product_order
     @store = Store.find(params[:store_id])
     @product_order.destroy
-    redirect_to store_path(@store), notice: 'Product was successfully destroyed'
+    redirect_to store_path(@store), notice: 'Product was successfully deleted'
   end
 
   private
