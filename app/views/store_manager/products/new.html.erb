@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-getlocal">
   <h1>Add my product</h1>
   <%= simple_form_for([:store_manager, @store, @product]) do |f| %>
   <% if @product.errors.any? %>
@@ -19,16 +19,20 @@
     <%= f.input :price, :label => "Price: " %>
   </div>
   <div class="form-inputs">
+    <%= f.input :discount, :label => "GetLocal discount: " %>
+  </div>
+  <div class="form-inputs">
     <%= f.input :stock, :label => "Stock available: " %>
   </div>
   <div class="form-inputs">
     <%= f.association :category, :label => "Choose category:" %>
   </div>
-  <div class="form-inputs">
+<!--   <div class="form-inputs">
     <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
-  </div>
+  </div> -->
+
   <div class="form-actions">
-    <%= f.submit  "submit my store", class: "btn btn-success" %>
+    <%= f.submit  "Add product", class: "btn btn-success" %>
   </div>
   <% end %>
   <%= link_to 'Back', store_manager_store_path(@store), class: "btn btn-outline-success" %>
