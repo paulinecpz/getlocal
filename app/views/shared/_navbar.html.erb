@@ -13,7 +13,7 @@
         <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "My cart", "#", class: "nav-link" %>
+        <%= link_to "My cart", orders_path, class: "nav-link" %>
       </li>
       <% if current_user.photo.present? %>
       <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: 'font-size:30px;cursor:pointer', onclick: 'openNav()'%>
@@ -39,9 +39,11 @@
               <li class="item-menu">
                 <%= link_to "My Orders", orders_path, class: "nav-link" %>
               </li>
+              <% if current_user.role == 'store_manager' %>
               <li class="item-menu">
                 <%= link_to "My Stores", store_manager_stores_path, class: "nav-link" %>
               </li>
+              <% end %>
               <li class="item-menu">
                 <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
               </li>

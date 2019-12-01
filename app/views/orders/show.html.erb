@@ -13,15 +13,13 @@
             </tr>
           </thead>
           <tbody>
-            <% @orders.each do |order| %>
-            <% order.product_orders.each do |product| %>
+            <% @order.product_orders.each do |product| %>
             <tr>
               <td class="col-3"><%= product.product.name %></td>
               <td class="col-2"><input class="form-control" type="text" value="<%= product.quantity %>" /></td>
               <td class="text-right col-3"><%= product.product.price %></td>
               <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
             </tr>
-            <% end %>
             <%  product_order = order.product_orders %>
             <tr>
               <td class="col-3">TOTAL</td>

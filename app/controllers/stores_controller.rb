@@ -21,6 +21,7 @@ class StoresController < ApplicationController
         
       update_map
 
+
     else
       @stores = policy_scope(Store).order(:name)
     end
@@ -61,40 +62,40 @@ class StoresController < ApplicationController
     update_map
   end
 
-  def fruits_stores
-    @stores = policy_scope(Store).where(:category => 'fruits')
+#   def fruits_stores
+#     @stores = policy_scope(Store).where(:category => 'fruits')
 
-    update_map
-  end
+#     update_map
+#   end
 
-  def bio_stores
-    @stores = policy_scope(Store).where(:category => 'bio')
+#   def bio_stores
+#     @stores = policy_scope(Store).where(:category => 'bio')
 
-    update_map
-  end
+#     update_map
+#   end
 
-  def meat_stores
-    @stores = policy_scope(Store).where(:category => 'meat')
+#   def meat_stores
+#     @stores = policy_scope(Store).where(:category => 'meat')
 
-    update_map
-  end
+#     update_map
+#   end
 
-  def fish_stores
-    @stores = policy_scope(Store).where(:category => 'fish')
+#   def fish_stores
+#     @stores = policy_scope(Store).where(:category => 'fish')
 
-    update_map
-  end
+#     update_map
+#   end
 
-  def cheese_stores
-    @stores = policy_scope(Store).where(:category => 'cheese')
+#   def cheese_stores
+#     @stores = policy_scope(Store).where(:category => 'cheese')
 
-    update_map
-  end
+#     update_map
+#   end
 
   def show
+
     @product_orders = ProductOrder.joins(:product).where(:products => {:store => @store})
     # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
-
     @markers = {
         lat: @store.latitude,
         lng: @store.longitude,
@@ -102,7 +103,6 @@ class StoresController < ApplicationController
         image_url: helpers.asset_url('pin.png')
       }
       @markers = [@markers]
-
   end
 
   def new
@@ -118,7 +118,7 @@ class StoresController < ApplicationController
       current_user.role = 'store_manager'
       current_user.save
       create_pictures
-      redirect_to store_path(@store), notice: 'Store was successfully created'
+      redirect_to store_manager_store_path(@store), notice: 'Store was successfully created'
     else
       render :new
     end

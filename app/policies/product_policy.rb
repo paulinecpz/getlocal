@@ -4,6 +4,9 @@ class ProductPolicy < ApplicationPolicy
       scope.all
     end
   end
+  def show?
+    true
+  end
 
   def new?
     record.store.user == user
