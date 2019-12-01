@@ -1,18 +1,18 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:destroy, :show, :create]
+  before_action :set_order, only: [:destroy, :show, :create, :new]
+
   def index
     @orders = policy_scope(Order).where(user: current_user)
   end
 
   def show
-    # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
+    @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
   end
 
   def new
   end
 
   def create
-
   end
 
   def edit
