@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:destroy, :show]
+  before_action :set_order, only: [:destroy, :show, :create]
   def index
     @orders = policy_scope(Order).where(user: current_user)
   end
@@ -29,7 +29,17 @@ class OrdersController < ApplicationController
   private
 
   def set_order
-    @order = Order.find(params[:id])
+    @order = Order.where(user: current_user)
+    @product_orders = ProductOrder.where(product_order_params)
     authorize @order
+    authorize @product_orders
+  end
+
+  def order_params
+    params.require(:order).permit(:amount, :amount, :state)
+  end
+
+  def product_order_params
+    params.require(:product_order).permit(:quantity, :product_id, :order_id)
   end
 end
