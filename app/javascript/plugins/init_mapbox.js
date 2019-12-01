@@ -69,8 +69,12 @@ const initGeotracker = () => {
       geoTracker.addEventListener('submit', (event) => {
       // prevent form's default behavior
         event.preventDefault();
-          const map = buildMap();
-          const geolocate = new mapboxgl.GeolocateControl({
+        const map = buildMap();
+        const markers = JSON.parse(mapElement.dataset.markers);
+        addMarkersToMap(map, markers);
+        fitMapToMarkers(map, markers);  
+                
+        const geolocate = new mapboxgl.GeolocateControl({
 
           positionOptions: {
           enableHighAccuracy: true

@@ -80,91 +80,89 @@
       <br><br>
       ​
       ​
-      ​
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="products">Products</h4>
-        <p><div class="store-info">
-          <div class= "store-products">
-            <table>
-              <% @store.products.each do |product| %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">GetLocal Discount</th>
+              <th scope="col">Stock</th>
+              <th scope="col">➕</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @store.products.each do |product| %>
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= product.price %> €</td>
+              <td><%= product.discount%> %</td>
+              <td><%= product.stock %></td>
+              <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <h4 id="reviews">Reviews</h4>
+        <p>...</p>
+        <h4 id="more-info">More info</h4>
+        <p><div class= "store-info">
+          <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
+          <p><strong>Website: </strong><%= @store.website %></p>
+          <p><strong>Phone number: </strong><%= @store.phone %></p>
+          <p><strong>Address: </strong><%= @store.address %></p>
+          <!-- map -->
+          <h4 id="location">Location</h4>
+          <p><div
+            id="map"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
+          </div></p>
+        </div></p>
+      </div>
+    </div>
+    ​
+    ​
+    ​
+    ​<% unless @store.is_owner?(current_user) %>
+    <div class="row" id="sidebar-products">
+      <div class="col-15">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <h3 class="text-center">Your Cart</h3>
+            <thead>
               <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Stock</th>
+                <th class="col-3">Product</th>
+                <th class="text-center col-2">Quantity</th>
+                <th class="text-right col-3">Price</th>
+                <th class="text-center col-4"> </th>
               </tr>
+            </thead>
+            <tbody>
+              <% if current_user.product_orders.present? %>
+              <% current_user.product_orders.joins(:product).where(:products => {:store_id => @store.id}).each do |item| %>
               <tr>
-                <td><%= product.name %></td>
-                <td><%= product.price %></td>
-                <td><%= product.stock %></td>
-                <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
+                <td class="col-3"><%= item.product.name %></td>
+                <td class="col-2"><input class="form-control" type="text" value="<%= item.quantity %>" /></td>
+                <td class="text-right col-3"><%= item.product.price %></td>
+                <td class="text-center col-4"><%= link_to 'Delete', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
               </tr>
               <% end %>
-            </table>
-          </div></div></p>
-          <h4 id="reviews">Reviews</h4>
-          <p>...</p>
-          <h4 id="more-info">More info</h4>
-          <p><div class= "store-info">
-            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-            <p><strong>Website: </strong><%= @store.website %></p>
-            <p><strong>Phone number: </strong><%= @store.phone %></p>
-            <p><strong>Address: </strong><%= @store.address %></p>
-            <!-- map -->
-          <h4 id="location">Location</h4>
-            <p><div
-              id="map"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
-            </div></p>
-          </div></p>
-        </div>
-      </div>
-      ​
-      ​
-      ​
-      ​<% unless @store.is_owner?(current_user) %>
-      <div class="row" id="sidebar-products">
-        <div class="col-15">
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <h3 class="text-center">Your Cart</h3>
-              <thead>
-                <tr>
-                  <!--                             <th scope="col"> </th>
-                  -->                            <th class="col-3">Product</th>
-                  <!--                             <th scope="col">Available</th>
-                  -->                            <th class="text-center col-2">Quantity</th>
-                  <th class="text-right col-3">Price</th>
-                  <th class="text-center col-4"> </th>
-                </tr>
-              </thead>
-              <tbody>
-                <% if current_user.product_orders.present? %>
-                  <% current_user.product_orders.joins(:product).where(:products => {:store_id => @store.id}).each do |item| %>
-
-                <tr>
-                  <!--                             <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                  -->                            <td class="col-3"><%= item.product.name %></td>
-                  <!--                             <td>In stock</td>
-                  -->                            <td class="col-2"><input class="form-control" type="text" value="<%= item.quantity %>" /></td>
-                  <td class="text-right col-3"><%= item.product.price %></td>
-                  <td class="text-center col-4"><%= link_to 'Delete', store_product_product_order_path(@store, item.product, item), method: :detele %></td>
-                </tr>
-                <tr>
+              <% else %>
+              <tr>
                 <td class="col-3"><p>Your cart is empty</p></td>
-                </tr>
-                <% end %>
-                <% end %>
-              </tbody>
-            </table>
-            <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
-          </div>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= link_to 'Checkout', order_path, class: 'btn btn-outline-success' %>
+          <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
         </div>
       </div>
     </div>
-    <% end %>
   </div>
-  <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
-
+  <% end %>
 </div>
-
+<%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
+</div>
