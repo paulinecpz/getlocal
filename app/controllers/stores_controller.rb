@@ -93,7 +93,7 @@ class StoresController < ApplicationController
 #   end
 
   def show
-
+    @order = Order.new
     @product_orders = ProductOrder.joins(:product).where(:products => {:store => @store})
     # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
     @markers = {
