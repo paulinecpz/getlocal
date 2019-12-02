@@ -75,7 +75,7 @@
         </nav>
       </div>
       ​     ​
-      
+
       <h4 >This store sells:</h4>
       <% @store.products.each do |product| %>
       <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
@@ -133,7 +133,7 @@
     </div>
     ​
     ​
-    ​
+    <!-- ​CART -->
     ​<%# unless @store.is_owner?(current_user) %>
   <% if current_user.present? %>
     <div class="row" id="sidebar-products">
@@ -167,12 +167,11 @@
                   </tr>
                 <% end %>
               <% end %>
-              <%= f.submit %>
-            <% end %>
           </tbody>
         </table>
+        <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button"><%= f.submit %></button>
+        <% end %>
         <%#= link_to 'Checkout', orders_path, class: 'btn btn-outline-success', method: :post %>
-        <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
         </div>
       </div>
     </div>
@@ -222,14 +221,12 @@
           </div>
           <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
   </div>
 
     <!--/.Carousel Wrapper-->
-  <% end %>
   <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 </div>
 </div>

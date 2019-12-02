@@ -26,7 +26,8 @@ class OrdersController < ApplicationController
     quantity = 0
     create_product_orders
     current_user.product_orders.each do |item|
-      amount += item.product.price
+      final_price = item.product.price * item.product.discount
+      amount += final_price
       quantity += item.quantity
     end
     @order.quantity = quantity
@@ -44,7 +45,7 @@ class OrdersController < ApplicationController
         name: @order.id,
         amount: @order.amount_cents,
         currency: 'eur',
-        quantity: @order.quantity
+        quantity: 1
       }],
       success_url: order_url(@order),
       cancel_url: order_url(@order)
