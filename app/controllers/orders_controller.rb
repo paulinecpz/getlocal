@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:destroy, :show]
+  before_action :set_order, only: [:destroy, :show, :create, :new]
+
   def index
     @orders = policy_scope(Order).where(user: current_user)
     @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
@@ -13,7 +14,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-
   end
 
   def edit
@@ -30,7 +30,18 @@ class OrdersController < ApplicationController
   private
 
   def set_order
-    @order = Order.find(params[:id])
+    @order = Order.where(user: current_user)
+    # @product_orders = ProductOrder.where(product_order_params)
+    @order = Order.find(order_params)
     authorize @order
+    authorize @product_orders
+  end
+
+  def order_params
+    params.require(:order).permit(:amount, :amount, :state, :user_id)
+  end
+
+  def product_order_params
+    params.require(:product_order).permit(:quantity, :product_id, :order_id)
   end
 end

@@ -18,7 +18,7 @@ class StoreManager::StoresController < ApplicationController
 
   def update
     if @store.update(store_params)
-      redirect_to store_path(@store), notice: 'Store was successfully updated'
+      redirect_to store_manager_store(@store), notice: 'Store was successfully updated'
     else
       render :edit
     end

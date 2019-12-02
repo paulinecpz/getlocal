@@ -1,4 +1,6 @@
-
+<video autoplay muted loop id="myVideo">
+  <source src="rain.mp4" type="video/mp4">
+</video>
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
   <div class="container-home d-flex justify-content-around">
     <h1>Get local products near you.</h1>
@@ -15,11 +17,47 @@
       <% end %>
     </div>
   </div>
+
+    <div class="container-home container-form" id="geolocation">
+    <%= form_tag stores_path, method: :get do %>
+    <%= submit_tag "Find local stores around me", class: "btn-localisation" %>
+    <% end %>
+    </div>
+
+</div>
+
+
+<div class="container-home">
+    <h2> Get local products in your town</h2>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1549588246-9a455c9c788c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+    Lisbon
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493407876535-66cff43a0558?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1648&q=80)">
+    Porto
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1500482176473-ccba10e1e880?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
+    Paris
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1561385945-c99789cd12d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1499&q=80)">
+    Barcelone
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1567750409538-75dfe2feb214?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=664&q=80)">
+    London
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1553688737-e4fbcdad80c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+    Lyon
+  </div>
+</div>
 </div>
 
 <!-- code a "How it works" section -->
 <div class="container-home">
-  <h2 class="text-center"><i class="fas fa-carrot"></i>  How it works <i class="fas fa-carrot"></i></h2>
+  <h2 class="text-center"><i class="fas fa-carrot"></i>  How does it work? <i class="fas fa-carrot"></i></h2>
   <div class="cards-home">
 
     <div class="card-home">
@@ -31,14 +69,286 @@
     <div class="card-home">
       <%= image_tag "order2.svg", class: "text-center home-pics" %>
       <h4><%= link_to "Make an order", stores_path %></h4>
-      <p>Then, select your fresh products and pay on the website</p>
+      <p>Then, select your fresh products and pay directly on GetLocal</p>
     </div>
 
     <div class="card-home">
       <%= image_tag "basket.svg", class: "text-center home-pics", id: "vegetables-basket" %>
       <h4><%= link_to "Collect your items", stores_path %></h4>
-      <p>Finally, get the directions and pick up your products directly at the store</p>
+      <p>Finally, get the directions to the store and and go pick up your fresh products</p>
     </div>
 
   </div>
+
+
+
+
+    <!--Carousel Wrapper-->
+
+  <div class="container my-4">
+    <h2>⭐️ Discover the GetLocal selection ⭐️</h2>
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+      <!--Controls-->
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+      <% @stores.each_slice(3).with_index do |slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+
+              <% slice.each do |store| %>
+
+                  <div class="col-md-4 ">
+                    <div class="card mb-2 ">
+
+<!--                       <div class= card-img-top>
+ -->                        <% if cl_image_tag store.pictures.present? %>
+                        <% store.pictures.each do |picture| %>
+                          <%= cl_image_tag(picture.photo) %>
+                          <% end %>
+                        <% else %>
+                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+                        <% end %>
+<!--                       </div>
+ -->
+                      <div class="card-body text-center">
+                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
+                        <p class="card-text"><%=store.address%></p>
+                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
+                      </div>
+
+                    </div>
+                  </div>
+
+              <% end %>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!--/.Slides-->
+   </div>
+ </div>
+<!--/.Carousel Wrapper-->
+
+<!--Carousel Wrapper-->
+
+  <div class="container my-4">
+    <h2>Popular Stores in Lisbon 🇵🇹</h2>
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+      <!--Controls-->
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+      <% @stores_lisbon.each_slice(3).with_index do |slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+
+              <% slice.each do |store| %>
+
+                  <div class="col-md-4 ">
+                    <div class="card mb-2 ">
+
+<!--                       <div class= card-img-top>
+ -->                        <% if cl_image_tag store.pictures.present? %>
+                        <% store.pictures.each do |picture| %>
+                          <%= cl_image_tag(picture.photo) %>
+                          <% end %>
+                        <% else %>
+                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+                        <% end %>
+<!--                       </div>
+ -->
+                      <div class="card-body text-center">
+                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
+                        <p class="card-text"><%=store.address%></p>
+                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
+                      </div>
+
+                    </div>
+                  </div>
+
+              <% end %>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!--/.Slides-->
+   </div>
+</div>
+<!--/.Carousel Wrapper-->
+
+
+<!--Carousel Wrapper-->
+
+<div class="container my-4">
+    <h2>The best GetLocal Vegetables Stores 🥕🥦🥔 </h2>
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+      <!--Controls-->
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+      <% @stores_vegetables.each_slice(3).with_index do |slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+
+              <% slice.each do |store| %>
+
+                  <div class="col-md-4 ">
+                    <div class="card mb-2 ">
+
+<!--                       <div class= card-img-top>
+ -->                        <% if cl_image_tag store.pictures.present? %>
+                        <% store.pictures.each do |picture| %>
+                          <%= cl_image_tag(picture.photo) %>
+                          <% end %>
+                        <% else %>
+                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+                        <% end %>
+<!--                       </div>
+ -->
+                      <div class="card-body text-center">
+                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
+                        <p class="card-text"><%=store.address%></p>
+                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
+                      </div>
+
+                    </div>
+                  </div>
+
+              <% end %>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!--/.Slides-->
+   </div>
+</div>
+    <!--/.Carousel Wrapper-->
+
+<!--Carousel Wrapper-->
+
+<div class="container my-4">
+    <h2>The best rated local stores 👍</h2>
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+      <!--Controls-->
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+
+        <!--First slide-->
+      <% @stores_best_rated.each_slice(3).with_index do |slice, index| %>
+          <div class="carousel-item <%= 'active' if index == 0 %>">
+            <div class="row">
+
+              <% slice.each do |store| %>
+
+                  <div class="col-md-4 ">
+                    <div class="card mb-2 ">
+
+<!--                       <div class= card-img-top>
+ -->                        <% if cl_image_tag store.pictures.present? %>
+                        <% store.pictures.each do |picture| %>
+                          <%= cl_image_tag(picture.photo) %>
+                          <% end %>
+                        <% else %>
+                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+                        <% end %>
+<!--                       </div>
+ -->
+                      <div class="card-body text-center">
+                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
+                        <p class="card-text"><%=store.address%></p>
+                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
+                      </div>
+
+                    </div>
+                  </div>
+
+              <% end %>
+
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!--/.Slides-->
+   </div>
+</div>
+    <!--/.Carousel Wrapper-->
+
+
+    <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 </div>
