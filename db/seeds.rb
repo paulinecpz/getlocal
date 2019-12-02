@@ -151,13 +151,9 @@ Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.c
     store: Store.all.sample,
     category: Category.all.sample
     )
-<<<<<<< HEAD
-  order = Order.create(state: "default", amount: "2", user: user)
-  ProductOrder.create(quantity: 2, order: order)
-=======
+
   order = Order.create(state: "pending", amount: 2, user: user)
   ProductOrder.create(quantity: 2, user: user, product: product )
->>>>>>> 84a465736bc50ba4b9bc98b254d3f6f864214ed0
 end
 
 

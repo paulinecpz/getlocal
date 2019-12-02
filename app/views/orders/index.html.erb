@@ -21,7 +21,7 @@
         <div id="sidebar-products">
           <div class="table-responsive-orders">
             <table class="table table-striped">
-              <h3 class="text-center">My Order - </h3>
+              <h3 class="text-center">My Order -</h3>
               <thead>
                 <tr>
                   <th class="text">Products</th>
@@ -31,15 +31,13 @@
               </thead>
               <tbody>
                 <% @total = 0 %>
-                <% @orders.each do |order| %>
-                  <% order.products.each do |product| %>
-                    <tr>
-                      <td class="text"><%= product.name %></td>
-                      <td class="text-center"><%= order.product_orders.find_by(product: product).quantity %></td>
-                      <td class="text"><%= product.price %></td>
-                      <% @total += product.price %>
-                    </tr>
-                  <% end %>
+                <% current_user.product_orders.each do |product_order| %>
+                  <tr>
+                    <td class="text"><%= product_order.product.name %></td>
+                    <td class="text-center"><%= product_order.quantity %></td>
+                    <td class="text"><%= product_order.product.price %></td>
+                    <% @total += product_order.product.price %>
+                  </tr>
                 <% end %>
                 <tr>
                   <td class="col-3">TOTAL</td>
