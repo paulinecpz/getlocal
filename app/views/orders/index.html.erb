@@ -1,2 +1,59 @@
-<h1> my orders </h1>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="content">
+      <div class="card-horizontal">
+               <%# @stores.each do |store| %>
+      <div class="card-store">
+        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+        <h3>Store1 Name</h3>
+             <%# if cl_image_tag store.pictures.present? %>
+              <%# store.pictures.each do |picture| %>
+              <%#= cl_image_tag(picture.photo) %>
+              <%# end %>
+              <%# else %>
+              <%#= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+              <%# end %>
+          <div class="card-store-infos">
+            <h5>Order 1 info</h5>
+            <% @orders.each do |order| %>
+            <% if cl_image_tag store.pictures.present? %>
+                <% store.pictures.each do |picture| %>
+                <%= cl_image_tag(picture.photo) %>
+                <% end %>
+                <% else %>
+                <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+                <% end %>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="content">
+       <div class="card-horizontal">
+               <%# @stores.each do |store| %>
+      <div class="card-store">
+        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+        <h3>Store2 Name</h3>
+             <%# if cl_image_tag store.pictures.present? %>
+              <%# store.pictures.each do |picture| %>
+              <%#= cl_image_tag(picture.photo) %>
+              <%# end %>
+              <%# else %>
+              <%#= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+              <%# end %>
+          <div class="card-store-infos">
+            <h5>Order 2 info</h5>
+            <% @orders.each do |order| %>
+            <% if cl_image_tag store.pictures.present? %>
+                <% store.pictures.each do |picture| %>
+                <%= cl_image_tag(picture.photo) %>
+                <% end %>
+                <% else %>
+                <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+                <% end %>
+              </div>
+              <%end%>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
