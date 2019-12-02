@@ -152,7 +152,7 @@ Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.c
     category: Category.all.sample
     )
   order = Order.create(state: "default", amount: "2", user: user)
-  ProductOrder.create(quantity: 2, order: order, product: product )
+  ProductOrder.create(quantity: 2, order: order)
 end
 
 
