@@ -33,7 +33,7 @@
     </div>
   </div>
   <%= link_to 'Modify my items', :back, class: "btn btn-outline-success" %>
-  <%= render 'reviews/form', order: Order.first, review: Review.new %>
+  <%= render 'reviews/form', order: @order, review: Review.new %>
 </div>
 ​</div>
 ​
