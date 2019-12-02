@@ -1,6 +1,6 @@
 class ProductOrdersController < ApplicationController
   before_action :set_product_order, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
 
   def index
     @product_orders = policy_scope(ProductOrders)
