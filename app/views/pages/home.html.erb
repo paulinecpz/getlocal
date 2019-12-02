@@ -1,6 +1,4 @@
-<video autoplay muted loop id="myVideo">
-  <source src="rain.mp4" type="video/mp4">
-</video>
+
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
   <div class="container-home d-flex justify-content-around">
     <h1>Get local products near you.</h1>
@@ -31,52 +29,69 @@
     <h2> Get local products in your town</h2>
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1549588246-9a455c9c788c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
-    Lisbon
+    <%= link_to "Lisbon", :controller => "stores", :query => "lisbon"%>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493407876535-66cff43a0558?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1648&q=80)">
-    Porto
+   <%= link_to "Porto", :controller => "stores", :query => "porto"%>
+
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1500482176473-ccba10e1e880?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
-    Paris
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1500482176473-ccba10e1e880?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">    
+    <%= link_to "Paris", :controller => "stores", :query => "paris"%>
   </div>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1561385945-c99789cd12d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1499&q=80)">
-    Barcelone
+    <%= link_to "Barcelona", :controller => "stores", :query => "barcelona"%>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1567750409538-75dfe2feb214?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=664&q=80)">
-    London
+    <%= link_to "London", :controller => "stores", :query => "london" %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1553688737-e4fbcdad80c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
-    Lyon
+    <%= link_to "Lyon", :controller => "stores", :query => "lyon" %>
   </div>
 </div>
 </div>
 
 <!-- code a "How it works" section -->
+
 <div class="container-home">
   <h2 class="text-center"><i class="fas fa-carrot"></i>  How does it work? <i class="fas fa-carrot"></i></h2>
+
   <div class="cards-home">
 
+  <%= link_to stores_path, :action => 'go' do %>
     <div class="card-home">
       <%= image_tag "store1.svg", class: "text-center home-pics", id: "goods-store" %>
-      <h4><%= link_to "Find a Store", stores_path %></h4>
-      <p>First, search for a store around you that sells local products</p>
+      <h4><%= link_to "1. Find a Store", stores_path %></h4>
+      <p>Search for a store around you that sells local products</p>
     </div>
+  <% end %>
 
+  <%= link_to stores_path, :action => 'go' do %>
+    <div class="card-home">
+      <%= image_tag "discount.svg", class: "text-center home-pics", id: "goods-store" %>
+      <h4><%= link_to "2. Get a discount", stores_path %></h4>
+      <p>See all the products available and make the most of the GetLocal special discounts</p>
+    </div>
+  <% end %>
+
+  <%= link_to stores_path, :action => 'go' do %>
     <div class="card-home">
       <%= image_tag "order2.svg", class: "text-center home-pics" %>
-      <h4><%= link_to "Make an order", stores_path %></h4>
-      <p>Then, select your fresh products and pay directly on GetLocal</p>
+      <h4><%= link_to "3. Make an order", stores_path %></h4>
+      <p>Add the fresh products to your cart, checkout and pay directly on GetLocal website</p>
     </div>
+  <% end %>
 
+  <%= link_to stores_path, :action => 'go' do %>
     <div class="card-home">
       <%= image_tag "basket.svg", class: "text-center home-pics", id: "vegetables-basket" %>
-      <h4><%= link_to "Collect your items", stores_path %></h4>
-      <p>Finally, get the directions to the store and and go pick up your fresh products</p>
+      <h4><%= link_to "4. Collect your items", stores_path %></h4>
+      <p>Get the directions to the store and and go pick up your fresh products</p>
     </div>
+  <% end %>
 
   </div>
 
@@ -107,7 +122,7 @@
       <!--/.Indicators-->
 
       <!--Slides-->
-      <div class="carousel-inner" role="listbox">
+      <div class="carousel-inner" role="listbox" style="height:400px">
 
         <!--First slide-->
       <% @stores.each_slice(3).with_index do |slice, index| %>
@@ -116,25 +131,24 @@
 
               <% slice.each do |store| %>
 
-                  <div class="col-md-4 ">
-                    <div class="card mb-2 ">
-
-<!--                       <div class= card-img-top>
- -->                        <% if cl_image_tag store.pictures.present? %>
+                  <div class="col-md-4">
+                    <div class="card mb-4">
+                      <div class = "selection-store-card">
+                        <% if cl_image_tag store.pictures.present? %>
                         <% store.pictures.each do |picture| %>
                           <%= cl_image_tag(picture.photo) %>
                           <% end %>
                         <% else %>
                         <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
                         <% end %>
-<!--                       </div>
- -->
-                      <div class="card-body text-center">
-                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
-                        <p class="card-text"><%=store.address%></p>
-                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
                       </div>
 
+                      <div class="card-body text-center">
+                           <%= link_to store.name.capitalize, store_path(store), class: 'btn btn-success text-center' %>
+
+<!--                         <p class="card-text"><%=store.address%></p>
+ -->                        
+                      </div>
                     </div>
                   </div>
 
@@ -173,32 +187,32 @@
       <!--/.Indicators-->
 
       <!--Slides-->
-      <div class="carousel-inner" role="listbox">
+      <div class="carousel-inner" role="listbox" style="height:400px">
 
         <!--First slide-->
       <% @stores_lisbon.each_slice(3).with_index do |slice, index| %>
+
           <div class="carousel-item <%= 'active' if index == 0 %>">
             <div class="row">
 
               <% slice.each do |store| %>
+                  <div class="col-md-4">
+                    <div class="card mb-4"  id="carousel-selection">
 
-                  <div class="col-md-4 ">
-                    <div class="card mb-2 ">
-
-<!--                       <div class= card-img-top>
- -->                        <% if cl_image_tag store.pictures.present? %>
+                      <div class = "selection-store-card" >
+                       <% if cl_image_tag store.pictures.present? %>
                         <% store.pictures.each do |picture| %>
                           <%= cl_image_tag(picture.photo) %>
                           <% end %>
                         <% else %>
                         <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
                         <% end %>
-<!--                       </div>
- -->
+                      </div>
+
                       <div class="card-body text-center">
-                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
-                        <p class="card-text"><%=store.address%></p>
-                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
+                           <%= link_to store.name.capitalize, store_path(store), class: 'btn btn-success text-center' %>
+<!--                         <p class="card-text"><%=store.address%></p>
+ -->                        
                       </div>
 
                     </div>
@@ -209,6 +223,7 @@
             </div>
           </div>
         <% end %>
+
       </div>
       <!--/.Slides-->
    </div>
@@ -240,7 +255,7 @@
       <!--/.Indicators-->
 
       <!--Slides-->
-      <div class="carousel-inner" role="listbox">
+      <div class="carousel-inner" role="listbox" style="height:400px">
 
         <!--First slide-->
       <% @stores_vegetables.each_slice(3).with_index do |slice, index| %>
@@ -249,23 +264,23 @@
 
               <% slice.each do |store| %>
 
-                  <div class="col-md-4 ">
-                    <div class="card mb-2 ">
+                  <div class="col-md-4">
+                    <div class="card mb-4">
 
-<!--                       <div class= card-img-top>
- -->                        <% if cl_image_tag store.pictures.present? %>
+                      <div class = "selection-store-card">
+                       <% if cl_image_tag store.pictures.present? %>
                         <% store.pictures.each do |picture| %>
                           <%= cl_image_tag(picture.photo) %>
                           <% end %>
                         <% else %>
                         <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
                         <% end %>
-<!--                       </div>
- -->
-                      <div class="card-body text-center">
-                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
-                        <p class="card-text"><%=store.address%></p>
-                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
+                      </div>
+
+                       <div class="card-body text-center">
+                           <%= link_to store.name.capitalize, store_path(store), class: 'btn btn-success text-center' %>
+<!--                         <p class="card-text"><%=store.address%></p>
+ -->                        
                       </div>
 
                     </div>
@@ -306,7 +321,7 @@
       <!--/.Indicators-->
 
       <!--Slides-->
-      <div class="carousel-inner" role="listbox">
+      <div class="carousel-inner" role="listbox" style="height:400px">
 
         <!--First slide-->
       <% @stores_best_rated.each_slice(3).with_index do |slice, index| %>
@@ -316,22 +331,22 @@
               <% slice.each do |store| %>
 
                   <div class="col-md-4 ">
-                    <div class="card mb-2 ">
+                    <div class="card mb-4">
 
-<!--                       <div class= card-img-top>
- -->                        <% if cl_image_tag store.pictures.present? %>
+                      <div class = "selection-store-card" >
+                      <% if cl_image_tag store.pictures.present? %>
                         <% store.pictures.each do |picture| %>
                           <%= cl_image_tag(picture.photo) %>
                           <% end %>
                         <% else %>
                         <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
                         <% end %>
-<!--                       </div>
- -->
-                      <div class="card-body text-center">
-                        <h3 class="card-title"><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h3>
-                        <p class="card-text"><%=store.address%></p>
-                        <%= link_to "More info", store_path(store), class: 'btn btn-success text-center' %>
+                      </div>
+
+                       <div class="card-body text-center">
+                           <%= link_to store.name.capitalize, store_path(store), class: 'btn btn-success text-center' %>
+<!--                         <p class="card-text"><%=store.address%></p>
+ -->                        
                       </div>
 
                     </div>

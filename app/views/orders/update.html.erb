@@ -1,29 +1,31 @@
-<div class="container-getlocal">
+<div class="container">
   <div class="row" id="sidebar-products">
     <div class="col-15">
       <div class="table-responsive">
         <table class="table table-striped">
-          <h3 class="text-center">Summary Order : <%= @order.id %></h3>
+          <h3 class="text-center">Your Cart</h3>
           <thead>
             <tr>
               <th class="col-3">Product</th>
               <th class="text-center col-2">Quantity</th>
               <th class="text-right col-3">Price</th>
+              <th class="text-center col-4"> </th>
             </tr>
           </thead>
           <tbody>
-            <% current_user.product_orders.each do |product| %>
+            <% @order.product_orders.each do |product| %>
             <tr>
-              <td class="col-3"><%= product.product.name %> - store <%= product.product.store.name %></td>
+              <td class="col-3"><%= product.product.name %></td>
               <td class="col-2"><input class="form-control" type="text" value="<%= product.quantity %>" /></td>
-              <td class="text-right col-3"><%= product.product.price %>€</td>
-
+              <td class="text-right col-3"><%= product.product.price %></td>
+              <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
             </tr>
             <% end %>
             <tr>
               <td class="col-3">TOTAL</td>
-              <td class="col-2"><%= @order.quantity %></td>
-              <td class="text-right col-3"><%= @order.amount %> €</td>
+              <td class="col-2"><input class="form-control" type="text" value="" /></td>
+              <td class="text-right col-3"><%= @order.amount %></td>
+              <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
             </tr>
 
           </tbody>
@@ -32,7 +34,7 @@
       </div>
     </div>
   </div>
-  <%= link_to 'Modify my items', :back, class: "btn btn-outline-success" %>
+  <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 
 </div>
 ​</div>

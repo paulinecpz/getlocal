@@ -1,0 +1,39 @@
+  <% if current_user.present? %>
+  <div class="row" id="sidebar-products">
+    <div class="col-15">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <h3 class="text-center">Your Cart</h3>
+          <thead>
+            <tr>
+              <th class="col-3">Product</th>
+              <th class="text-center col-2">Quantity</th>
+              <th class="text-right col-3">Price</th>
+              <th class="text-center col-4"> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if current_user&.product_orders.present? %>
+            <%# current_user.product_orders.joins(:product).where(:products => {:store_id => @store.id}).each do |item| %>
+            <% current_user.product_orders.each do |item| %>
+            <tr>
+              <td class="col-3"><%= item.product.name %></td>
+              <td class="col-2"><input class="form-control" type="text" value="<%= item.quantity %>" /></td>
+              <td class="text-right col-3"><%= (item.product.price - (item.product.price*item.product.discount)).round(2) %>€</td>
+              <td class="text-center col-4"><%= link_to 'Delete', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
+            </tr>
+            <% end %>
+            <% else %>
+            <tr>
+              <td class="col-3"><p>Your cart is empty</p></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'Checkout', orders_path, class: 'btn btn-outline-success', method: :post %>
+        <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -2,14 +2,13 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :orders, only: [:index, :show,] do
+  resources :orders, only: [:new, :create, :index, :show, :update] do
     resources :reviews, only: [:new, :create]
   end
 
   resources :stores, only: [:index, :show, :new, :create] do
     resources :products, only: :show do
       resources :product_orders
-      resources :orders, only: [:new, :create, :show, :index]
     end
   end
 

@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :stores, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :reviews
-  has_many :product_orders, through: :orders
+  has_many :product_orders
   mount_uploader :photo, PhotoUploader
 
 end
