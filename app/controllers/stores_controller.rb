@@ -105,6 +105,8 @@ class StoresController < ApplicationController
       @markers = [@markers]
       @orders = current_user.orders
 
+    @stores = policy_scope(Store).order(:name)
+
   end
 
   def new
