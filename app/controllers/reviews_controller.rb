@@ -1,8 +1,4 @@
 class ReviewsController < ApplicationController
-  def index
-    @review = Review.where(review_params)
-  end
-
   def new
     @order = Order.find(params[:order_id])
     @review = Review.new
@@ -13,12 +9,18 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
 
     @order = Order.find(params[:order_id])
-    @review.order_id = @order.id
+    @review.order = @order
     authorize @review
     if @review.save
-      redirect_to order_path(@order)
+      respond_to do |format|
+        format.html { redirect_to store_path(@store) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'store/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
