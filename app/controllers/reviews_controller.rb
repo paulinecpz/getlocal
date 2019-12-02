@@ -1,23 +1,30 @@
 class ReviewsController < ApplicationController
   def index
-    @reviews = policy_scope(Review).where(user: current_user)
-  end
-
-  def show
+    @review = Review.where(review_params)
   end
 
   def new
+    @order = Order.find(params[:order_id])
     @review = Review.new
-    @order = Order.find(order_params)
-    @review.order = @order
+    authorize @review
   end
 
   def create
+    @review = Review.new(review_params)
+
+    @order = Order.find(params[:order_id])
+    @review.order_id = @order.id
+    authorize @review
+    if @review.save
+      redirect_to order_path(@order)
+    else
+      render :new
+    end
   end
 
   private
 
-  def order_params
-    params.require(:order).permit(:state, :user_id, :amount)
+  def review_params
+    params.require(:review).permit(:content, :stars)
   end
 end
