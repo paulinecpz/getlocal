@@ -197,7 +197,35 @@ font-weight: bold;
 }
 
 
+.store-section{
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  border-bottom:  2px solid #F4F4F4 
+}
 
+.title-store-section{
+  // margin-top: 40px;
+  position: relative;
+  text-align: left;
+  color: #e14123;
+  }
 
-
-
+// .title-store-section:before{
+//     background: orange;
+//     content: "";
+//     display: block;
+//     height: 1px;
+//     position: absolute;
+//     top: 50%;
+//     width: 100%;
+//     left: 0;
+// }
+.content-title-store-section{
+    font-weight: 500;
+    font-size: 22px;
+    text-transform: uppercase;
+    background: #fff;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}

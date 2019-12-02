@@ -58,8 +58,19 @@
 
 #card-store-similar{
 height: 300px;
-width: 200px
+width: 300px;
+border-radius: 0px
 }
+#card-store-similar h4{
+font-size: 16px
+}
+
+#row-card-store-similar{
+  width:100%
+}
+// #card-store-similar img{
+// border-radius: 20px
+// }
 
 .card-order{
   overflow: hidden;

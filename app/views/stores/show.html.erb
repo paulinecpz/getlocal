@@ -76,22 +76,23 @@
       </div>
       ​     ​
       
-      <h4 >This store sells:</h4>
-      <% @store.products.each do |product| %>
-      <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
-        <%= product.category.name %>
-      </div>
-      <% end %>
-<!-- 
-      <div class="cards">
-        <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
-        </div>
-        <% end %>
-      </div> -->
+
+
       ​
-      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-        <h4 id="products">Products</h4>
+  <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+
+    <div class= "store-section">
+      <div class= "title-store-section">
+        <span class="content-title-store-section"><h4 id="products">Products Available</h4></span>
+      </div>
+    <% @store.products.each do |product| %>
+      <% if product.category.name == "Vegetables" %>
+
         <table class="table">
+          <tr>
+          <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80)">
+            <%= "Vegetables" %>
+          </tr>
           <thead>
             <tr>
               <th scope="col">Product</th>
@@ -102,7 +103,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @store.products.each do |product| %>
+
             <tr>
               <td><%= product.name %></td>
               <td><%= humanized_money_with_symbol(product.price)%></td>
@@ -110,30 +111,162 @@
               <td><%= product.stock %></td>
               <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
             </tr>
-            <% end %>
+
           </tbody>
         </table>
-        <h4 id="reviews">Reviews</h4>
+      <% elsif product.category.name == "Fruits" %>
+
+        <table class="table">
+          <tr>
+          <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546209705-a7eba4e8da21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80)">
+            <%= "Fruits" %>
+          </tr>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">GetLocal Discount</th>
+              <th scope="col">Stock</th>
+              <th scope="col">➕</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= humanized_money_with_symbol(product.price)%></td>
+              <td><%= (product.discount*100).round(0)%> %</td>
+              <td><%= product.stock %></td>
+              <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
+            </tr>
+
+
+          </tbody>
+        </table>
+
+      <% elsif product.category.name == "Meat" %>
+
+        <table class="table">
+          <tr>
+          <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1542901031-ec5eeb518e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+            <%= "Meat" %>
+          </tr>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">GetLocal Discount</th>
+              <th scope="col">Stock</th>
+              <th scope="col">➕</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= humanized_money_with_symbol(product.price)%></td>
+              <td><%= (product.discount*100).round(0)%> %</td>
+              <td><%= product.stock %></td>
+              <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
+            </tr>
+
+
+          </tbody>
+        </table>
+
+      <% elsif product.category.name == "Fish" %>
+
+        <table class="table">
+          <tr>
+          <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1534948216015-843149f72be3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+            <%= "Fish" %>
+          </tr>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">GetLocal Discount</th>
+              <th scope="col">Stock</th>
+              <th scope="col">➕</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= humanized_money_with_symbol(product.price)%></td>
+              <td><%= (product.discount*100).round(0)%> %</td>
+              <td><%= product.stock %></td>
+              <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
+            </tr>
+
+      <% elsif product.category.name == "Other" %>
+
+        <table class="table">
+          <tr>
+          <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1493925410384-84f842e616fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80)">
+            <%= "Other" %>
+          </tr>
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">GetLocal Discount</th>
+              <th scope="col">Stock</th>
+              <th scope="col">➕</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><%= product.name %></td>
+              <td><%= humanized_money_with_symbol(product.price)%></td>
+              <td><%= (product.discount*100).round(0)%> %</td>
+              <td><%= product.stock %></td>
+              <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
+            </tr>
+
+          </tbody>
+        </table>
+        <% end %>
+      <% end %>
+
+     </div>
+
+      <div class= "store-section">
+        <div class= "title-store-section">
+          <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
+        </div>
         <p>...</p>
-        <h4 id="more-info">More info</h4>
-        <p><div class= "store-info">
+      </div>
+
+      <div class= "store-section">
+        <div class= "title-store-section">
+          <span class="content-title-store-section"><h4 id="more-info">Information about the store</h4></span>
+        </div>
+        <div class= "store-info">
           <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
           <p><strong>Website: </strong><%= @store.website %></p>
           <p><strong>Phone number: </strong><%= @store.phone %></p>
           <p><strong>Address: </strong><%= @store.address %></p>
+        </div>
+      </div>
+
           <!-- map -->
-          <h4 id="location">Location</h4>
+        <div class= "store-section">
+          <div class= "title-store-section">
+            <span class="content-title-store-section"><h4 id="location">Location</h4></span>
+          </div>
           <p><div
             id="map"
             data-markers="<%= @markers.to_json %>"
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
           </div></p>
-        </div></p>
-      </div>
+        </div>
+
     </div>
-    ​
-    ​
-    ​
+    ​</div>
+
     ​<%# unless @store.is_owner?(current_user) %>
   <% if current_user.present? %>
     <div class="row" id="sidebar-products">
@@ -178,8 +311,12 @@
     </div>
   </div>
 <% end %>
+</div>
+
+    ​
 
 <!--Carousel Wrapper-->
+<div class="container my-4">
   <h4>Other GetLocal stores you might like:</h4>
   <!--Carousel Wrapper-->
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -201,9 +338,9 @@
       <!--First slide-->
       <% @stores.each_slice(3).with_index do |slice, index| %>
       <div class="carousel-item <%= 'active' if index == 0 %>">
-        <div class="row">
+        <div class="row" id="row-card-store-similar">
           <% slice.each do |store| %>
-            <div class="card-store mb-3 mr-3" id="card-store-similar">
+            <div class="card-store mb-3 mr-2 ml-3" id="card-store-similar">
               <% if cl_image_tag store.pictures.present? %>
               <% store.pictures.each do |picture| %>
               <%= cl_image_tag(picture.photo) %>
@@ -218,18 +355,17 @@
                 </div>
               </div>
             </div>
-            <% end %>
-          </div>
           <% end %>
         </div>
-        <% end %>
       </div>
-    </div>
+      <% end %>
+      </div>
+
   </div>
   </div>
 
     <!--/.Carousel Wrapper-->
-  <% end %>
   <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
+
 </div>
-</div>
+
