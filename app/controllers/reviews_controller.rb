@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   def index
-
     @review = Review.where(review_params)
   end
 
@@ -21,7 +20,8 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
-    
+  end
+
   private
 
   def review_params
