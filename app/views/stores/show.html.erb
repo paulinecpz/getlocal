@@ -22,7 +22,7 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active" id="carousel-item-show1">
             <div class="d-block w-100">
               <% if @store.pictures.present? %>
               ​
@@ -34,10 +34,10 @@
               <% end %>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" id="carousel-item-show2">
             <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" class="d-block w-100" alt="...">
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" id="carousel-item-show3">
             <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" class="d-block w-100" alt="...">
           </div>
         </div>
@@ -50,7 +50,6 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-
       ​
       ​
       ​
@@ -75,9 +74,16 @@
           </ul>
         </nav>
       </div>
-      ​
-      <br><br>
-      ​
+      ​     ​
+      
+      <h4 >This store sells:</h4>
+      <div class="cards">
+        <% @store.products.each do |product| %>
+        <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546548970-71785318a17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
+          <%= product.category.name %>
+        </div>
+        <% end %>
+      </div>
       ​
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="products">Products</h4>
@@ -140,6 +146,7 @@
               </tr>
             </thead>
             <tbody>
+
               <%= simple_form_for @order do |f| %>
                 <% current_user.product_orders.each do |item| %>
                   <% if current_user.product_orders.present? %>
@@ -168,7 +175,57 @@
   </div>
 <% end %>
 
-  <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
+<!--Carousel Wrapper-->
+  <h4>Other GetLocal stores you might like:</h4>
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+    <!--Controls-->
+    <div class="controls-top">
+      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+    </div>
+    <!--/.Controls-->
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+      <li data-target="#multi-item-example" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox" >
+      <!--First slide-->
+      <% @stores.each_slice(3).with_index do |slice, index| %>
+      <div class="carousel-item <%= 'active' if index == 0 %>">
+        <div class="row">
+          <% slice.each do |store| %>
+            <div class="card-store mb-3 mr-3" id="card-store-similar">
+              <% if cl_image_tag store.pictures.present? %>
+              <% store.pictures.each do |picture| %>
+              <%= cl_image_tag(picture.photo) %>
+              <% end %>
+              <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+              <% end %>
+              <div class="card-store-infos">
+                <div>
+                  <h4><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h4>
+                  <p><%= store.address %></p>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  </div>
 
+    <!--/.Carousel Wrapper-->
+  <% end %>
+  <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 </div>
 </div>
