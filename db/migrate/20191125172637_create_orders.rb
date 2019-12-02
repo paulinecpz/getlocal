@@ -2,7 +2,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
       t.string :state, default: "pending"
-      t.float :amount
+      t.monetize :amount, currency: { present: false }
       t.references :user, foreign_key: true
 
       t.timestamps
