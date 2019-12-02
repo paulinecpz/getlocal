@@ -4,8 +4,10 @@ class OrdersController < ApplicationController
 
   def index
     @orders = policy_scope(Order).where(user: current_user)
-    @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
+    @product_orders = ProductOrder.where(user: current_user)
+    #@product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
     # @stores = Store.joins(:products).where(:orders => {:user_id => current_user.id})
+
   end
 
   def show
