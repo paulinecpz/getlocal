@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_150450) do
+ActiveRecord::Schema.define(version: 2019_12_02_160120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
+    t.string "name", default: "vegetables"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
@@ -34,11 +34,12 @@ ActiveRecord::Schema.define(version: 2019_12_02_150450) do
 
   create_table "orders", force: :cascade do |t|
     t.string "state", default: "pending"
-    t.float "amount"
+    t.integer "amount_cents", default: 0, null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "quantity"
+    t.string "checkout_session_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -62,7 +63,6 @@ ActiveRecord::Schema.define(version: 2019_12_02_150450) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
-    t.float "price"
     t.integer "stock"
     t.float "discount"
     t.bigint "store_id"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_150450) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.integer "price_cents", default: 0, null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["store_id"], name: "index_products_on_store_id"
   end
