@@ -32,7 +32,6 @@
               <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", class: "d-block w-100"%>
               <% end %>
-              <br>
             </div>
           </div>
           <div class="carousel-item">
@@ -51,7 +50,7 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <br>
+
       ​
       ​
       ​
@@ -142,7 +141,8 @@
             </thead>
             <tbody>
               <% if current_user&.product_orders.present? %>
-              <% current_user.product_orders.joins(:product).where(:products => {:store_id => @store.id}).each do |item| %>
+
+              <% current_user.product_orders.each do |item| %>
               <tr>
                 <td class="col-3"><%= item.product.name %></td>
                 <td class="col-2"><input class="form-control" type="text" value="<%= item.quantity %>" /></td>
@@ -157,7 +157,7 @@
               <% end %>
             </tbody>
           </table>
-          <%= link_to 'Checkout', order_path(current_user.orders.first), class: 'btn btn-outline-success', method: :patch %>
+          <%= link_to 'Checkout', orders_path, class: 'btn btn-outline-success', method: :post %>
           <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
         </div>
       </div>

@@ -18,7 +18,7 @@ class StoresController < ApplicationController
     if params[:query].present?
       condition = "address @@ :query OR name @@ :query"
       @stores = policy_scope(Store).where(condition, query: "%#{params[:query]}%")
-        
+
       update_map
 
 
@@ -103,6 +103,8 @@ class StoresController < ApplicationController
         image_url: helpers.asset_url('pin.png')
       }
       @markers = [@markers]
+      @orders = current_user.orders
+
   end
 
   def new
@@ -131,7 +133,7 @@ class StoresController < ApplicationController
     authorize @store
   end
 
-  def update_map         
+  def update_map
     @markers = @stores.map do |store|
     {
       lat: store.latitude,
