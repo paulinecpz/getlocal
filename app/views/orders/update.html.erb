@@ -13,10 +13,7 @@
             </tr>
           </thead>
           <tbody>
-            <% @orders = current_user.orders %>
-            <% @orders.each do |order| %>
-            <h1><%= order.id %></h1>
-            <% order.product_orders.each do |product| %>
+            <% @order.product_orders.each do |product| %>
             <tr>
               <td class="col-3"><%= product.product.name %></td>
               <td class="col-2"><input class="form-control" type="text" value="<%= product.quantity %>" /></td>
@@ -24,14 +21,13 @@
               <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
             </tr>
             <% end %>
-            <%  product_order = order.product_orders %>
             <tr>
               <td class="col-3">TOTAL</td>
               <td class="col-2"><input class="form-control" type="text" value="" /></td>
-              <td class="text-right col-3"></td>
+              <td class="text-right col-3"><%= @order.amount %></td>
               <td class="text-center col-4"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
             </tr>
-            <% end %>
+
           </tbody>
         </table>
         <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
@@ -42,3 +38,4 @@
 
 </div>
 ​</div>
+​
