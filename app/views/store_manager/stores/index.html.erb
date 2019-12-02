@@ -1,7 +1,8 @@
-<div class="container-fluid">
-  <h1>My stores</h1>
-  <div class="content">
-    <div class="cards">
+
+<div class="container-getlocal">
+  <h1>My Stores</h1>
+<div class="content">
+  <div class="cards">
       <% current_user.stores.each do |store| %>
       <div class="card-store">
         <% if cl_image_tag store.pictures.present? %>
@@ -13,7 +14,7 @@
         <% end %>
         <div class="card-store-infos">
           <div>
-            <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
+            <h2><%= link_to store.name.capitalize, store_manager_store_path(store), class: 'link-green' %></h2>
             <p><%= store.address %></p>
           </div>
         </div>
@@ -24,5 +25,9 @@
         <a href='http://www.counter-zaehler.de'>Visitors</a> <script type='text/javascript' src='https://whomania.com/ctr?id=9ed4f2178270154b1883a81a85d36525c69fb2be'></script>
       </div>
     </div>
+<<<<<<< added_counter
   </div>
+=======
+</div>
+>>>>>>> master
 </div>

@@ -6,7 +6,7 @@
       <h2>Add my Store</h2>
       <%= simple_form_for(@store) do |f| %>
       <% if @store.errors.any? %>
-      <div class="errors-container">
+      <div class="errors-container" style="width: 20px">
         <ul>
           <% @store.errors.full_messages.each do |message| %>
           <li><%= message %></li>

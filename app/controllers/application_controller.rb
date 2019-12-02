@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :first_name, :last_name,:description, :username, :photo, :photo_cache])
   end
 
+
+  def after_update_path_for(resource)
+    edit_user_registration_path(resource)
+  end
+
   # Uncomment when you *really understand* Pundit!
 
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized

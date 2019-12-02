@@ -24,7 +24,7 @@
 
 .collapse .navbar-collapse {
   display: flex;
-  justify-content : spacebetween;
+  justify-content : space-between;
 }
 
 .container-form {
@@ -41,9 +41,13 @@
 
 }
 
-form {
-  display: flex;
+#container_search{
+    display: flex;
+    justify-content: left;
+  margin: 30px 0px 20px 0px
+
 }
+
 
 .banner-home-card {
   width: 600px;
