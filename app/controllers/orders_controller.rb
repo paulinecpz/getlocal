@@ -12,8 +12,7 @@ class OrdersController < ApplicationController
 
   def show
     # @product_orders = ProductOrder.joins(:orders).where(:orders => {:user_id => current_user.id})
-    @order = Order.find(params[:id])
-
+    @order = current_user.orders.find(params[:id])
   end
 
   def new
@@ -22,10 +21,10 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new
     @order.user = current_user
-    @order = Order.where(user: current_user).first_or_create
 
     amount = 0
     quantity = 0
+    create_product_orders
     current_user.product_orders.each do |item|
       amount += item.product.price
       quantity += item.quantity
@@ -35,26 +34,24 @@ class OrdersController < ApplicationController
     @order.amount = amount
     @order.save
     authorize @order
-    redirect_to order_path(@order)
     # @order = Order.find(params[:order_id])
     # @order = Order.create!(amount: 0, state: 'pending', user_id: current_user)
     # redirect_to order_path(@order)
 
-    # session = Stripe::Checkout::Session.create(
-    #   payment_method_types: ['card'],
-    #   line_items: [{
-    #     name: teddy.sku,
-    #     images: [teddy.photo_url],
-    #     amount: teddy.price_cents,
-    #     currency: 'eur',
-    #     quantity: 1
-    #   }],
-    #   success_url: order_url(order),
-    #   cancel_url: order_url(order)
-    # # )
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        name: @order.id,
+        amount: @order.amount_cents,
+        currency: 'eur',
+        quantity: @order.quantity
+      }],
+      success_url: order_url(@order),
+      cancel_url: order_url(@order)
+    )
 
-    # order.update(checkout_session_id: session.id)
-    # redirect_to new_order_payment_path(order)
+    @order.update(checkout_session_id: session.id)
+    redirect_to new_order_payment_path(@order)
   end
 
   def edit
@@ -78,6 +75,15 @@ class OrdersController < ApplicationController
   end
 
   private
+
+  def create_product_orders
+    params["order"]["product_order_ids"].each do |po|
+      product_order = ProductOrder.find(po)
+      product_order.order = @order
+      product_order.save
+    end
+
+  end
 
   def set_order
     @order = Order.where(user: current_user)
