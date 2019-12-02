@@ -20,9 +20,8 @@
   margin: 45px 0px 0px 30px;
 }
 
-#sidebar-products h2{
-  font-size: 28px;
-  font-weight: bold;
+#sidebar-products h3{
+  font-size: 25px;
   color: green
 }
 
@@ -48,7 +47,7 @@ width:0;
 
 
 .table-responsive{
-border: 4px solid #3A7A34;
+border: 2px solid #3A7A34;
 padding-top: 10px;
  border-radius: 20px;
 
@@ -56,7 +55,9 @@ padding-top: 10px;
 
 .table-responsive h2{
 	color: #3A7A34;
+
 }
+
 #checkout-button {
 border-radius: 0px}
 
@@ -67,6 +68,13 @@ border-radius: 0px}
   flex-grow: 1;
   position: relative
 }
+
+.products h2{
+  font-size: 38px;
+  font-weight: bold;
+  color: green;
+}
+
 
 .store-infos {
   padding: 16px;
@@ -113,47 +121,49 @@ border-radius: 0px}
 //   }
 // }
 
-.mapboxgl-popup {
-  max-width: 200px;
-}
-
-.mapboxgl-popup-content {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
-
-#map {
-  height: 300px;
-  width: 100%;
-  margin: 15px 0px 0px 0px;
-}
-
-.card-map {
-  overflow: hidden;
-  background: white;
-  height: 250px;
-  width: 200px;
-}
-
-.card-map > img {
-  height: 70%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-map .card-map-infos {
-  padding: 16px;
-  position: relative;
-}
 
 
-.card-map h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+// .mapboxgl-popup {
+//   max-width: 100px;
+// }
 
-#navbar-product-infos{	
+// .mapboxgl-popup-content {
+//   text-align: center;
+//   font-family: 'Open Sans', sans-serif;
+// }
+
+// #map {
+//   height: 300px;
+//   width: 100%;
+//   margin: 15px 0px 0px 0px;
+// }
+
+// .card-map {
+//   overflow: hidden;
+//   background: white;
+//   height: 250px;
+//   width: 200px;
+// }
+
+// .card-map > img {
+//   height: 70%;
+//   width: 100%;
+//   object-fit: cover;
+// }
+
+// .card-map .card-map-infos {
+//   padding: 12px;
+//   position: relative;
+// }
+
+
+// .card-map h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+#navbar-product-infos{
 overflow: hidden;
 position: sticky;
 top: 70px;
@@ -171,9 +181,8 @@ align-items: flex-start;
 display: flex;
 justify-content: space-between;
 align-items: flex-start;
-
 }
-.navbar .navbar-light .bg-light #navbar-example2 {	
+.navbar .navbar-light .bg-light #navbar-example2 {
 overflow: hidden;
 position: sticky;
 top: 70px;
@@ -183,4 +192,14 @@ top: 70px;
 color: #3A7A34;
 font-weight: bold;
 }
+
+.nav-item {
+  color: #3A7A34;
+  font-weight: bold;
+}
+
+
+
+
+
 
