@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @stores = policy_scope(Store).order(:name)
-    @stores_lisbon = policy_scope(Store).where("address ILIKE ?", "%Lisbon%")
+    @stores_lisbon = policy_scope(Store).where("address ILIKE ?", "%Lisboa")
   	store_from_vegetable_ids = Product.where(category_id: 6).pluck(:store_id)
     @stores_vegetables = @stores.where(id: store_from_vegetable_ids)
     @stores_best_rated = policy_scope(Store).where("address ILIKE ?", "Lisbon")
