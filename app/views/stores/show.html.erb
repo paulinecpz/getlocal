@@ -95,7 +95,7 @@
             <% @store.products.each do |product| %>
             <tr>
               <td><%= product.name %></td>
-              <td><%= humanized_money_with_symbol(product.price)%> <%= product.price %></td>
+              <td><%= humanized_money_with_symbol(product.price)%></td>
               <td><%= (product.discount*100).round(0)%> %</td>
               <td><%= product.stock %></td>
               <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
