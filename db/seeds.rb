@@ -23,7 +23,7 @@ Picture.destroy_all
 Category.destroy_all
 
 
-User.create(first_name: "Paulo", last_name: "Lewagon", email:"paulo@paulo.com", password:"password", role: "admin")
+user = User.create(first_name: "Paulo", last_name: "Lewagon", email:"paulo@paulo.com", password:"password", role: "admin")
 User.create(first_name: "Pauline", last_name: "Lewagon", email:"pauline@pauline.com", password:"password", role: "admin")
 User.create(first_name: "Mathieu", last_name: "Lewagon", email:"mathieu@mathieu.com", password:"password", role: "admin")
 User.create(first_name: "Eduardo", last_name: "Lewagon", email:"edu@edu.com", password:"password", role: "admin")
@@ -131,7 +131,7 @@ Category.create(name: "Other")
 puts("create products")
 
 
-50.times do
+20.times do
   Product.create!(name: Faker::Food.fruits,
     price: rand(10),
     stock: rand(100..500),
@@ -141,15 +141,20 @@ puts("create products")
     )
 end
 
-50.times do
-  Product.create!(name: Faker::Food.vegetables,
+Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
+
+20.times do
+  product = Product.create!(name: Faker::Food.vegetables,
     price: rand(10),
     stock: rand(100..500),
     discount: rand(),
     store: Store.all.sample,
     category: Category.all.sample
     )
+  order = Order.create(state: "pending", amount: 2, user: user)
+  ProductOrder.create(quantity: 2, user: user, product: product )
 end
+
 
 puts("seed finished")
 
