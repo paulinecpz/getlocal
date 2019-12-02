@@ -97,7 +97,7 @@
             <tr>
               <td><%= product.name %></td>
               <td><%= product.price %> €</td>
-              <td><%= product.discount%> %</td>
+              <td><%= (product.discount*100).round(0)%> %</td>
               <td><%= product.stock %></td>
               <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
             </tr>
@@ -146,7 +146,7 @@
               <tr>
                 <td class="col-3"><%= item.product.name %></td>
                 <td class="col-2"><input class="form-control" type="text" value="<%= item.quantity %>" /></td>
-                <td class="text-right col-3"><%= item.product.price - item.product.discount %></td>
+                <td class="text-right col-3"><%= (item.product.price - (item.product.price*item.product.discount)).round(2) %>€</td>
                 <td class="text-center col-4"><%= link_to 'Delete', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
               </tr>
               <% end %>
@@ -157,7 +157,7 @@
               <% end %>
             </tbody>
           </table>
-          <%= link_to 'Checkout', order_path(current_user.orders), class: 'btn btn-outline-success', method: :post %>
+          <%= link_to 'Checkout', order_path(current_user.orders.first), class: 'btn btn-outline-success', method: :patch %>
           <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
         </div>
       </div>
