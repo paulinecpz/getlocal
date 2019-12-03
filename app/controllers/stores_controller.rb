@@ -18,9 +18,9 @@ class StoresController < ApplicationController
     # category_id = Product.where(category_id: params[:category_id]).pluck(:store_id)
 
     if params[:query].present?
-      condition = "address @@ :query OR name @@ :query OR store_from_category_ids @@ :query"
+      condition = "address @@ :query OR name @@ :query"
       @stores = policy_scope(Store).where(condition, query: "%#{params[:query]}%")
-      
+
       # @stores = policy_scope(Store).where(id: store_from_category_ids)(condition, query: "%#{params[:query]}%")
 
       update_map
