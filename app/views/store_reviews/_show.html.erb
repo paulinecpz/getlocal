@@ -1,2 +1,4 @@
-<p><%= store_review.content %></p>
-<p><%= store_review.stars %></p>
+<p>From <strong><%= store_review.user.first_name %></strong></p>
+<p><%= '⭐️'*store_review.stars %></p>
+<p><em><%= store_review.content %></em></p>
+

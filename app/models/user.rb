@@ -16,4 +16,15 @@ class User < ApplicationRecord
   has_many :products, through: :product_orders
   mount_uploader :photo, PhotoUploader
 
+
+  def self.get_stores(user)
+    orders = Order.where(user_id: user.id).where(state: "paid")
+    stores = []
+    orders.each do |order|
+      order.product_orders.each do |po|
+        stores << po.product.store
+      end
+    end
+    stores
+  end
 end

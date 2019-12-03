@@ -109,6 +109,9 @@ class StoresController < ApplicationController
 
     @stores = policy_scope(Store).order(:name)
     @store_review = StoreReview.new
+
+    @user_stores = User.get_stores(current_user)
+
   end
 
   def new
