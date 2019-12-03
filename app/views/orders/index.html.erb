@@ -20,7 +20,7 @@
                   <td class="text"><%= order.id %></td>
                   <td class="text"><%= order.state %></td>
                   <td class="text"><%= order.quantity %></td>
-                  <td class="text"><%= order.amount_cents %>€</td>
+                  <td class="text"><%= order.amount_cents/100.00 %>€</td>
                 </tr>
                 <% end %>
               </tbody>
@@ -44,14 +44,14 @@
                 </tr>
               </thead>
               <tbody>
-                <% @orders.where(state: :payed).each do |order| %>
+                <% @orders.where(state: :paid).each do |order| %>
                 <tr>
                   <td class="text"><%= order.id %></td>
                   <td class="text"><%= order.state %></td>
                   <td class="text"><%= order.quantity %></td>
-                  <td class="text"><%= order.amount_cents %>€</td>
+                  <td class="text"><%= order.amount_cents/100.00 %>€</td>
                   <td>
-                    <a href="#content">Review</a>
+                    <%= link_to 'Add a Review', new_order_review_path(order), class: 'btn btn-outline-success' %>
                   </td>
                 </tr>
                 <% end %>
@@ -61,7 +61,7 @@
         </div>
       </div>
     </div>
-    <%= render 'reviews/form', order: @orders.first, review: Review.new %>
+    <%#= render 'reviews/form', order: @orders.first, review: Review.new %>
   </div>
 </div>
 
