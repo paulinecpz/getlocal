@@ -103,7 +103,7 @@ class StoresController < ApplicationController
         image_url: helpers.asset_url('pin.png')
       }
       @markers = [@markers]
-      # @orders = current_user.orders
+      @orders = current_user.orders
 
     @stores = policy_scope(Store).order(:name)
 
