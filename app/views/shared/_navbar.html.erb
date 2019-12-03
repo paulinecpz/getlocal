@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-  <%= image_tag "https://github.com/paulinecpz/GETLOCAL/blob/master/app/assets/images/logo.jpg?raw=true" %>
-  <%= image_tag "https://github.com/paulinecpz/GETLOCAL/blob/master/app/assets/images/GetLocal.png?raw=true", id: "getlocal" %>
+    <%= image_tag "https://github.com/paulinecpz/GETLOCAL/blob/master/app/assets/images/logo.jpg?raw=true" %>
+    <%= image_tag "https://github.com/paulinecpz/GETLOCAL/blob/master/app/assets/images/GetLocal.png?raw=true", id: "getlocal" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
@@ -16,20 +16,24 @@
         <%= link_to "My cart", orders_path, class: "nav-link" %>
       </li>
       <% if current_user.photo.present? %>
-      <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: 'font-size:30px;cursor:pointer', onclick: 'openNav()'%>
+        <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: 'font-size:30px;cursor:pointer'%>
       <% else %>
-      <%= image_tag "https://avatarfiles.alphacoders.com/547/54795.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: 'font-size:30px;cursor:pointer', onclick: 'openNav()'%>
+        <%= image_tag "https://avatarfiles.alphacoders.com/547/54795.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, style: 'font-size:30px;cursor:pointer' %>
       <% end %>
+
       <div id="mySidenav" class="sidenav">
         <div class="user-photo">
           <span class="photo">
             <% if current_user.photo.present? %>
-            <%= cl_image_tag current_user.photo, class: "user-image"%>
+              <%= cl_image_tag current_user.photo, class: "user-image"%>
             <% else %>
-            <%= image_tag "https://avatarfiles.alphacoders.com/547/54795.jpg", class: "user-image"%>
+              <%= image_tag "https://avatarfiles.alphacoders.com/547/54795.jpg", class: "user-image"%>
             <% end %>
           </span>
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        </div>
+
+          <a href="javascript:void(0)" class="closebtn" >&times;</a>
+
           <div class= "h5-name"><h5><%=current_user.first_name%> <%=current_user.last_name%></h5></div>
           <div class="list">
             <ul class="menu-list">
@@ -49,7 +53,7 @@
               </li>
             </ul>
           </div>
-        </div>
+
       </div>
       <% else %>
       <li class="nav-item">
