@@ -3,6 +3,8 @@ ruby '2.6.3'
 
 gem 'money-rails'
 gem 'stripe'
+gem 'stripe_event'
+
 
 gem 'faker'
 gem 'dotenv-rails', groups: [:development, :test]
