@@ -143,7 +143,7 @@ end
 
 Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
 
-5.times do
+20.times do
   product = Product.create!(name: Faker::Food.vegetables,
     price: rand(10),
     stock: rand(100..500),
@@ -157,7 +157,7 @@ Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.c
 
 end
 
-5.times do
+20.times do
   product = Product.create!(name: Faker::Food.vegetables,
     price: rand(10),
     stock: rand(100..500),
