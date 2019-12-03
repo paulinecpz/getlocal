@@ -26,13 +26,13 @@ class OrdersController < ApplicationController
     quantity = 0
     create_product_orders
     current_user.product_orders.each do |item|
-      final_price = item.product.price * item.product.discount
+      final_price = (item.product.price * item.product.discount)*100
       amount += final_price
       quantity += item.quantity
     end
     @order.quantity = quantity
 
-    @order.amount = amount
+    @order.amount_cents = amount
     @order.save
     authorize @order
     # @order = Order.find(params[:order_id])
