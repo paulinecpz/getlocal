@@ -12,13 +12,33 @@ import { initGeotracker } from '../plugins/init_mapbox.js';
 
 // import { injectCoordinates, injectMap } from '../plugins/init_geocode.js';
 
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+
+const openNav = () => {
+  const sideNav = document.getElementById("mySidenav");
+  sideNav.style.width = "250px";
 }
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
+$(document).ready(() => {
+  const toggleMenu = document.getElementById("navbarDropdown");
+  toggleMenu.addEventListener("click", () => {
+    openNav();
+  });
+
+  const closeMenu = document.querySelector(".closebtn");
+    closeMenu.addEventListener("click", () => {
+    closeNav();
+  });
+});
+
+/*toggleMenu.addEventListener("click", openNav, false);
+*/
+
+
+
 
 
 initMapbox();

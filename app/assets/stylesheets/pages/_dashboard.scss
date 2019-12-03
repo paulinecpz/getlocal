@@ -11,7 +11,12 @@
   transition: 0.5s;
   padding-top: 60px;
   content-align: center;
+  white-space: nowrap;
 
+  .user-photo {
+    text-align: center;
+    margin: 0 40px;
+  }
 }
 
 .menu-list li {
@@ -23,6 +28,7 @@
   transition: 0.3s;
   margin-left: auto;
   margin-right: auto;
+  white-space: nowrap;
 }
 
 .menu-list li:hover {

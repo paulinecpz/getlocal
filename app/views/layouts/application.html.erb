@@ -8,8 +8,9 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application' %>
+
   </head>
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
