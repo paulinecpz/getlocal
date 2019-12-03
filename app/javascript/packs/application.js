@@ -12,6 +12,14 @@ import { initGeotracker } from '../plugins/init_mapbox.js';
 
 // import { injectCoordinates, injectMap } from '../plugins/init_geocode.js';
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
 
 initMapbox();
 initAutocomplete();
@@ -26,5 +34,5 @@ initGeotracker();
     // manual carousel controls
     $('.next').click(function(){ $('.carousel').carousel('next');return false; });
     $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
-    
+
 })(jQuery);
