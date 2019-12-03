@@ -143,7 +143,7 @@ end
 
 Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
 
-60.times do
+5.times do
   product = Product.create!(name: Faker::Food.vegetables,
     price: rand(10),
     stock: rand(100..500),
@@ -151,12 +151,24 @@ Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.c
     store: Store.all.sample,
     category: Category.all.sample
     )
-  
-  # order = Order.create(state: "pending", amount: 2, user: user)
-  # ProductOrder.create(quantity: 2, user: user, product: product )
+
+   order = Order.create(state: "pending", amount: 2, user: user)
+  ProductOrder.create(quantity: 2, user: user, product: product )
 
 end
 
+5.times do
+  product = Product.create!(name: Faker::Food.vegetables,
+    price: rand(10),
+    stock: rand(100..500),
+    discount: rand(),
+    store: Store.all.sample,
+    category: Category.all.sample
+    )
+   ProductOrder.create(quantity: 2, user: user, product: product )
+   order = Order.create(state: "payed", amount: 2, user: user)
+
+end
 
 puts("seed finished")
 

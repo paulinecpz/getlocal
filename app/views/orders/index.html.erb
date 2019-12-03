@@ -15,7 +15,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% @orders.each do |order| %>
+                <% @orders.where(state: :pending).each do |order| %>
                 <tr>
                   <td class="text"><%= order.id %></td>
                   <td class="text"><%= order.state %></td>
@@ -28,6 +28,7 @@
           </div>
         </div>
       </div>
+
       <div class="col-6">
         <div id="sidebar-products">
           <div class="table-responsive-orders">
@@ -39,15 +40,17 @@
                   <th class="text">State</th>
                   <th class="text">Quantity</th>
                   <th class="text">Amount</th>
-                  <th class="text"></th>
+                  <th class="text">Review</th>
                 </tr>
               </thead>
               <tbody>
-                <% @orders.each do |order| %>
+                <% @orders.where(state: :payed).each do |order| %>
                 <tr>
                   <td class="text"><%= order.id %></td>
+                  <td class="text"><%= order.state %></td>
                   <td class="text"><%= order.quantity %></td>
                   <td class="text"><%= order.amount_cents %>€</td>
+                  <td class="text"><%#=link to reviews%></td>
                 </tr>
                 <% end %>
               </tbody>
@@ -58,4 +61,4 @@
     </div>
   </div>
 </div>
-<!-- <td class="text"><#%= order.where(#state: "payed") %></td> -->
+
