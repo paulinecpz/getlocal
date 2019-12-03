@@ -40,6 +40,7 @@
   display: flex;
 }
 
+
 // .card-home a {
 //   font-size: ;
 // }
@@ -61,7 +62,7 @@ font-size: 20px
   text-align: center;
   padding: 10px;
   border: 2px solid green;
-  background-color: white
+  background-color: white;
 }
 
 .cards-home {
@@ -143,7 +144,7 @@ font-size: 20px
 }
 
 .mb-4:hover .card-body a{
-  font-size: 45px;
+  font-size: 35px;
   background-color: white;
   color:green
 }
