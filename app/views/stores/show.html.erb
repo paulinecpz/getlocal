@@ -108,6 +108,7 @@
                   <td class="text-center"><%= product.stock %></td>
                   <td class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
                 </tr>
+
                 <% end %>
               </tbody>
             </table>
@@ -117,7 +118,13 @@
             <div class= "title-store-section">
               <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
             </div>
-            <p>...</p>
+          </div>
+            <% @store.store_reviews.each do |review| %>
+                <%= render "store_reviews/show", store_review: review %>
+            <% end %>
+            <% if @user_stores.include? @store %>
+              <%= render "store_reviews/form", store: @store, store_review: @store_review %>
+            <% end %>
           </div>
           <div class= "store-section">
             <div class= "title-store-section">

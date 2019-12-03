@@ -1,4 +1,4 @@
-<%= simple_form_for([ order, review ], remote: true) do |form| %>
+<%= simple_form_for([ store, store_review ], remote: true) do |form| %>
   <%= form.input :content, as: :text %>
   <%= form.input :stars, collection: (1..5).to_a, label: "Rate your experience" %>
   <%= form.button :submit, class: "btn btn-outline-success" %>

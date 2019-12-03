@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_111234) do
+ActiveRecord::Schema.define(version: 2019_12_03_160302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,17 @@ ActiveRecord::Schema.define(version: 2019_12_03_111234) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "store_reviews", force: :cascade do |t|
+    t.integer "stars"
+    t.text "content"
+    t.bigint "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["store_id"], name: "index_store_reviews_on_store_id"
+    t.index ["user_id"], name: "index_store_reviews_on_user_id"
+  end
+
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -109,15 +120,15 @@ ActiveRecord::Schema.define(version: 2019_12_03_111234) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "photo"
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "role", default: "user"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "photo"
-    t.string "role", default: "user"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -132,5 +143,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_111234) do
   add_foreign_key "products", "stores"
   add_foreign_key "reviews", "orders"
   add_foreign_key "reviews", "users"
+  add_foreign_key "store_reviews", "stores"
+  add_foreign_key "store_reviews", "users"
   add_foreign_key "stores", "users"
 end
