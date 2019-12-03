@@ -120,7 +120,6 @@
             <% @store.store_reviews.each do |review| %>
                 <%= render "store_reviews/show", store_review: review %>
             <% end %>
-
             <%= render "store_reviews/form", store: @store, store_review: @store_review %>
 
           </div>
