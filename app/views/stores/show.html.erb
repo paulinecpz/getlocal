@@ -85,28 +85,28 @@
             <span class="content-title-store-section"><h4 id="products">Products Available</h4></span>
           </div>
           <% @store.categories.uniq.each do |cat| %>
-          <table class="table">
+          <table class="table" id="product-table">
             <tr>
               <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cat.url %>')">
                 <%= cat.name %>
               </tr>
               <thead>
                 <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">GetLocal Discount</th>
-                  <th scope="col">Stock</th>
-                  <th scope="col">➕</th>
+                  <th scope="col" >Product</th>
+                  <th scope="col" class="text-center">Price</th>
+                  <th scope="col" class="text-center">GetLocal Discount</th>
+                  <th scope="col" class="text-center">Stock</th>
+                  <th scope="col" class="text-center">➕</th>
                 </tr>
               </thead>
               <tbody>
                 <% cat.products.where(store: @store).each do |product| %>
                 <tr>
-                  <td><%= product.name %></td>
-                  <td><%= humanized_money_with_symbol(product.price)%></td>
-                  <td><%= (product.discount*100).round(0)%> %</td>
-                  <td><%= product.stock %></td>
-                  <td><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post %></td>
+                  <td style="font-size: 18px"><%= product.name %></td>
+                  <td class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
+                  <td class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
+                  <td class="text-center"><%= product.stock %></td>
+                  <td class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
                 </tr>
                 <% end %>
               </tbody>
@@ -123,12 +123,10 @@
             <div class= "title-store-section">
               <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
             </div>
-            <div class= "store-section">
               <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
               <p><strong>Website: </strong><%= @store.website %></p>
               <p><strong>Phone number: </strong><%= @store.phone %></p>
               <p><strong>Address: </strong><%= @store.address %></p>
-            </div>
           </div>
           <!-- map -->
           <div class= "store-section">
@@ -155,10 +153,10 @@
       ​<%# unless @store.is_owner?(current_user) %>
       <% if current_user.present? %>
       <div class="row" id="center-content">
-        <div class="col-12">
+        <div class="col-13 ml-3">
           <div class="table-responsive">
             <table class="table table-striped">
-              <h3 class="text-center">Your Cart</h3>
+              <h3 class="text-center" style ="color:green"><strong>Your Cart</strong></h3>
               <thead>
                 <tr>
                   <th class="col-3">Product</th>
@@ -200,7 +198,7 @@
 
   <!--Carousel Wrapper-->
   <div class="container-getlocal">
-    <h4>Other GetLocal stores you might like:</h4>
+    <h4 style="color:orange">Other GetLocal stores you might like:</h4>
     <!--Carousel Wrapper-->
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
       <!--Controls-->

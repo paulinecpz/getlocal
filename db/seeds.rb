@@ -109,7 +109,7 @@ puts("creating stores and users")
 
   end
 
-# Store.create(name: address: description:"We sell fresh products, great quality " website: phone:Faker::PhoneNumber.phone_number_with_country_code, longitude: user:User.all.sample)
+Store.create(name: address: description:"We sell fresh products, great quality " website: phone:Faker::PhoneNumber.phone_number_with_country_code, longitude: latitude: user:User.all.sample)
 
 # 40.times do
 #     Picture.create!(
