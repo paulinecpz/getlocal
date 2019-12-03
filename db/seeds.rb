@@ -131,7 +131,7 @@ Category.create(name: "Other")
 puts("create products")
 
 
-20.times do
+60.times do
   Product.create!(name: Faker::Food.fruits,
     price: rand(10),
     stock: rand(100..500),
@@ -143,7 +143,7 @@ end
 
 Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
 
-20.times do
+60.times do
   product = Product.create!(name: Faker::Food.vegetables,
     price: rand(10),
     stock: rand(100..500),
@@ -151,8 +151,8 @@ Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.c
     store: Store.all.sample,
     category: Category.all.sample
     )
-  order = Order.create(state: "pending", amount: 2, user: user)
-  ProductOrder.create(quantity: 2, user: user, product: product )
+  # order = Order.create(state: "pending", amount: 2, user: user)
+  # ProductOrder.create(quantity: 2, user: user, product: product )
 end
 
 
