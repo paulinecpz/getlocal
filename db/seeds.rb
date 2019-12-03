@@ -151,8 +151,10 @@ Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.c
     store: Store.all.sample,
     category: Category.all.sample
     )
+  
   # order = Order.create(state: "pending", amount: 2, user: user)
   # ProductOrder.create(quantity: 2, user: user, product: product )
+
 end
 
 

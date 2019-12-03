@@ -1,58 +1,61 @@
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
   <div class="container">
     <div class="row">
       <div class="col-6">
-        <%# @stores.each do |store| %>
-        <div class="card-store">
-          <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-          <h3>Store - 1 Name - asf</h3>
-          <%# if cl_image_tag store.pictures.present? %>
-          <%# store.pictures.each do |picture| %>
-          <%#= cl_image_tag(picture.photo) %>
-          <%# end %>
-          <%# else %>
-          <%#= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-          <%# end %>
-          <!-- div class="card-store-infos"> -->
+        <div id="sidebar-products">
+          <div class="table-responsive-orders">
+            <table class="table table-striped">
+              <h3 class="text-center">Pending Orders</h3>
+              <thead>
+                <tr>
+                  <th class="text">Order Nr</th>
+                  <th class="text">State</th>
+                  <th class="text">Quantity</th>
+                  <th class="text-center">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @orders.each do |order| %>
+                <tr>
+                  <td class="text"><%= order.id %></td>
+                  <td class="text"><%= order.state %></td>
+                  <td class="text"><%= order.quantity %></td>
+                  <td class="text"><%= order.amount_cents %>€</td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       <div class="col-6">
         <div id="sidebar-products">
           <div class="table-responsive-orders">
             <table class="table table-striped">
-              <h3 class="text-center">My Order - </h3>
+              <h3 class="text-center">Confirmed Orders</h3>
               <thead>
                 <tr>
-                  <th class="text">Products</th>
-                  <th class="text-center">Quantity</th>
-                  <th class="text">Price</th>
+                  <th class="text">Order Nr</th>
+                  <th class="text">State</th>
+                  <th class="text">Quantity</th>
+                  <th class="text">Amount</th>
+                  <th class="text"></th>
                 </tr>
               </thead>
               <tbody>
-                <% @total = 0 %>
                 <% @orders.each do |order| %>
-                  <% order.products.each do |product| %>
-                    <tr>
-                      <td class="text"><%= product.name %></td>
-                      <td class="text-center"><%= order.product_orders.find_by(product: product).quantity %></td>
-                      <td class="text"><%= product.price %></td>
-                      <% @total += product.price %>
-                    </tr>
-                  <% end %>
-                <% end %>
                 <tr>
-                  <td class="col-3">TOTAL</td>
-                  <td class="col-3"></td>
-                  <td class="col-3"><%= @total %></td>
+                  <td class="text"><%= order.id %></td>
+                  <td class="text"><%= order.quantity %></td>
+                  <td class="text"><%= order.amount_cents %>€</td>
                 </tr>
+                <% end %>
               </tbody>
             </table>
-            <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
+<!-- <td class="text"><#%= order.where(#state: "payed") %></td> -->

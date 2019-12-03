@@ -26,11 +26,11 @@
             <div class="d-block w-100">
               <% if @store.pictures.present? %>
               ​
-              <% @store.pictures.each do |picture| %>
-              <%= cl_image_tag(picture.photo) %>
-              <% end %>
+                <% @store.pictures.each do |picture| %>
+                  <%= cl_image_tag(picture.photo) %>
+                <% end %>
               <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", class: "d-block w-100"%>
+                <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", class: "d-block w-100"%>
               <% end %>
             </div>
           </div>
