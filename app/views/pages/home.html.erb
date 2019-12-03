@@ -132,7 +132,7 @@
               <% slice.each do |store| %>
 
                   <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card mb-4" id="card-home-store-section">
                       <div class = "selection-store-card">
                         <% if cl_image_tag store.pictures.present? %>
                         <% store.pictures.each do |picture| %>
@@ -144,7 +144,7 @@
                       </div>
 
                       <div class="card-body text-center">
-                           <%= link_to store.name.capitalize, store_path(store), class: 'btn btn-success text-center' %>
+                           <%= link_to store.name.capitalize, store_path(store)%>
 
 <!--                         <p class="card-text"><%=store.address%></p>
  -->                        

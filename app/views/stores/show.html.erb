@@ -4,13 +4,15 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 ​
-​
-​
-<div class="container-getlocal">
-  <div class= "content">
-    ​
+​<div class ="container">
+
+​<div class="container-getlocal" id="container-flex">
+
+<!-- <div class="container-getlocal">
+ --><!--   <div class= "content">
+ -->    ​
     <div class="products">
-      <h2><%= @store.name.capitalize %>
+      <h2>- <%= @store.name.capitalize %> -
       <% if @store.is_owner?(current_user) %>
       <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
       <% end %>
@@ -65,7 +67,7 @@
                 <a class="nav-link" href="#reviews">Reviews</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#more-info">More info</a>
+                <a class="nav-link" href="#more-info">Information</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link"style="background-color: transparent;" href="#location">Location</a>
@@ -78,6 +80,7 @@
       ​
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <div class= "store-section">
+
           <div class= "title-store-section">
             <span class="content-title-store-section"><h4 id="products">Products Available</h4></span>
           </div>
@@ -118,7 +121,7 @@
           </div>
           <div class= "store-section">
             <div class= "title-store-section">
-              <span class="content-title-store-section"><h4 id="more-info">Information about the store</h4></span>
+              <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
             </div>
             <div class= "store-info">
               <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
@@ -142,11 +145,16 @@
       ​</div>
       ​
       ​
+  ​
+
+
       <!-- ​CART -->
+      <div class="container col-3" id="container-sticky">
+
       ​<%# unless @store.is_owner?(current_user) %>
       <% if current_user.present? %>
-      <div class="row" id="sidebar-products">
-        <div class="col-15">
+      <div class="row" id="center-content">
+        <div class="col-12">
           <div class="table-responsive">
             <table class="table table-striped">
               <h3 class="text-center">Your Cart</h3>
@@ -166,7 +174,7 @@
                   <td class="col-3"><%= item.product.name %></td>
                   <td class="col-2"><input class="form-control" type="text" value="<%= item.quantity %>" /></td>
                   <td class="text-right col-3"><%= (item.product.price - (item.product.price*item.product.discount)).round(2) %>€</td>
-                  <td class="text-center col-4"><%= link_to 'Delete', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
+                  <td class="text-center col-4"><%= link_to '❌', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
                 </tr>
                 <%= f.hidden_field :product_order_ids, multiple: true , value: item.id %>
                 <% else %>
@@ -177,7 +185,7 @@
                 <% end %>
               </tbody>
             </table>
-            <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button"><%= f.submit %></button>
+            <button class="btn-block btn-success" id="checkout-button"><%= f.submit %></button>
             <% end %>
             <%#= link_to 'Checkout', orders_path, class: 'btn btn-outline-success', method: :post %>
           </div>
@@ -185,9 +193,12 @@
       </div>
     </div>
     <% end %>
-  ​
+  </div>
+
+
+
   <!--Carousel Wrapper-->
-  <div class="container my-4">
+  <div class="container-getlocal">
     <h4>Other GetLocal stores you might like:</h4>
     <!--Carousel Wrapper-->
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -207,11 +218,11 @@
       <!--Slides-->
       <div class="carousel-inner" role="listbox" >
         <!--First slide-->
-        <% @stores.each_slice(3).with_index do |slice, index| %>
+        <% @stores.each_slice(4).with_index do |slice, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
-          <div class="row" id="row-card-store-similar">
+          <div class="row" >
             <% slice.each do |store| %>
-            <div class="card-store mb-3 mr-2 ml-3" id="card-store-similar">
+            <div class="card-store mb-3 mr-3 ml-3" id="card-store-similar">
               <% if cl_image_tag store.pictures.present? %>
               <% store.pictures.each do |picture| %>
               <%= cl_image_tag(picture.photo) %>
@@ -232,8 +243,8 @@
         <% end %>
       </div>
     </div>
+
   </div>
   <!--/.Carousel Wrapper-->
-  <%= link_to 'Back', stores_path, class: "btn btn-outline-success" %>
 </div>
 </div>
