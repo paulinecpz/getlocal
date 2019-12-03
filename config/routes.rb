@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :stores, only: [:index, :show, :new, :create] do
+    resources :store_reviews, only: [:new, :create]
     resources :products, only: :show do
       resources :product_orders
     end

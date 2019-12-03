@@ -108,7 +108,7 @@ class StoresController < ApplicationController
       end
 
     @stores = policy_scope(Store).order(:name)
-
+    @store_review = StoreReview.new
   end
 
   def new
