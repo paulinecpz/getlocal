@@ -123,7 +123,7 @@
             <div class= "title-store-section">
               <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
             </div>
-            <div class= "store-info">
+            <div class= "store-section">
               <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
               <p><strong>Website: </strong><%= @store.website %></p>
               <p><strong>Phone number: </strong><%= @store.phone %></p>
@@ -135,6 +135,7 @@
             <div class= "title-store-section">
               <span class="content-title-store-section"><h4 id="location">Location</h4></span>
             </div>
+            <p>This store is located <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %></strong> km away from your current location</p>
             <p><div
               id="map"
               data-markers="<%= @markers.to_json %>"
@@ -234,6 +235,7 @@
                 <div>
                   <h4><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h4>
                   <p><%= store.address %></p>
+                  <p><%= store.distance_to([38.736946, -9.142685]).to_i %>km </p>
                 </div>
               </div>
             </div>
