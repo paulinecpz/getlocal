@@ -1,8 +1,7 @@
-<div class="m-3">
+<div class="m-5 mb-5">
   <!-- Gmap -->
 
-    <div class="m-3">
-        <div id="container_search">
+      <div id="container_search">
           <div>
           <%= form_tag stores_path, method: :get do %>
           <%= text_field_tag :query,
@@ -13,20 +12,19 @@
           <%= submit_tag "Search", class: "btn btn-success"%>
           <% end %>
           </div>
-          <h3 class= "text-center ml-3">  or </h3>
-          <div class="text-center ml-3" id="geolocation">
+          <h3 class= "text-center ml-4">or</h3>
+          <div class="text-center ml-2" id="geolocation">
             <%= form_tag stores_path, method: :get do %>
             <%= submit_tag "See all the local stores Around You!", class: "btn-localisation" %>
             <% end %>
           </div>
         </div>
-    </div>
     <!--         <div>
       <h2 class= "text-center">Explore the GetLocal map</h2>
     </div> -->
-  </div>
+
   <div class="content">
-    <div class="cards-store">
+    <div class="cards-store" >
       <% @stores.each do |store| %>
       <div class="card-store">
         <% if cl_image_tag store.pictures.present? %>
@@ -46,7 +44,7 @@
       <% end %>
     </div>
 
-    <div id = "map-index">
+    <div id = "map-index" >
       <div id="map"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -55,3 +53,4 @@
     </div>
   </div>
 </div>
+

@@ -24,7 +24,7 @@
 }
 
 #map {
-  height: 70%;
+  height: 80%;
   width: 100%;
   margin: 15px 0px 0px 0px;
   border-radius: 20px
@@ -41,6 +41,8 @@
   height: 70%;
   width: 100%;
   object-fit: cover;
+  border-top-radius: 20px
+
 }
 
 .card-map .card-map-infos {
