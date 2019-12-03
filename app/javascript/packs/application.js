@@ -8,6 +8,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox.js';
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 import { initGeotracker } from '../plugins/init_mapbox.js';
+import { initStarRating } from '../plugins/init_star_rating';
 // import { carouselCards } from '../plugins/carousel_cards.js';
 
 // import { injectCoordinates, injectMap } from '../plugins/init_geocode.js';
@@ -24,6 +25,7 @@ function closeNav() {
 initMapbox();
 initAutocomplete();
 initGeotracker();
+initStarRating();
 // carouselCards();
 // injectMap();
 
@@ -36,3 +38,4 @@ initGeotracker();
     $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
 
 })(jQuery);
+
