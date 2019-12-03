@@ -1,38 +1,37 @@
-<div class="container-getlocal">
-  <div class="row" id="sidebar-products">
-    <div class="col-15">
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <h3 class="text-center">Summary Order : <%= @order.id %></h3>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container d-flex justify-content-around">
+    <h1>Your order is confirmed!</h1>
+    <div class="banner-card">
+      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <h4 id="products">Order Summary</h4>
+        <table class="table">
           <thead>
             <tr>
-              <th class="col-3">Product</th>
-              <th class="text-center col-2">Quantity</th>
-              <th class="text-right col-3">Price</th>
+              <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
             </tr>
           </thead>
           <tbody>
             <% current_user.product_orders.each do |product| %>
             <tr>
-              <td class="col-3"><%= product.product.name %> - store <%= product.product.store.name %></td>
+              <td class="col-3"><%= product.product.name %> - <strong> <%= product.product.store.name %></strong></td>
               <td class="col-2"><input class="form-control" type="text" value="<%= product.quantity %>" /></td>
               <td class="text-right col-3"><%= product.product.price %>€</td>
 
             </tr>
             <% end %>
             <tr>
-              <td class="col-3">TOTAL</td>
-              <td class="col-2"><%= @order.quantity %></td>
-              <td class="text-right col-3"><%= @order.amount %> €</td>
+              <td class="col-3"><strong>TOTAL</strong></td>
+              <td class="col-2"><strong><%= @order.quantity %></strong></td>
+              <td class="text-right col-3"><strong><%= @order.amount %> €</strong></td>
             </tr>
-
           </tbody>
         </table>
-        <button class="btn btn-lg btn-block btn-success text-uppercase" id="checkout-button">Checkout</button>
+        <%= link_to 'Check All My Orders', orders_path, class: 'btn btn-outline-success'  %>
       </div>
     </div>
   </div>
-  <%= link_to 'Modify my items', :back, class: "btn btn-outline-success" %>
 </div>
 
 
