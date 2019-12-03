@@ -122,11 +122,11 @@ puts("creating stores and users")
 
 puts("create categories")
 
-Category.create(name: "Vegetables")
-Category.create(name: "Fruits")
-Category.create(name: "Meat")
-Category.create(name: "Fish")
-Category.create(name: "Other")
+Category.create(name: "Vegetables",url: 'https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80')
+Category.create(name: "Fruits",url: 'https://images.unsplash.com/photo-1546209705-a7eba4e8da21?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80')
+Category.create(name: "Meat",url: 'https://images.unsplash.com/photo-1542901031-ec5eeb518e83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+Category.create(name: "Fish",url: 'https://images.unsplash.com/photo-1534948216015-843149f72be3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+Category.create(name: "Other",url: 'https://images.unsplash.com/photo-1493925410384-84f842e616fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80')
 
 puts("create products")
 
@@ -143,7 +143,7 @@ end
 
 Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
 
-5.times do
+20.times do
   product = Product.create!(name: Faker::Food.vegetables,
     price: rand(10),
     stock: rand(100..500),
@@ -157,7 +157,7 @@ Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.c
 
 end
 
-5.times do
+20.times do
   product = Product.create!(name: Faker::Food.vegetables,
     price: rand(10),
     stock: rand(100..500),

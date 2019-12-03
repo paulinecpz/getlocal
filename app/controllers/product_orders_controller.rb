@@ -14,17 +14,17 @@ class ProductOrdersController < ApplicationController
 
   def create
     @store = Store.find(params[:store_id])
-    # @order = Order.where(user: current_user).first_or_create
+    @order = Order.where(user: current_user).first_or_create
     # @order.user = current_user
     # @order.save!
     @product_order = ProductOrder.new
-    # @product_order.order = @order
+    @product_order.order = @order
     @product = Product.find(params[:product_id])
     @product_order.product = @product
     @product_order.user_id = current_user.id
-    # @product_order.order_id = current_user.order_id
+    #@product_order.order_id = current_user.order_id
     authorize @product_order
-    @product_order.save
+    @product_order.save!
     redirect_to store_path(@store)
   end
 

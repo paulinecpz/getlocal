@@ -103,7 +103,9 @@ class StoresController < ApplicationController
         image_url: helpers.asset_url('pin.png')
       }
       @markers = [@markers]
-      @orders = current_user.orders
+      if user_signed_in? && current_user.orders.present?
+        @orders = current_user.orders
+      end
 
     @stores = policy_scope(Store).order(:name)
 
