@@ -56,6 +56,7 @@
         </div>
       </div>
     </div>
+    <%= render 'reviews/form', order: @orders.first, review: Review.new %>
   </div>
 </div>
 <!-- <td class="text"><#%= order.where(#state: "payed") %></td> -->
