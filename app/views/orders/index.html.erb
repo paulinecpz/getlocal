@@ -51,7 +51,6 @@
                   <td class="text"><%= order.quantity %></td>
                   <td class="text"><%= order.amount_cents/100.00 %>€</td>
                   <td>
-                    <%= link_to 'Add a Review', new_order_review_path(order), class: 'btn btn-outline-success' %>
                   </td>
                 </tr>
                 <% end %>
@@ -61,7 +60,6 @@
         </div>
       </div>
     </div>
-    <%= render 'reviews/form', order: @orders.first, review: Review.new %>
   </div>
 </div>
 
