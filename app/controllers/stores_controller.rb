@@ -10,20 +10,25 @@ class StoresController < ApplicationController
 
     # @stores = policy_scope(Store).near(:latitude, :longitude, 8_000_000 , order: 'distance')
 
-    @stores = policy_scope(Store).order(:name)
-    @stores = Store.geocoded
+    @stores = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)    
 
     update_map
     # @stores = policy_scope(store).order(:name)
+
+    # category_id = Product.where(category_id: params[:category_id]).pluck(:store_id)
+
     if params[:query].present?
-      condition = "address @@ :query OR name @@ :query"
+      condition = "address @@ :query OR name @@ :query OR store_from_category_ids @@ :query"
       @stores = policy_scope(Store).where(condition, query: "%#{params[:query]}%")
+      
+      # @stores = policy_scope(Store).where(id: store_from_category_ids)(condition, query: "%#{params[:query]}%")
 
       update_map
 
 
     else
-      @stores = policy_scope(Store).order(:name)
+      @stores = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)    
+
     end
 
     if params[:category_id].present?
@@ -33,7 +38,13 @@ class StoresController < ApplicationController
       update_map
     end
 
-    # @stores = Store.search_by_address_and_name(params[:query])
+
+
+    # @nearest_stores= Store.closest(origin: [@lat,@long])
+
+    # @locations = Location.near([current_user.latitude, current_user.longitude], 50, :order => :distance)
+
+    # @stores = Store.search_by_address(params[:query])
   end
 
 # def distances

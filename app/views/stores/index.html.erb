@@ -39,6 +39,11 @@
             <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
             <p><%= store.address %></p>
           </div>
+          <div class= 'distance-orange'>
+            <p>⚑</p>
+            <p><%= store.distance_to([38.736946, -9.142685]).to_i %> km</p>
+
+          </div>
         </div>
       </div>
       <% end %>
