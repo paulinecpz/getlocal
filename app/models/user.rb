@@ -9,9 +9,10 @@ class User < ApplicationRecord
 
   has_many :stores, dependent: :destroy
   has_many :orders, dependent: :destroy
-  has_many :reviews
-  has_many :product_orders
+  has_many :store_reviews
 
+  # TODO CHECK IF THIS MAKES SENSE PAULINE !!!!!!!!!!!!!!!!
+  has_many :product_orders
   has_many :products, through: :product_orders
   mount_uploader :photo, PhotoUploader
 

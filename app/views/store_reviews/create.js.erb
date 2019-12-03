@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_store_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const reviews = document.getElementById('reviews');
+  reviews.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @store_review.errors.any? %>
+  refreshForm('<%= j render "store_reviews/form", store: @store, store_review: @store_review %>');
+<% else %>
+  addReview('<%= j render "store_reviews/show", store_review: @store_review %>');
+  refreshForm('<%= j render "store_reviews/form", store: @store, store_review: StoreReview.new %>');
+<% end %>
