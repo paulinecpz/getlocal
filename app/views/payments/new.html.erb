@@ -18,6 +18,7 @@
             <tr>
               <td><%= product.name %>-- <%= product.store.name %></td>
               <td><%= humanized_money_with_symbol(product.price)%></td>
+                <% product.discount = 0 if product.discount.blank? %>
               <td><%= (product.discount*100).round(0)%> %</td>
               <td><%= humanized_money_with_symbol product.price - (product.price*product.discount) %></td>
             </tr>
