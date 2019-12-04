@@ -1,9 +1,10 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+<div class="banner-payment" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
   <div class="container d-flex justify-content-around">
     <h1>Your order is ready.</h1>
-    <div class="banner-card">
+    <div class="banner-card-payment">
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <h4 id="products">Order Summary</h4>
+        <br>
         <table class="table">
           <thead>
             <tr>
@@ -29,6 +30,7 @@
           <tr>
             <td><strong>Total</strong></td>
             <td><strong><%= @order.quantity %></strong></td>
+            <td></td>
             <td></td>
             <td><strong><%= humanized_money_with_symbol @order.amount %></strong></td>
           </tr>

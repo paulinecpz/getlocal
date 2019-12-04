@@ -49,5 +49,35 @@
   border-radius: 10px;
 }
 
+.banner-payment {
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  height: 700px;
+}
+
+.banner-payment h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  padding-top: 60px;
+}
 
 
+.banner-card-payment {
+  background: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 600px;
+  border-radius: 10px;
+
+}
+.banner-card-orders {
+  background: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding: 20px;
+  width: 500px;
+  border-radius: 10px;
+}
