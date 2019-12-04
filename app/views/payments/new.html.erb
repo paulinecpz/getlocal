@@ -8,6 +8,7 @@
           <thead>
             <tr>
               <th scope="col">Product</th>
+              <th scope="col">Quantity</th>
               <th scope="col">Price</th>
               <th scope="col">GetLocal Discount</th>
               <th scope="col">Final Price</th>
@@ -17,6 +18,7 @@
             <% current_user.products.each do |product| %>
             <tr>
               <td><%= product.name %>-- <%= product.store.name %></td>
+              <td><%= product.product_orders.last.quantity %></td>
               <td><%= humanized_money_with_symbol(product.price)%></td>
                 <% product.discount = 0 if product.discount.blank? %>
               <td><%= (product.discount*100).round(0)%> %</td>
@@ -26,7 +28,7 @@
           </tbody>
           <tr>
             <td><strong>Total</strong></td>
-            <td></td>
+            <td><strong><%= @order.quantity %></strong></td>
             <td></td>
             <td><strong><%= humanized_money_with_symbol @order.amount %></strong></td>
           </tr>

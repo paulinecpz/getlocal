@@ -264,26 +264,53 @@ store = Store.create(name: "Mercearia do Amial", address: "R. do Amial 926, Port
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Porto Organico", address: "R. Prof. Vicente José de Carvalho 37, 4050-366 Porto", description:Faker::Restaurant.description, website: "www.portoorganico.pt", phone:"+351 221 784 112", user:User.all.sample)
+store = Store.create(name: "Porto Organico", address: "R. de Clemente Meneres 65, Porto", description:Faker::Restaurant.description, website: "www.portoorganico.pt", phone:"+351 221 784 112", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Folha de Oliveira", address: "Calçada de Monchique 13, 4050-465 Porto", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user:User.all.sample)
+store = Store.create(name: "Folha de Oliveira", address: "Tv. de Cedofeita 24, Porto", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Frutaria de Campanha", address: "R. Alto da Bela 221, 4300-023 Porto", description:Faker::Restaurant.description, website: "www.mercadoscampanha.pt", phone:"+351 221 763 882", user:User.all.sample)
+store = Store.create(name: "Frutaria de Campanha", address: "Rua de José Falcão 156, Porto", description:Faker::Restaurant.description, website: "www.mercadoscampanha.pt", phone:"+351 221 763 882", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Mercearia das Flores", address: "R. Dr. Maurício Estêves Pereira Pinto 94, 4300-006 Porto", description:Faker::Restaurant.description, website: "www.merceariaflores.pt", phone:"+351 221 991 973", user:User.all.sample)
+store = Store.create(name: "Mercearia das Flores", address: "R. Formosa 353, Porto", description:Faker::Restaurant.description, website: "www.merceariaflores.pt", phone:"+351 221 991 973", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Arvore do Euro", address: "Rua do Heroísmo 63, 4300-258 Porto", description:Faker::Restaurant.description, website: "www.arvoredoeuro.pt", phone:"+351 221 412 331", user:User.all.sample)
+store = Store.create(name: "Arvore do Euro", address: "Rua do Almada 249, Porto", description:Faker::Restaurant.description, website: "www.arvoredoeuro.pt", phone:"+351 221 412 331", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
+
+
+# Review
+
+Review.create(content: "Super fresh vegetables. I especially love their carrots. I definitely recommend this store if you are looking for good local products!" , stars: 5, store: store, user: user )
+Review.create(content: "Everything is fresh in this store from the veggies to fruit, i recommend this one" , stars: 5, store: store, user: user )
+Review.create(content: "Os produtos mais frescos que vai encontrar aqui perto, otimo atendimento e a fruta é do melhor.Recomendo a todos" , stars: 5, store: store, user: user )
+Review.create(content: "Not bad, the products could be better, at least the it looks super clean" , stars: 3, store: store, user: user )
+Review.create(content: "The best store in the neighborhood, i only bought some vegetables, but everything looks super fresh" , stars: 4, store: store, user: user )
+Review.create(content: "I hated this store, the owner is super rude, and the fruit doesn't look very fresh. I dont recommend it to anyone" , stars: 1, store: store, user: user )
+Review.create(content: "I'm only giving to stars beacuse of the treatment we had, the owner is badle regarded" , stars: 2, store: store, user: user )
+Review.create(content: "Super cool store, i loved it" , stars: 5, store: store, user: user )
+Review.create(content: "Store with an old air but don't be fooled because the products are the freshest" , stars: 4, store: store, user: user )
+Review.create(content: "Very good regional products especially the jams" , stars: 4, store: store, user: user )
+Review.create(content: "One of the worst stores I can remember, could have more variety of products" , stars: 1, store: store, user: user )
+Review.create(content: "I've been to better stores, but I've been to worse, I leave 3 stars" , stars: 3, store: store, user: user )
+Review.create(content: "Super cool store, i loved it. The freshest vegetables i'v find so far" , stars: 4, store: store, user: user )
+Review.create(content: "I can't tell you how much i love this store, its where i buy all the fruit" , stars: 5, store: store, user: user )
+Review.create(content: "Don't go on this store, i've never seen anything like that" , stars: 1, store: store, user: user )
+Review.create(content: "If you want fruit with dust, this is the right store for you" , stars: 2, store: store, user: user )
+Review.create(content: "I don't recommend this store to anyone" , stars: 2, store: store, user: user )
+Review.create(content: "IFollow my advice and dont visit this grocery store" , stars: 2, store: store, user: user )
+Review.create(content: "All normal, I have nothing to point" , stars: 3, store: store, user: user )
+Review.create(content: "The products could be fresher, but worth for the friendliness of the owner" , stars: 3, store: store, user: user )
+Review.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: user )
+
+
 
 
 

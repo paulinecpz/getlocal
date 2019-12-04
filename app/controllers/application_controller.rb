@@ -28,7 +28,9 @@ class ApplicationController < ActionController::Base
     edit_user_registration_path(resource)
   end
 
-
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 
   # Uncomment when you *really understand* Pundit!
 
