@@ -10,9 +10,9 @@ class StoresController < ApplicationController
 
     # @stores = policy_scope(Store).near(:latitude, :longitude, 8_000_000 , order: 'distance')
 
-    @stores = policy_scope(store).order(:name)
+    # @stores = policy_scope(store).order(:name)
 
-    update_map
+    # update_map
     # @stores = policy_scope(store).order(:name)
 
     # category_id = Product.where(category_id: params[:category_id]).pluck(:store_id)
@@ -27,7 +27,9 @@ class StoresController < ApplicationController
 
 
     else
-      @stores = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)    
+      # @stores = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)    
+    @stores = policy_scope(Store).order(:name)
+    update_map
 
     end
 

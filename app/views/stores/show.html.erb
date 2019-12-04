@@ -36,10 +36,10 @@
             </div>
           </div>
           <div class="carousel-item" id="carousel-item-show2">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" class="d-block w-100" alt="...">
+            <img src="https://images.unsplash.com/photo-1567306295427-94503f8300d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1326&q=80" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item" id="carousel-item-show3">
-            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" class="d-block w-100" alt="...">
+            <img src="https://images.unsplash.com/photo-1485637701894-09ad422f6de6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1320&q=80" class="d-block w-100" alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -101,7 +101,7 @@
             <tbody>
               <% cat.products.where(store: @store).each do |product| %>
               <tr>
-                <td scope="col-3" style="font-size: 18px"><%= product.name %></td>
+                <td scope="col-3" style="font-size: 18px"><%= product.name.capitalize %></td>
                 <td scope="col-2" class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
                 <% if product.discount.blank? %>
                   <td scope="col-3" class="text-center" style="color: orange"></td>
