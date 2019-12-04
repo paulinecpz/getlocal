@@ -105,35 +105,100 @@ puts("creating stores and users")
   # end
 
 
+ # London
 
-Store.create(name: "Finer Foods", address:"North End, Camden Town, London", description:"We only sell fresh products with great quality, at affordable prices. All our products come from the local producers in the region", website:"www.Finer-Foods.com", phone:"+44 18 7153 1234", longitude: -0.193160, latitude: 51.564550, user:User.all.sample)
-Store.create(name: "Goodness Grocery", address: "North Kensington, Kensington, London", description:Faker::Restaurant.description, website:"www.Goodness-Grocery.com", phone:"+44 20 4123 7392", longitude: -0.216220, latitude: 51.518080, user:User.all.sample)
-Store.create(name: "Fast And Fresh", address: "Notting Hill, Kensington, London", description:Faker::Restaurant.description, website: "www.fastNfresh.com", phone:"+44 22 0284 1473", longitude: -0.203880, latitude: 51.513120, user:User.all.sample)
-Store.create(name: "Family’S Own Grocery", address: "Osidge, Enfield, London", description:Faker::Restaurant.description, website: "www.OwnGrocery.com", phone:"+44 84 3658 0922", longitude: -0.143660, latitude: 51.632380, user:User.all.sample)
-Store.create(name: "Proud Produce",address: "Kensal Town, Kensington, London", description:Faker::Restaurant.description, website:"www.ProudProduce.com", phone:"+44 29 4453 9726", longitude:-0.212190, latitude:51.518420, user:User.all.sample)
+store =Store.create(name: "Finer Foods", address:"Lambeth, London SE1 7PB", description:"We only sell fresh products with great quality, at affordable prices. All our products come from the local producers in the region", website:"www.Finer-Foods.com", phone:"+44 18 7153 1234", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Goodness Grocery", address: "51 Shaftesbury Ave, Soho, London W1D 6BA", description:Faker::Restaurant.description, website:"www.Goodness-Grocery.com", phone:"+44 20 4123 7392", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Fast And Fresh", address: "Belvedere Rd, Lambeth, London SE1 8XX", description:Faker::Restaurant.description, website: "www.fastNfresh.com", phone:"+44 22 0284 1473", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Family’S Own Grocery", address: "32 London Bridge St, London SE1 9SG", description:Faker::Restaurant.description, website: "www.OwnGrocery.com", phone:"+44 84 3658 0922", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Proud Produce",address: "150 London Wall, Barbican, London EC2Y 5HN", description:Faker::Restaurant.description, website:"www.ProudProduce.com", phone:"+44 29 4453 9726",user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
 
-Store.create(name: "Nos producteurs", address:"97 Place de la Madeleine, Paris", description:Faker::Restaurant.description, website:"www.nos-producteurs.com", phone:"+33 34 45 53 12 34", longitude: 2.324379, latitude: 48.869253, user:User.all.sample)
-Store.create(name: "Marché aux Fruits", address: "90 rue La Boétie, Paris", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.com", phone:"01 20 41 23 73 92", longitude: 2.309498, latitude: 48.872394, user:User.all.sample)
-Store.create(name: "C'est Bio", address: "7 Faubourg Saint Honoré, Paris", description:Faker::Restaurant.description, website: "www.cestbio.com", phone:"01 22 02 84 14 73", longitude: 2.329498, latitude: 48.672394, user:User.all.sample)
-Store.create(name: "Epicerie Fine", address: "37 Rue Nationale, Paris", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", longitude: 2.367866, latitude: 48.824271, user:User.all.sample)
-Store.create(name: "Mes beaux légumes",address: "50 Rue St Ferréol, Paris", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.com", phone:"01 29 44 53 97 26", longitude: 2.400887, latitude: 48.862464, user:User.all.sample)
+ # Paris
 
-Store.create(name: "La Main Verte", address:"23 Avenue General De Gaulle, Lyon", description:Faker::Restaurant.description, website:"www.nos-producteurs.fr", phone:"03 64 75 53 02 34", longitude: 2.5132670, latitude: 45.732796, user:User.all.sample)
-Store.create(name: "Le Coin Oragnic", address: "23 Rue Molière Lyon, Lyon", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.fr", phone:"+33 60 41 53 74 02", longitude: 2.4632670, latitude: 45.792796, user:User.all.sample)
-Store.create(name: "Produits Frais", address: "72 rue Banaudon, Lyon", description:Faker::Restaurant.description, website: "www.cestbio.fr", phone:"03 22 02 84 14 73", longitude: 2.4862670, latitude: 45.712796, user:User.all.sample)
-Store.create(name: "Bouchon Lyonnais", address: "84 rue de la République, Lyon", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.fr", phone:"+33 94 36 38 09 22", longitude: 2.4932670, latitude: 45.782796, user:User.all.sample)
-Store.create(name: "Le Marché Local",address: "35 Rue St Ferréol, Lyon", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.fr", phone:"03 29 24 53 92 36", longitude: 2.4832670, latitude: 45.762796, user:User.all.sample)
+store =Store.create(name: "Nos producteurs", address:"97 Place de la Madeleine, 75008 Paris", description:Faker::Restaurant.description, website:"www.nos-producteurs.com", phone:"+33 34 45 53 12 34", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Marché aux Fruits", address: "90 rue La Boétie, 75008 Paris", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.com", phone:"01 20 41 23 73 92", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "C'est Bio", address: "129 Rue de Grenelle, 75007 Paris", description:Faker::Restaurant.description, website: "www.cestbio.com", phone:"01 22 02 84 14 73", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Epicerie Fine", address: "176 Rue Montmartre, 75002 Paris", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Mes beaux légumes",address: "Place Georges-Pompidou, 75004 Paris", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.com", phone:"01 29 44 53 97 26", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
 
-Store.create(name: "Supermercado Fino", address:"Comandante Izarduy 42, Barcelona", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", longitude: 2.173404, latitude: 41.365063, user:User.all.sample)
-Store.create(name: "El comida Stores", address: "Pl. Virgen Blanca 35, Barcelona", description:Faker::Restaurant.description, website:"www.comida-stores.es", phone:"+34 88 41 53 35 02", longitude: 2.4632670, latitude: 41.474150, user:User.all.sample)
-Store.create(name: "Food Plaza", address: "C/ Benito Guinea 56, Barcelona", description:Faker::Restaurant.description, website: "www.FoodPlaza.es", phone:"+34 57 63 84 75 04", longitude: 2.159592, latitude: 41.400347, user:User.all.sample)
-Store.create(name: "Mis verduras", address: "Cercas Bajas 17, Barcelona", description:Faker::Restaurant.description, website: "www.mis-verduras.es", phone:"+34 94 96 38 09 13", longitude: 2.159592, latitude: 41.400347, user:User.all.sample)
-Store.create(name: "El Mercado",address: "Plazuela Do Porto 6, Barcelona", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", longitude: 2.142991, latitude: 41.411079, user:User.all.sample)
+ # Lyon
+
+store =Store.create(name: "La Main Verte", address:"221 Rue Garibaldi, 69003 Lyon", description:Faker::Restaurant.description, website:"www.nos-producteurs.fr", phone:"03 64 75 53 02 34", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Le Coin Oragnic", address: "23 Rue Molière, 69006 Lyon", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.fr", phone:"+33 60 41 53 74 02", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Produits Frais", address: "107 Rue Boileau, 69006 Lyon", description:Faker::Restaurant.description, website: "www.cestbio.fr", phone:"03 22 02 84 14 73", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Bouchon Lyonnais", address: "5 Place d'Arsonval, 69003 Lyon", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.fr", phone:"+33 94 36 38 09 22", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Le Marché Local", address: "5 Rue Bonnefoi, 69003 Lyon", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.fr", phone:"03 29 24 53 92 36", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+
+ # Barcelona
+
+store = Store.create(name: "Supermercado Fino", address:"Gran Via de les Corts Catalanes, 749, Barcelona", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "El comida Stores", address: "Passeig de Sant Joan, 108, Barcelona", description:Faker::Restaurant.description, website:"www.comida-stores.es", phone:"+34 88 41 53 35 02", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Food Plaza", address: "Carrer de Mallorca, 401, Barcelona", description:Faker::Restaurant.description, website: "www.FoodPlaza.es", phone:"+34 57 63 84 75 04", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "Mis verduras", address: "Carrer Nou de la Rambla, 3-5, Barcelona", description:Faker::Restaurant.description, website: "www.mis-verduras.es", phone:"+34 94 96 38 09 13", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store =Store.create(name: "El Mercado",address: "Plaça d'Espanya, Barcelona", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
+# rand(1..5).times do 
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
 
 
-pictures_array.each do | picture |
-Picture.create(remote_photo_url: picture, store: Store.all.sample)
-end
+
 
 stores_names = ["Fresh Mart", "Natural Foods" ,"Meat & More","El Comida Stores","Elgin’s Pantry","The Perfect Pantry","George’s Convenience","Quick Corner Mart","Bill’s Bakery & Grocery","The Food Plaza","Fred’s Family Mart","The Grocery Gals","Au Natural Foods","Vinny’s Value Foods","Epic Groceries","The Grocery Green","The Potato Patch","Organic Aisles","All Organic","Awesome Organics","Fresh Mart","Food Selectors","The Jolly Belly","Ocean Market","The Fresh Apron","Nana’s Provisions","Rise & Shine","Earth’s Favour","Flavours of the World","Ethnic Kitchen","The Banana Box","Lucky Grocers","Green Eaters","Gil’s Grocerama","The Potato Bin","Nice Neighbors","Friendly Fare","Brass Tack Foods","Extra Victuals"]
 # 40.times do
