@@ -39,9 +39,16 @@
 
 .table th, .table td{
   padding: 5px;
-  font-size: 12px;
+  font-size: 15px;
   vertical-align: middle;
 }
+
+.div-minusplus a{
+  font-size: 35px;
+    vertical-align: middle;
+}
+
+
 
 .table-responsive h3{
   font-size: 20px
@@ -291,9 +298,14 @@ h4:after {
 .minusplus {
   display: flex;
   text-align: center;
-  vertical-align: center;
+  vertical-align: middle;
   justify-content: space-between;
   align-items: center;
+}
+
+.div-minusplus {
+  display: flex;
+}
 
   .minus, .plus {
     font-size: 2em;

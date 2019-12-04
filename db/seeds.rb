@@ -89,20 +89,20 @@ puts("creating stores and users")
 
 
 
-  pictures_array.each do | picture |
-    store = Store.create!(name: Faker::Company.name,
-      address: Faker::Address.full_address,
-      description: Faker::Restaurant.description,
-      website: Faker::Internet.url,
-      phone: Faker::PhoneNumber.phone_number_with_country_code,
-      # picture: pictures.sample,
-      longitude: Faker::Address.longitude,
-      latitude: Faker::Address.latitude,
-      user: User.all.sample
-      )
-    Picture.create(remote_photo_url: picture, store: store)
+  # pictures_array.each do | picture |
+  #   store = Store.create!(name: Faker::Company.name,
+  #     address: Faker::Address.full_address,
+  #     description: Faker::Restaurant.description,
+  #     website: Faker::Internet.url,
+  #     phone: Faker::PhoneNumber.phone_number_with_country_code,
+  #     # picture: pictures.sample,
+  #     longitude: Faker::Address.longitude,
+  #     latitude: Faker::Address.latitude,
+  #     user: User.all.sample
+  #     )
+  #   Picture.create(remote_photo_url: picture, store: store)
 
-  end
+  # end
 
 
  # London
@@ -323,6 +323,7 @@ stores_names = ["Fresh Mart", "Natural Foods" ,"Meat & More","El Comida Stores",
 #   end
 
 
+Review.create(content: "Super fresh vegetables. I especially love their carrots. I definitely recommend this store if you are looking for good local products!" , stars: 5, store: store, user: user )
 
 puts("create categories")
 
