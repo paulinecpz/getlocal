@@ -212,11 +212,11 @@ store = Store.create(name: "Canto Saudavel", address: "Rua Limoeiro 10, Lisbon",
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 4A, Lisbon", description:Faker::Restaurant.description, website: "www.merceariacriativa.pt", phone:"+351 216 458 943", user:User.all.sample)
+store = Store.create(name: "Mercearia Criativa", address: "R. de Santa Marta 16, 1150-228 Lisbon", description:Faker::Restaurant.description, website: "www.merceariacriativa.pt", phone:"+351 216 458 943", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "WineOff", address: "R. Jau 54, 1300-314 Lisbon", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
+store = Store.create(name: "WineOff", address: "R. Luís de Camões 132, Lisbon", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
@@ -236,7 +236,7 @@ store = Store.create(name: "Glood Areeiro", address: "Av. de Roma 23, Lisbon", d
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Mercearia Nacional", address: "Av. Elias Garcia 98, Lisbon", description:Faker::Restaurant.description, website: "www.mercearianacional.pt", phone:"+351 211 488 743", user:User.all.sample)
+store = Store.create(name: "Mercearia Nacional", address: "Regueirão Anjos 81, 1150-019 Lisbon", description:Faker::Restaurant.description, website: "www.mercearianacional.pt", phone:"+351 211 488 743", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
@@ -256,7 +256,7 @@ store = Store.create(name: "Frutaria do Bairro", address: "R. Formosa 300, Porto
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Mercado da Ribeira", address: "R. de Cima do Muro 42, Porto", description:Faker::Restaurant.description, website: "www.mercadoribeiro.pt", phone:"+351 221 456 343", user:User.all.sample)
+store = Store.create(name: "Mercado da Ribeira", address: "Av. Gustavo Eiffel 200, Porto", description:Faker::Restaurant.description, website: "www.mercadoribeiro.pt", phone:"+351 221 456 343", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
@@ -264,23 +264,23 @@ store = Store.create(name: "Mercearia do Amial", address: "R. do Amial 926, Port
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Porto Organico", address: "R. João de Barros 393, Porto", description:Faker::Restaurant.description, website: "www.portoorganico.pt", phone:"+351 221 784 112", user:User.all.sample)
+store = Store.create(name: "Porto Organico", address: "Rua da Constituição 2313, Porto", description:Faker::Restaurant.description, website: "www.portoorganico.pt", phone:"+351 221 784 112", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Folha de Oliveira", address: "R. de Passos Manuel 2-34, Porto", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user:User.all.sample)
+store = Store.create(name: "Folha de Oliveira", address: "Av. da Boavista 856, Porto", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Frutaria de Campanha", address: "R. de São Sebastião 73-1, Porto", description:Faker::Restaurant.description, website: "www.mercadoscampanha.pt", phone:"+351 221 763 882", user:User.all.sample)
+store = Store.create(name: "Frutaria de Campanha", address: "Rua de Júlio Dinis 908, Porto", description:Faker::Restaurant.description, website: "www.mercadoscampanha.pt", phone:"+351 221 763 882", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Mercearia das Flores", address: "R. Joaquim António de Aguiar 80, Porto", description:Faker::Restaurant.description, website: "www.merceariaflores.pt", phone:"+351 221 991 973", user:User.all.sample)
+store = Store.create(name: "Mercearia das Flores", address: "Rua do Campo Alegre 147, Porto", description:Faker::Restaurant.description, website: "www.merceariaflores.pt", phone:"+351 221 991 973", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Arvore do Euro", address: " Av. do Dr. Antunes Guimarães 888, Porto", description:Faker::Restaurant.description, website: "www.arvoredoeuro.pt", phone:"+351 221 412 331", user:User.all.sample)
+store = Store.create(name: "Arvore do Euro", address: "R. de Belomonte 86, 4050-096 Porto", description:Faker::Restaurant.description, website: "www.arvoredoeuro.pt", phone:"+351 221 412 331", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
