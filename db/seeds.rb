@@ -200,6 +200,14 @@ store =Store.create(name: "El Mercado",address: "Plaça d'Espanya, Barcelona", d
 
 
 
+
+Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso, Porto", description:Faker::Restaurant.description, website: "www.canela&maça.pt", phone:"+351 221 245 149", longitude: 41.146525, latitude: -8.603935, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Portus Sabor", address: "Av. dos Aliados 166, Porto", description:Faker::Restaurant.description, website: "www.portusabor.pt", phone:"+351 221 478 198", longitude: 41.148435, latitude: -8.610531, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Frutaria do Bairro", address: "R. Formosa 300, Porto", description:Faker::Restaurant.description, website: "www.frutariadobairro.pt", phone:"+351 221 235 872", longitude: 41.148507, latitude: -8.606743, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Mercado da Ribeira", address: "R. de Cima do Muro 42, Porto", description:Faker::Restaurant.description, website: "www.mercadoribeiro.pt", phone:"+351 221 456 343", longitude: 41.140650, latitude: -8.611787, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Mercearia do Amial", address: "R. do Amial 926, Porto", description:Faker::Restaurant.description, website: "www.frutadoamial.pt", phone:"+351 221 785 772", longitude: 41.181012, latitude: -8.613582, user:User.all.sample, remote_photo_url: pictures_array.sample)
+
+
 stores_names = ["Fresh Mart", "Natural Foods" ,"Meat & More","El Comida Stores","Elgin’s Pantry","The Perfect Pantry","George’s Convenience","Quick Corner Mart","Bill’s Bakery & Grocery","The Food Plaza","Fred’s Family Mart","The Grocery Gals","Au Natural Foods","Vinny’s Value Foods","Epic Groceries","The Grocery Green","The Potato Patch","Organic Aisles","All Organic","Awesome Organics","Fresh Mart","Food Selectors","The Jolly Belly","Ocean Market","The Fresh Apron","Nana’s Provisions","Rise & Shine","Earth’s Favour","Flavours of the World","Ethnic Kitchen","The Banana Box","Lucky Grocers","Green Eaters","Gil’s Grocerama","The Potato Bin","Nice Neighbors","Friendly Fare","Brass Tack Foods","Extra Victuals"]
 # 40.times do
 #     Picture.create!(
