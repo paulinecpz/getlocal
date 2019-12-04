@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
 
   def self.get_stores(user)
+    return [] unless user.present?
     orders = Order.where(user_id: user.id).where(state: "paid")
     stores = []
     orders.each do |order|
