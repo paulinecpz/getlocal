@@ -19,8 +19,9 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new
-    @order = current_user.order
+    # @order = Order.new
+    @order = Order.find(params[:id])
+    current_user.order = @order
 
     amount = 0
     quantity = 0
