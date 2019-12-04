@@ -216,7 +216,7 @@ store = Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "WineOff", address: "R. Luís de Camões 132, Lisbon", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
+store = Store.create(name: "WineOff", address: "R. Jau 54, 1300-314 Lisbon", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
@@ -307,12 +307,13 @@ Category.create(name: "Other",url: 'https://images.unsplash.com/photo-1493925410
 
 puts("create products")
 
+discount=["", 0.05, 0.10, 0.20, 0.30, 0.40, 0.50]
 
 60.times do
   product_fruits = Product.create!(name: Faker::Food.fruits,
-    price: rand(0..1),
+    price: rand(0.5..1.5),
     stock: rand(20..100),
-    discount: rand(),
+    discount: discount.sample,
     store: Store.all.sample,
     category: Category.find_by_name("Fruits")
     )
@@ -326,9 +327,9 @@ end
 
 60.times do
   product_veggie = Product.create!(name: Faker::Food.vegetables,
-    price: rand(0..1),
+    price: rand(0.5..1.5),
     stock: rand(20..100),
-    discount: rand(),
+    discount: discount.sample,
     store: Store.all.sample,
     category: Category.find_by_name("Vegetables")
     )
@@ -340,9 +341,9 @@ end
 
 40.times do
    product_fish = Product.create!(name: Faker::Food.sushi,
-    price: rand(0..1),
-    stock: rand(20..100),
-    discount: rand(),
+    price: rand(1.2..3).to_f.round(1),
+    stock: rand(10..500),
+    discount: discount.sample,
     store: Store.all.sample,
     category: Category.find_by_name("Fish")
     )
@@ -353,9 +354,9 @@ end
 
 40.times do
    product_meat = Product.create!(name: Faker::Creature::Animal.name,
-    price: rand(0..1),
-    stock: rand(20..100),
-    discount: rand(),
+    price: rand(1.5..4),
+    stock: rand(10..500),
+    discount: discount.sample,
     store: Store.all.sample,
     category: Category.find_by_name("Meat")
     )
@@ -366,9 +367,9 @@ end
 
 40.times do
    product_other = Product.create!(name: Faker::Food.spice,
-    price: rand(0.5..2),
+    price: rand(0.5..2).to_f.round(1),
     stock: rand(20..100),
-    discount: rand(),
+    discount: discount.sample,
     store: Store.all.sample,
     category: Category.find_by_name("Other")
     )
