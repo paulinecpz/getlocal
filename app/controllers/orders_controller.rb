@@ -32,7 +32,7 @@ class OrdersController < ApplicationController
     end
     @order.quantity = quantity
 
-    @order.amount_cents = amount
+    @order.amount = amount
     @order.save
     authorize @order
     # @order = Order.find(params[:order_id])
