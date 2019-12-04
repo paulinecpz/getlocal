@@ -23,18 +23,13 @@ Picture.destroy_all
 Category.destroy_all
 
 
-user = User.create(first_name: "Paulo", last_name: "Lewagon", email:"paulo@paulo.com", password:"password", role: "admin")
-User.create(first_name: "Pauline", last_name: "Lewagon", email:"pauline@pauline.com", password:"password", role: "admin")
-User.create(first_name: "Mathieu", last_name: "Lewagon", email:"mathieu@mathieu.com", password:"password", role: "admin")
-User.create(first_name: "Eduardo", last_name: "Lewagon", email:"edu@edu.com", password:"password", role: "admin")
-
 
 # users= [user1, user2, user3, user4]
 puts("creating stores and users")
 
-15.times do
+1.times do
     User.create!(
-      email: Faker::Internet.email,
+      email: "admin@lewagon.com",
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       password: "password",
@@ -107,31 +102,10 @@ puts("creating stores and users")
   #     )
   #   Picture.create(remote_photo_url: picture, store: store)
 
-  end
+  # end
 
-Store.create(name: "Finer Foods", address:"North End, Camden Town, London", description:"We only sell fresh products with great quality, at affordable prices. All our products come from the local producers in the region", website:"www.Finer-Foods.com", phone:"+44 18 7153 1234", longitude: -0.193160, latitude: 51.564550, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Goodness Grocery", address: "North Kensington, Kensington, London", description:Faker::Restaurant.description, website:"www.Goodness-Grocery.com", phone:"+44 20 4123 7392", longitude: -0.216220, latitude: 51.518080, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Fast And Fresh", address: "Notting Hill, Kensington, London", description:Faker::Restaurant.description, website: "www.fastNfresh.com", phone:"+44 22 0284 1473", longitude: -0.203880, latitude: 51.513120, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Family’S Own Grocery", address: "Osidge, Enfield, London", description:Faker::Restaurant.description, website: "www.OwnGrocery.com", phone:"+44 84 3658 0922", longitude: -0.143660, latitude: 51.632380, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Proud Produce",address: "Kensal Town, Kensington, London", description:Faker::Restaurant.description, website:"www.ProudProduce.com", phone:"+44 29 4453 9726", longitude:-0.212190, latitude:51.518420, user:User.all.sample, remote_photo_url: pictures_array.sample)
 
-Store.create(name: "Nos producteurs" address:"97 Place de la Madeleine, Paris", description:Faker::Restaurant.description, website:"www.nos-producteurs.com", phone:"+33 34 45 53 12 34", longitude: 2.324379, latitude: 48.869253, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Marché aux Fruits", address: "90 rue La Boétie, Paris", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.com", phone:"01 20 41 23 73 92", longitude: 2.309498, latitude: 48.872394, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "C'est Bio", address: "7 Faubourg Saint Honoré, Paris", description:Faker::Restaurant.description, website: "www.cestbio.com", phone:"01 22 02 84 14 73", longitude: 2.329498, latitude: 48.672394, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Epicerie Fine", address: "37 Rue Nationale, Paris", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", longitude: 2.367866, latitude: 48.824271, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Mes beaux légumes",address: "50 Rue St Ferréol, Paris", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.com", phone:"01 29 44 53 97 26", longitude: 2.400887, latitude: 48.862464, user:User.all.sample, remote_photo_url: pictures_array.sample)
 
-Store.create(name: "La Main Verte" address:"23 Avenue General De Gaulle, Lyon", description:Faker::Restaurant.description, website:"www.nos-producteurs.fr", phone:"03 64 75 53 02 34", longitude: 2.5132670, latitude: 45.732796, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Le Coin Oragnic", address: "23 Rue Molière Lyon, Lyon", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.fr", phone:"+33 60 41 53 74 02", longitude: 2.4632670, latitude: 45.792796, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Produits Frais", address: "72 rue Banaudon, Lyon", description:Faker::Restaurant.description, website: "www.cestbio.fr", phone:"03 22 02 84 14 73", longitude: 2.4862670, latitude: 45.712796, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Bouchon Lyonnais", address: "84 rue de la République, Lyon", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.fr", phone:"+33 94 36 38 09 22", longitude: 2.4932670, latitude: 45.782796, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Le Marché Local",address: "35 Rue St Ferréol, Lyon", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.fr", phone:"03 29 24 53 92 36", longitude: 2.4832670, latitude: 45.762796, user:User.all.sample)
-
-Store.create(name: "Supermercado Fino" address:"Comandante Izarduy 42, Barcelona", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", longitude: 2.173404, latitude: 41.365063, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "El comida Stores", address: "Pl. Virgen Blanca 35, Barcelona", description:Faker::Restaurant.description, website:"www.comida-stores.es", phone:"+34 88 41 53 35 02", longitude: 2.4632670, latitude: 41.474150, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Food Plaza", address: "C/ Benito Guinea 56, Barcelona", description:Faker::Restaurant.description, website: "www.FoodPlaza.es", phone:"+34 57 63 84 75 04", longitude: 2.159592, latitude: 41.400347, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "Mis verduras", address: "Cercas Bajas 17, Barcelona", description:Faker::Restaurant.description, website: "www.mis-verduras.es", phone:"+34 94 96 38 09 13", longitude: 2.159592, latitude: 41.400347, user:User.all.sample, remote_photo_url: pictures_array.sample)
-Store.create(name: "El Mercado",address: "Plazuela Do Porto 6, Barcelona", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", longitude: 2.142991, latitude: 41.411079, user:User.all.sample, remote_photo_url: pictures_array.sample)
 
 Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso, Porto", description:Faker::Restaurant.description, website: "www.canela&maça.pt", phone:"+351 221 245 149", longitude: 41.146525, latitude: -8.603935, user:User.all.sample, remote_photo_url: pictures_array.sample)
 Store.create(name: "Portus Sabor", address: "Av. dos Aliados 166, Porto", description:Faker::Restaurant.description, website: "www.portusabor.pt", phone:"+351 221 478 198", longitude: 41.148435, latitude: -8.610531, user:User.all.sample, remote_photo_url: pictures_array.sample)
@@ -145,6 +119,35 @@ Store.create(name: "Canto Saudavel", address: "Rua Limoeiro 10, Lisboa", descrip
 Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 4A, Lisboa", description:Faker::Restaurant.description, website: "www.merceariacriativa.pt", phone:"+351 216 458 943", longitude: 38.737902, latitude: -9.134420, user:User.all.sample, remote_photo_url: pictures_array.sample)
 Store.create(name: "WineOff", address: "R. Luís de Camões 132, Lisboa", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", longitude: 38.705627, latitude: -9.184207, user:User.all.sample, remote_photo_url: pictures_array.sample)
 
+Store.create(name: "Finer Foods", address:"North End, Camden Town, London", description:"We only sell fresh products with great quality, at affordable prices. All our products come from the local producers in the region", website:"www.Finer-Foods.com", phone:"+44 18 7153 1234", longitude: -0.193160, latitude: 51.564550, user:User.all.sample)
+Store.create(name: "Goodness Grocery", address: "North Kensington, Kensington, London", description:Faker::Restaurant.description, website:"www.Goodness-Grocery.com", phone:"+44 20 4123 7392", longitude: -0.216220, latitude: 51.518080, user:User.all.sample)
+Store.create(name: "Fast And Fresh", address: "Notting Hill, Kensington, London", description:Faker::Restaurant.description, website: "www.fastNfresh.com", phone:"+44 22 0284 1473", longitude: -0.203880, latitude: 51.513120, user:User.all.sample)
+Store.create(name: "Family’S Own Grocery", address: "Osidge, Enfield, London", description:Faker::Restaurant.description, website: "www.OwnGrocery.com", phone:"+44 84 3658 0922", longitude: -0.143660, latitude: 51.632380, user:User.all.sample)
+Store.create(name: "Proud Produce",address: "Kensal Town, Kensington, London", description:Faker::Restaurant.description, website:"www.ProudProduce.com", phone:"+44 29 4453 9726", longitude:-0.212190, latitude:51.518420, user:User.all.sample)
+
+Store.create(name: "Nos producteurs", address:"97 Place de la Madeleine, Paris", description:Faker::Restaurant.description, website:"www.nos-producteurs.com", phone:"+33 34 45 53 12 34", longitude: 2.324379, latitude: 48.869253, user:User.all.sample)
+Store.create(name: "Marché aux Fruits", address: "90 rue La Boétie, Paris", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.com", phone:"01 20 41 23 73 92", longitude: 2.309498, latitude: 48.872394, user:User.all.sample)
+Store.create(name: "C'est Bio", address: "7 Faubourg Saint Honoré, Paris", description:Faker::Restaurant.description, website: "www.cestbio.com", phone:"01 22 02 84 14 73", longitude: 2.329498, latitude: 48.672394, user:User.all.sample)
+Store.create(name: "Epicerie Fine", address: "37 Rue Nationale, Paris", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", longitude: 2.367866, latitude: 48.824271, user:User.all.sample)
+Store.create(name: "Mes beaux légumes",address: "50 Rue St Ferréol, Paris", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.com", phone:"01 29 44 53 97 26", longitude: 2.400887, latitude: 48.862464, user:User.all.sample)
+
+Store.create(name: "La Main Verte", address:"23 Avenue General De Gaulle, Lyon", description:Faker::Restaurant.description, website:"www.nos-producteurs.fr", phone:"03 64 75 53 02 34", longitude: 2.5132670, latitude: 45.732796, user:User.all.sample)
+Store.create(name: "Le Coin Oragnic", address: "23 Rue Molière Lyon, Lyon", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.fr", phone:"+33 60 41 53 74 02", longitude: 2.4632670, latitude: 45.792796, user:User.all.sample)
+Store.create(name: "Produits Frais", address: "72 rue Banaudon, Lyon", description:Faker::Restaurant.description, website: "www.cestbio.fr", phone:"03 22 02 84 14 73", longitude: 2.4862670, latitude: 45.712796, user:User.all.sample)
+Store.create(name: "Bouchon Lyonnais", address: "84 rue de la République, Lyon", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.fr", phone:"+33 94 36 38 09 22", longitude: 2.4932670, latitude: 45.782796, user:User.all.sample)
+Store.create(name: "Le Marché Local",address: "35 Rue St Ferréol, Lyon", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.fr", phone:"03 29 24 53 92 36", longitude: 2.4832670, latitude: 45.762796, user:User.all.sample)
+
+Store.create(name: "Supermercado Fino", address:"Comandante Izarduy 42, Barcelona", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", longitude: 2.173404, latitude: 41.365063, user:User.all.sample)
+Store.create(name: "El comida Stores", address: "Pl. Virgen Blanca 35, Barcelona", description:Faker::Restaurant.description, website:"www.comida-stores.es", phone:"+34 88 41 53 35 02", longitude: 2.4632670, latitude: 41.474150, user:User.all.sample)
+Store.create(name: "Food Plaza", address: "C/ Benito Guinea 56, Barcelona", description:Faker::Restaurant.description, website: "www.FoodPlaza.es", phone:"+34 57 63 84 75 04", longitude: 2.159592, latitude: 41.400347, user:User.all.sample)
+Store.create(name: "Mis verduras", address: "Cercas Bajas 17, Barcelona", description:Faker::Restaurant.description, website: "www.mis-verduras.es", phone:"+34 94 96 38 09 13", longitude: 2.159592, latitude: 41.400347, user:User.all.sample)
+Store.create(name: "El Mercado",address: "Plazuela Do Porto 6, Barcelona", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", longitude: 2.142991, latitude: 41.411079, user:User.all.sample)
+
+
+
+pictures_array.each do | picture |
+Picture.create(remote_photo_url: picture, store: Store.all.sample)
+end
 
 stores_names = ["Fresh Mart", "Natural Foods" ,"Meat & More","El Comida Stores","Elgin’s Pantry","The Perfect Pantry","George’s Convenience","Quick Corner Mart","Bill’s Bakery & Grocery","The Food Plaza","Fred’s Family Mart","The Grocery Gals","Au Natural Foods","Vinny’s Value Foods","Epic Groceries","The Grocery Green","The Potato Patch","Organic Aisles","All Organic","Awesome Organics","Fresh Mart","Food Selectors","The Jolly Belly","Ocean Market","The Fresh Apron","Nana’s Provisions","Rise & Shine","Earth’s Favour","Flavours of the World","Ethnic Kitchen","The Banana Box","Lucky Grocers","Green Eaters","Gil’s Grocerama","The Potato Bin","Nice Neighbors","Friendly Fare","Brass Tack Foods","Extra Victuals"]
 # 40.times do
@@ -168,71 +171,80 @@ puts("create products")
 
 
 60.times do
-  Product.create!(name: Faker::Food.fruits,
+  product_fruits = Product.create!(name: Faker::Food.fruits,
     price: rand(0..1),
     stock: rand(20..100),
     discount: rand(),
     store: Store.all.sample,
-    category: Category.find_by_name(name:"Fruits")
+    category: Category.find_by_name("Fruits")
     )
+
+  #   order = Order.create(state: "pending", amount: 2, user:User.all.sample)
+  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_fruits.sample )
 end
 
-Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
+ 
+# Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
 
 60.times do
-  product = Product.create!(name: Faker::Food.vegetables,
+  product_veggie = Product.create!(name: Faker::Food.vegetables,
     price: rand(0..1),
     stock: rand(20..100),
     discount: rand(),
     store: Store.all.sample,
-    category: Category.find_by_name(name:"Vegetables")
+    category: Category.find_by_name("Vegetables")
     )
 
-   order = Order.create(state: "pending", amount: 2, user: user)
-  ProductOrder.create(quantity: 2, user: user, product: product )
+  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
+  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_veggie.sample )
 
 end
 
 40.times do
-   product = Product.create!(name: Faker::Food.sushi,
+   product_fish = Product.create!(name: Faker::Food.sushi,
     price: rand(0..1),
     stock: rand(20..100),
     discount: rand(),
     store: Store.all.sample,
-    category: Category.find_by_name(name:"Fish")
+    category: Category.find_by_name("Fish")
     )
 
-   order = Order.create(state: "pending", amount: 2, user: user)
-  ProductOrder.create(quantity: 2, user: user, product: product )
+  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
+  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_fish.sample )
 end
 
 40.times do
-   product = Product.create!(name: Faker::Food.,
+   product_meat = Product.create!(name: Faker::Creature::Animal.name,
     price: rand(0..1),
     stock: rand(20..100),
     discount: rand(),
     store: Store.all.sample,
-    category: Category.find_by_name(name:"Meat")
+    category: Category.find_by_name("Meat")
     )
 
-   order = Order.create(state: "pending", amount: 2, user: user)
-  ProductOrder.create(quantity: 2, user: user, product: product )
+  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
+  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_meat.sample )
 end
 
 40.times do
-   product = Product.create!(name: Faker::Food.vegetables,
+   product_other = Product.create!(name: Faker::Food.spice,
     price: rand(0.5..2),
     stock: rand(20..100),
     discount: rand(),
     store: Store.all.sample,
-    category: Category.find_by_name(name:"Other")
+    category: Category.find_by_name("Other")
     )
 
-   order = Order.create(state: "pending", amount: 2, user: user)
-  ProductOrder.create(quantity: 2, user: user, product: product )
+  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
+  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_other.sample )
 end
 
 
+
+User.create(first_name: "Paulo", last_name: "Lewagon", email:"paulo@paulo.com", password:"password", role: "admin")
+User.create(first_name: "Pauline", last_name: "Lewagon", email:"pauline@pauline.com", password:"password", role: "admin")
+User.create(first_name: "Mathieu", last_name: "Lewagon", email:"mathieu@mathieu.com", password:"password", role: "admin")
+User.create(first_name: "Eduardo", last_name: "Lewagon", email:"edu@edu.com", password:"password", role: "admin")
 
 
 puts("seed finished")
