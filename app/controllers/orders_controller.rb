@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    #@order = Order.new
+    @order = Order.new
     @order = current_user.order
 
     amount = 0
