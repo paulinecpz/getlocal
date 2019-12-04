@@ -1,5 +1,5 @@
 class ProductOrdersController < ApplicationController
-  before_action :set_product_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_product_order, only: [:show, :edit, :destroy]
   before_action :authenticate_user!
 
   def index
@@ -10,6 +10,19 @@ class ProductOrdersController < ApplicationController
   end
 
   def new
+  end
+
+  def update
+    @product_order = ProductOrder.find(params[:id])
+    authorize @product_order
+
+    if params[:direction] == 'up'
+      @product_order.increment!(:quantity)
+    else
+      @product_order.decrement!(:quantity)
+    end
+
+    redirect_to @product_order.product.store
   end
 
   def create
