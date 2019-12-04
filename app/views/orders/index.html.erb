@@ -1,65 +1,63 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <div id="sidebar-products">
-          <div class="table-responsive-orders">
-            <table class="table table-striped">
-              <h3 class="text-center">Pending Orders</h3>
-              <thead>
-                <tr>
-                  <th class="text">Order Nr</th>
-                  <th class="text">State</th>
-                  <th class="text">Quantity</th>
-                  <th class="text-center">Amount</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @orders.where(state: :pending).each do |order| %>
-                <tr>
-                  <td class="text"><%= order.id %></td>
-                  <td class="text"><%= order.state %></td>
-                  <td class="text"><%= order.quantity %></td>
-                  <td class="text"><%= order.amount_cents/100.00 %>€</td>
-                </tr>
-                <% end %>
-              </tbody>
+<div class="banner-payment" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+  <div class="container d-flex justify-content-around">
+    <div class="banner-card-orders">
+      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <h4 id="products">Paid Orders</h4>
+        <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Order Nr</th>
+              <th scope="col">State</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @orders.where(state: :paid).each do |order| %>
+            <tr>
+              <td class="text"><%= order.id %></td>
+              <td class="text"><%= order.state %></td>
+              <td class="text"><%= order.quantity %></td>
+              <td class="text"><%= order.amount_cents/100.00 %>€</td>
+              <td>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
             </table>
           </div>
         </div>
-      </div>
 
-      <div class="col-6">
-        <div id="sidebar-products">
-          <div class="table-responsive-orders">
-            <table class="table table-striped">
-              <h3 class="text-center">Confirmed Orders</h3>
-              <thead>
-                <tr>
-                  <th class="text">Order Nr</th>
-                  <th class="text">State</th>
-                  <th class="text">Quantity</th>
-                  <th class="text">Amount</th>
-                  <th class="text">Review</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @orders.where(state: :paid).each do |order| %>
-                <tr>
-                  <td class="text"><%= order.id %></td>
-                  <td class="text"><%= order.state %></td>
-                  <td class="text"><%= order.quantity %></td>
-                  <td class="text"><%= order.amount_cents/100.00 %>€</td>
-                  <td>
-                  </td>
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+ <div class="banner-card-orders">
+   <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+     <h4 id="products">Picked Up Orders</h4>
+     <br>
+     <table class="table">
+       <thead>
+         <tr>
+           <th scope="col">Order Nr</th>
+           <th scope="col">State</th>
+           <th scope="col">Quantity</th>
+           <th scope="col">Amount</th>
+         </tr>
+       </thead>
+       <tbody>
+         <% @orders.where(state: :picked).each do |order| %>
+         <tr>
+           <td class="text"><%= order.id %></td>
+           <td class="text"><%= order.state %></td>
+           <td class="text"><%= order.quantity %></td>
+           <td class="text"><%= order.amount_cents/100.00 %>€</td>
+           <td>
+           </td>
+         </tr>
+         <% end %>
+       </tbody>
+         </table>
+       </div>
+     </div>
+   </div>
 </div>
-
+</div>
