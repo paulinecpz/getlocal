@@ -15,7 +15,7 @@ class ProductOrdersController < ApplicationController
   def create
     @store = Store.find(params[:store_id])
     @order = Order.where(user: current_user).first_or_create
-    # @order.user = current_user
+    @order.user = current_user
     # @order.save!
     @product_order = ProductOrder.new
     @product_order.order = @order
