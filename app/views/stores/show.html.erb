@@ -5,12 +5,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 ​
 ​<div class ="container">
-
-​<div class="container-getlocal" id="container-flex">
-
-<!-- <div class="container-getlocal">
- --><!--   <div class= "content">
- -->    ​
+  ​<div class="container-getlocal" id="container-flex">
     <div class="products">
       <h2>- <%= @store.name.capitalize %> -
       <% if @store.is_owner?(current_user) %>
@@ -28,11 +23,11 @@
             <div class="d-block w-100">
               <% if @store.pictures.present? %>
               ​
-                <% @store.pictures.each do |picture| %>
-                  <%= cl_image_tag(picture.photo) %>
-                <% end %>
+              <% @store.pictures.each do |picture| %>
+              <%= cl_image_tag(picture.photo) %>
+              <% end %>
               <% else %>
-                <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", class: "d-block w-100"%>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", class: "d-block w-100"%>
               <% end %>
             </div>
           </div>
@@ -80,7 +75,6 @@
       ​
       <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <div class= "store-section">
-
           <div class= "title-store-section">
             <span class="content-title-store-section"><h4 id="products">Products Available</h4></span>
           </div>
@@ -89,74 +83,68 @@
             <tr>
               <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cat.url %>')">
                 <%= cat.name %>
+              </div>
+            </tr>
+            <thead>
+              <tr>
+                <th scope="col" >Product</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">GetLocal Discount</th>
+                <th scope="col" class="text-center">Stock</th>
+                <th scope="col" class="text-center">➕</th>
               </tr>
-              <thead>
-                <tr>
-                  <th scope="col" >Product</th>
-                  <th scope="col" class="text-center">Price</th>
-                  <th scope="col" class="text-center">GetLocal Discount</th>
-                  <th scope="col" class="text-center">Stock</th>
-                  <th scope="col" class="text-center">➕</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% cat.products.where(store: @store).each do |product| %>
-                <tr>
-                  <td style="font-size: 18px"><%= product.name %></td>
-                  <td class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
-                  <td class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
-                  <td class="text-center"><%= product.stock %></td>
-                  <td class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
-                </tr>
-
-                <% end %>
-              </tbody>
-            </table>
-            <% end %>
-          </div>
-          <div class= "store-section">
-            <div class= "title-store-section">
-              <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
-            </div>
-          </div>
-            <% @store.store_reviews.each do |review| %>
-                <%= render "store_reviews/show", store_review: review %>
-            <% end %>
-            <% if @user_stores.include? @store %>
-              <%= render "store_reviews/form", store: @store, store_review: @store_review %>
-            <% end %>
-          </div>
-          <div class= "store-section">
-            <div class= "title-store-section">
-              <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
-            </div>
-              <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
-              <p><strong>Website: </strong><%= @store.website %></p>
-              <p><strong>Phone number: </strong><%= @store.phone %></p>
-              <p><strong>Address: </strong><%= @store.address %></p>
-          </div>
-          <!-- map -->
-          <div class= "store-section">
-            <div class= "title-store-section">
-              <span class="content-title-store-section"><h4 id="location">Location</h4></span>
-            </div>
-            <p>This store is located <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %></strong> km away from your current location</p>
-            <p><div
-              id="map"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
-            </div></p>
+            </thead>
+            <tbody>
+              <% cat.products.where(store: @store).each do |product| %>
+              <tr>
+                <td style="font-size: 18px"><%= product.name %></td>
+                <td class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
+                <td class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
+                <td class="text-center"><%= product.stock %></td>
+                <td class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <% end %>
+        </div>
+        <div class= "store-section">
+          <div class= "title-store-section">
+            <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
           </div>
         </div>
-      ​</div>
-      ​
-      ​
-  ​
+        <% @store.store_reviews.each do |review| %>
+        <%= render "store_reviews/show", store_review: review %>
+        <% end %>
+        <% if @user_stores.include? @store %>
+        <%= render "store_reviews/form", store: @store, store_review: @store_review %>
+        <% end %>
+      </div>
+      <div class= "store-section">
+        <div class= "title-store-section">
+          <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
+        </div>
+        <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
+        <p><strong>Website: </strong><%= @store.website %></p>
+        <p><strong>Phone number: </strong><%= @store.phone %></p>
+        <p><strong>Address: </strong><%= @store.address %></p>
+      </div>
+      <!-- map -->
+      <div class= "store-section">
+        <div class= "title-store-section">
+          <span class="content-title-store-section"><h4 id="location">Location</h4></span>
+        </div>
+        <p>This store is located <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %></strong> km away from your current location</p>
+        <p><div
+          id="map"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
+        </div></p>
+      </div>
+    </div>
+    <!-- ​CART -->
 
-
-      <!-- ​CART -->
-      <div class="container col-3" id="container-sticky">
-
+    <div class="container col-3" id="container-sticky">
       ​<%# unless @store.is_owner?(current_user) %>
       <% if current_user.present? %>
       <div class="row" id="center-content">
@@ -199,12 +187,13 @@
       </div>
     </div>
     <% end %>
-  </div>
-
-
+  ​</div>
+</div>
 
   <!--Carousel Wrapper-->
-  <div class="container-getlocal">
+
+  <div class="container">
+    <div class="container-getlocal">
     <h4 style="color:orange">Other GetLocal stores you might like:</h4>
     <!--Carousel Wrapper-->
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -250,8 +239,6 @@
         <% end %>
       </div>
     </div>
-
-  </div>
-  <!--/.Carousel Wrapper-->
+</div>
 </div>
 </div>
