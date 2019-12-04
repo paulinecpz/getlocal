@@ -106,6 +106,19 @@ puts("creating stores and users")
 
 
 
+
+Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso, Porto", description:Faker::Restaurant.description, website: "www.canela&maça.pt", phone:"+351 221 245 149", longitude: 41.146525, latitude: -8.603935, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Portus Sabor", address: "Av. dos Aliados 166, Porto", description:Faker::Restaurant.description, website: "www.portusabor.pt", phone:"+351 221 478 198", longitude: 41.148435, latitude: -8.610531, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Frutaria do Bairro", address: "R. Formosa 300, Porto", description:Faker::Restaurant.description, website: "www.frutariadobairro.pt", phone:"+351 221 235 872", longitude: 41.148507, latitude: -8.606743, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Mercado da Ribeira", address: "R. de Cima do Muro 42, Porto", description:Faker::Restaurant.description, website: "www.mercadoribeiro.pt", phone:"+351 221 456 343", longitude: 41.140650, latitude: -8.611787, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Mercearia do Amial", address: "R. do Amial 926, Porto", description:Faker::Restaurant.description, website: "www.frutadoamial.pt", phone:"+351 221 785 772", longitude: 41.181012, latitude: -8.613582, user:User.all.sample, remote_photo_url: pictures_array.sample)
+
+Store.create(name: "Mercearia Santa Catarina", address: "Calçada do Combro 38G, Lisboa", description:Faker::Restaurant.description, website: "www.merceariascatarina.pt", phone:"+351 213 487 133", longitude: 38.711059, latitude: -9.146973, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Mini Mercado da Teresa", address: "Travessa da Água da Flor 28, Lisboa", description:Faker::Restaurant.description, website: "www.mercadodateresa.pt", phone:"+351 219 951 882", longitude: 38.713630, latitude: -9.144639, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Canto Saudavel", address: "Rua Limoeiro 10, Lisboa", description:Faker::Restaurant.description, website: "www.cantosaudavel.pt", phone:"+351 214 232 431", longitude: 38.710966, latitude: -9.130706, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 4A, Lisboa", description:Faker::Restaurant.description, website: "www.merceariacriativa.pt", phone:"+351 216 458 943", longitude: 38.737902, latitude: -9.134420, user:User.all.sample, remote_photo_url: pictures_array.sample)
+Store.create(name: "WineOff", address: "R. Luís de Camões 132, Lisboa", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", longitude: 38.705627, latitude: -9.184207, user:User.all.sample, remote_photo_url: pictures_array.sample)
+
 Store.create(name: "Finer Foods", address:"North End, Camden Town, London", description:"We only sell fresh products with great quality, at affordable prices. All our products come from the local producers in the region", website:"www.Finer-Foods.com", phone:"+44 18 7153 1234", longitude: -0.193160, latitude: 51.564550, user:User.all.sample)
 Store.create(name: "Goodness Grocery", address: "North Kensington, Kensington, London", description:Faker::Restaurant.description, website:"www.Goodness-Grocery.com", phone:"+44 20 4123 7392", longitude: -0.216220, latitude: 51.518080, user:User.all.sample)
 Store.create(name: "Fast And Fresh", address: "Notting Hill, Kensington, London", description:Faker::Restaurant.description, website: "www.fastNfresh.com", phone:"+44 22 0284 1473", longitude: -0.203880, latitude: 51.513120, user:User.all.sample)
@@ -129,6 +142,7 @@ Store.create(name: "El comida Stores", address: "Pl. Virgen Blanca 35, Barcelona
 Store.create(name: "Food Plaza", address: "C/ Benito Guinea 56, Barcelona", description:Faker::Restaurant.description, website: "www.FoodPlaza.es", phone:"+34 57 63 84 75 04", longitude: 2.159592, latitude: 41.400347, user:User.all.sample)
 Store.create(name: "Mis verduras", address: "Cercas Bajas 17, Barcelona", description:Faker::Restaurant.description, website: "www.mis-verduras.es", phone:"+34 94 96 38 09 13", longitude: 2.159592, latitude: 41.400347, user:User.all.sample)
 Store.create(name: "El Mercado",address: "Plazuela Do Porto 6, Barcelona", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", longitude: 2.142991, latitude: 41.411079, user:User.all.sample)
+
 
 
 pictures_array.each do | picture |
