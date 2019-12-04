@@ -172,24 +172,30 @@
               </thead>
               <tbody>
                 <%= simple_form_for @order do |f| %>
-                <% current_user.product_orders.each do |item| %>
-                <% if current_user.product_orders.present? %>
-                <tr>
-                  <td class="col-3"><%= item.product.name %></td>
-                  <td class="col-2"><input class="form-control" type="text" value="<%= item.quantity %>" /></td>
-                  <td class="text-right col-3"><%= (item.product.price - (item.product.price*item.product.discount)).round(2) %>€</td>
-                  <td class="text-center col-4"><%= link_to '❌', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
-                </tr>
-                <%= f.hidden_field :product_order_ids, multiple: true , value: item.id %>
-                <% else %>
-                <tr>
-                  <td class="col-3"><p>Your cart is empty</p></td>
-                </tr>
-                <% end %>
+                  <% if current_user.product_orders.any? %>
+                    <% current_user.product_orders.each do |item| %>
+                      <tr>
+                        <td><%= item.product.name %></td>
+                          <div class="div-minusplus">
+                            <td>
+                          <%= link_to '-', product_order_path(item, direction: :down), method: :patch, id: :minusplus%>
+                          <%= item.quantity %>
+                          <%= link_to '+', product_order_path(item, direction: :up), method: :patch, id: :minusplus%>
+                          </td>
+                        </div>
+                        <td class="text-right"><%= (item.product.price - (item.product.price*item.product.discount)).round(2) %>€</td>
+                        <td class="text-center"><%= link_to '❌', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
+                      </tr>
+                      <%= f.hidden_field :product_order_ids, multiple: true , value: item.id %>
+                    <% end %>
+                  <% else %>
+                    <tr>
+                      <td colspan="4"><p class="text-center">Your cart is empty</p></td>
+                    </tr>
                 <% end %>
               </tbody>
             </table>
-            <button class="btn-block btn-success" id="checkout-button"><%= f.submit %></button>
+              <%= f.submit class: "btn-block btn-success btn", id: 'checkout-button' %>
             <% end %>
             <%#= link_to 'Checkout', orders_path, class: 'btn btn-outline-success', method: :post %>
           </div>

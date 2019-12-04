@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :product_orders, only: [:update]
+
   get "dashboard", to: "pages#dashboard"
 
   namespace :store_manager do
