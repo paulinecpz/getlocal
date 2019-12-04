@@ -4,8 +4,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 ​
-​<div class ="container">
-  ​<div class="container-getlocal" id="container-flex">
+​<div class ="container-getlocal">
+  ​<div class="container-inside-getlocal" id="container-flex">
     <div class="products">
       <h2>- <%= @store.name.capitalize %> -
       <% if @store.is_owner?(current_user) %>
@@ -158,7 +158,7 @@
       ​<%# unless @store.is_owner?(current_user) %>
       <% if current_user.present? %>
       <div class="row" id="center-content">
-        <div class="col-13 ml-3">
+        <div class="col-12 ml-3">
           <div class="table-responsive">
             <table class="table table-striped">
               <h3 class="text-center" style ="color:green"><strong>Your Cart</strong></h3>
@@ -177,7 +177,7 @@
                       <tr>
                         <td><%= item.product.name %></td>
                           <div class="div-minusplus">
-                            <td>
+                            <td class="text-center">
                           <%= link_to '-', product_order_path(item, direction: :down), method: :patch, id: :minusplus%>
                           <%= item.quantity %>
                           <%= link_to '+', product_order_path(item, direction: :up), method: :patch, id: :minusplus%>
@@ -208,9 +208,9 @@
 
   <!--Carousel Wrapper-->
 
-  <div class="container" style="padding-left:0">
-    <div class="container-getlocal">
-    <h4 style="color:orange">Other GetLocal stores you might like:</h4>
+  <div class="container-getlocal">
+<!--     <div class="container-getlocal">
+ -->    <h4 style="color:orange">Other GetLocal stores you might like:</h4>
     <!--Carousel Wrapper-->
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
       <!--Controls-->
@@ -255,6 +255,6 @@
         <% end %>
       </div>
     </div>
-</div>
-</div>
+<!-- </div>
+ --></div>
 </div>

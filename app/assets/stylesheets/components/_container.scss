@@ -1,8 +1,15 @@
-.container-getlocal {
+.container-getlocal{
   background-color: white;
-   width: 1100px;
-  margin: 0;
-  padding: 10px 30px;
+   width: 1200px;
+  margin: auto;
+  padding: 20px 20px;
+}
+
+.container-inside-getlocal {
+  background-color: white;
+   width: 1200px;
+  margin: auto;
+  padding: 0px 0px;
 }
 
 .container-getlocal h2{
@@ -20,7 +27,9 @@
 
 #container-flex{
   display: flex;
-  width: 1100px;
+  width: 1160px;
+  padding: 0px;
+
 }
 
 #container-sticky{
@@ -34,4 +43,9 @@
   margin-top: 70px;
   margin: 0;
   padding: 0;
+}
+
+#bigger-container{
+  width: 1300px;
+
 }
