@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
     quantity = 0
     create_product_orders
     current_user.product_orders.each do |item|
+      item.product.discount = 0 if item.product.discount.blank?
       final_price = (item.product.price - (item.product.price * item.product.discount))
       amount += final_price
       quantity += item.quantity
