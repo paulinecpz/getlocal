@@ -141,9 +141,9 @@
         </div>
         <p><strong>Address: </strong><%= @store.address %></p>
         <% if @store.distance_to([38.736946, -9.142685]).to_i < 10 %>
-          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km </strong>away from your current location</p>
-        <% else %>
-          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km </strong>away from your current location</p>
+          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(1) %> km </strong>away from your current location</p>
+        <% else %>  
+          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %> km </strong>away from your current location</p>
         <% end %>
         <p><div
           id="map"

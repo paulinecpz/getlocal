@@ -68,7 +68,7 @@ font-size: 20px
 .cards-home {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 
@@ -160,6 +160,7 @@ font-size: 20px
 
 .mb-4:hover .card-body a{
   color:white;
+  font-size: 20px
 }
 // .mb-4:hover .selection-store-card{
 //   height: 150px
@@ -168,6 +169,7 @@ font-size: 20px
 .container-home{
   width: 1100px;
   margin: auto;
+  margin-bottom:60px
 }
 
 
@@ -210,10 +212,12 @@ a:hover {
   border-color: orange;
 }
 
-.my-4 > h3{
+.my-4 > h4{
   color: green;
-  font-size: 25px
+  font-size: 25px;
+  margin-top: 30px
 }
+
 
 .btn-localisation {
   border: 2px solid orange;

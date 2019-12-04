@@ -41,8 +41,11 @@
           </div>
           <div class= 'distance-orange'>
             <p>⚑</p>
-            <p><%= store.distance_to([38.736946, -9.142685]).to_i %> km</p>
-
+            <% if store.distance_to([38.736946, -9.142685]).to_i < 10 %>
+                <p><%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km</p>
+            <% else %>  
+                <p><%= store.distance_to([38.736946, -9.142685]).to_i %> km</p>
+            <% end %>
           </div>
         </div>
       </div>
