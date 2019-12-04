@@ -11,7 +11,7 @@ class PagesController < ApplicationController
     @stores_london = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where("address ILIKE ?", "%london")
     @stores_barcelona = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where("address ILIKE ?", "%Barcelona")
 
-  	store_from_vegetable_ids = Product.where(category_id: 91).pluck(:store_id)
+  	store_from_vegetable_ids = Product.where(category_id: 61).pluck(:store_id)
     @stores_vegetables = @stores.where(id: store_from_vegetable_ids)
 
     store_from_fruits_ids = Product.where(category_id: 92).pluck(:store_id)
