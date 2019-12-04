@@ -87,21 +87,25 @@
             </tr>
             <thead>
               <tr>
-                <th scope="col" >Product</th>
-                <th scope="col" class="text-center">Price</th>
-                <th scope="col" class="text-center">GetLocal Discount</th>
-                <th scope="col" class="text-center">Stock</th>
-                <th scope="col" class="text-center">➕</th>
+                <th scope="col-3" >Product</th>
+                <th scope="col-2" class="text-center">Price</th>
+                <th scope="col-3" class="text-center">GetLocal Discount</th>
+                <th scope="col-1" class="text-center">Stock</th>
+                <th scope="col-3" class="text-center">➕</th>
               </tr>
             </thead>
             <tbody>
               <% cat.products.where(store: @store).each do |product| %>
               <tr>
-                <td style="font-size: 18px"><%= product.name %></td>
-                <td class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
-                <td class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
-                <td class="text-center"><%= product.stock %></td>
-                <td class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
+                <td scope="col-3" style="font-size: 18px"><%= product.name %></td>
+                <td scope="col-2" class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
+                <% if product.discount.blank? %>
+                  <td scope="col-3" class="text-center" style="color: orange"></td>
+                <% else %>
+                  <td scope="col-3" class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
+                <% end %>
+                <td scope="col-1" class="text-center"><%= product.stock %></td>
+                <td scope="col-3" class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
               </tr>
               <% end %>
             </tbody>
@@ -127,14 +131,18 @@
         <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
         <p><strong>Website: </strong><%= @store.website %></p>
         <p><strong>Phone number: </strong><%= @store.phone %></p>
-        <p><strong>Address: </strong><%= @store.address %></p>
       </div>
       <!-- map -->
       <div class= "store-section">
         <div class= "title-store-section">
           <span class="content-title-store-section"><h4 id="location">Location</h4></span>
         </div>
-        <p>This store is located <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %></strong> km away from your current location</p>
+        <p><strong>Address: </strong><%= @store.address %></p>
+        <% if @store.distance_to([38.736946, -9.142685]).to_i < 10 %>
+          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km </strong>away from your current location</p>
+        <% else %>  
+          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km </strong>away from your current location</p>
+        <% end %>
         <p><div
           id="map"
           data-markers="<%= @markers.to_json %>"
@@ -192,7 +200,7 @@
 
   <!--Carousel Wrapper-->
 
-  <div class="container">
+  <div class="container" style="padding-left:0">
     <div class="container-getlocal">
     <h4 style="color:orange">Other GetLocal stores you might like:</h4>
     <!--Carousel Wrapper-->
