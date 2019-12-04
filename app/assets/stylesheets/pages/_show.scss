@@ -288,18 +288,15 @@ h4:after {
 
 }
 
-.btn-minusplus {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+.minusplus {
+  display: flex;
   text-align: center;
   vertical-align: center;
-}
+  justify-content: space-between;
+  align-items: center;
 
-.div-minusplus {
-  display: flex;
-}
-
-#minusplus{
-text-align: center;
+  .minus, .plus {
+    font-size: 2em;
+    padding: 2px;
+  }
 }

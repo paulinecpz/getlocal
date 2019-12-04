@@ -1,0 +1,2 @@
+var container = document.getElementById('product_order_<%= @product_order.id %>');
+container.innerHTML = '<%= j render("product_orders/product_order_row", product_order: @product_order) %>';
