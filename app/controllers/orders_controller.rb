@@ -19,10 +19,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # @order = Order.new
-    @order = Order.find(params[:id])
-    current_user.order = @order
-
+    @order = Order.new
+    @order.user = current_user
+    # @order = Order.find(params[:id])
+    # current_user.order = @order
     amount = 0
     quantity = 0
     create_product_orders
@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
     @order.quantity = quantity
 
     @order.amount = amount
+
     @order.save
     authorize @order
     # @order = Order.find(params[:order_id])

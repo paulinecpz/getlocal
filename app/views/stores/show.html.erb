@@ -104,14 +104,15 @@
                 <% else %>
                   <td scope="col-3" class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
                   <% end %>
-                <% end %>
+
                 <td scope="col-1" class="text-center"><%= product.stock %></td>
                 <td scope="col-3" class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
               </tr>
               <% end %>
+              <% end %>
             </tbody>
           </table>
-          <% end %>
+
         </div>
         <div class= "store-section">
           <div class= "title-store-section">
