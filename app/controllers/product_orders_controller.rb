@@ -21,8 +21,6 @@ class ProductOrdersController < ApplicationController
     else
       @product_order.decrement!(:quantity)
     end
-
-    redirect_to @product_order.product.store
   end
 
   def create

@@ -142,7 +142,7 @@
         <p><strong>Address: </strong><%= @store.address %></p>
         <% if @store.distance_to([38.736946, -9.142685]).to_i < 10 %>
           <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(1) %> km </strong>away from your current location</p>
-        <% else %>  
+        <% else %>
           <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %> km </strong>away from your current location</p>
         <% end %>
         <p><div
@@ -174,17 +174,8 @@
                 <%= simple_form_for @order do |f| %>
                   <% if current_user.product_orders.any? %>
                     <% current_user.product_orders.each do |item| %>
-                      <tr>
-                        <td><%= item.product.name %></td>
-                          <div class="div-minusplus">
-                            <td>
-                          <%= link_to '-', product_order_path(item, direction: :down), method: :patch, id: :minusplus%>
-                          <%= item.quantity %>
-                          <%= link_to '+', product_order_path(item, direction: :up), method: :patch, id: :minusplus%>
-                          </td>
-                        </div>
-                        <td class="text-right"><%= (item.product.price - (item.product.price*item.product.discount)).round(2) %>€</td>
-                        <td class="text-center"><%= link_to '❌', store_product_product_order_path(@store, item.product, item), method: :delete %></td>
+                      <tr id="product_order_<%= item.id %>">
+                        <%= render 'product_orders/product_order_row', product_order: item %>
                       </tr>
                       <%= f.hidden_field :product_order_ids, multiple: true , value: item.id %>
                     <% end %>

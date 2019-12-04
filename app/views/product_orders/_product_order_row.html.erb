@@ -1,0 +1,16 @@
+<td>
+  <%= product_order.product.name %>
+</td>
+<td>
+  <div class="minusplus">
+    <%= link_to '-', product_order_path(product_order, direction: :down), method: :patch, remote: true, class: 'minus' %>
+    <%= product_order.quantity %>
+    <%= link_to '+', product_order_path(product_order, direction: :up), method: :patch, remote: true, class: 'plus' %>
+  </div>
+</td>
+<td class="text-right">
+  <%= total_price(product_order) %>€
+</td>
+<td class="text-center">
+  <%= link_to '❌', store_product_product_order_path(product_order.product.store, product_order.product, product_order), method: :delete %>
+</td>
