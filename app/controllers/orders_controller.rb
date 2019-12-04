@@ -19,14 +19,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new
+    #@order = Order.new
     @order.user = current_user
 
     amount = 0
     quantity = 0
     create_product_orders
     current_user.product_orders.each do |item|
-      final_price = (item.product.price * item.product.discount)*100
+      final_price = (item.product.price - (item.product.price * item.product.discount))
       amount += final_price
       quantity += item.quantity
     end
