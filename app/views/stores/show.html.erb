@@ -154,6 +154,8 @@
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
         </div></p>
+        <div class=" text-center"><%= link_to "Get directions", "http://maps.google.com/maps?q=#{@store.address}",target: "_blank",class:"btn btn-success text-center"%>
+        </div>
       </div>
     </div>
     <!-- ​CART -->
@@ -226,7 +228,7 @@
       <!--Slides-->
       <div class="carousel-inner" role="listbox" >
         <!--First slide-->
-        <% @stores.each_slice(4).with_index do |slice, index| %>
+        <% @stores_near.each_slice(4).with_index do |slice, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
           <div class="row" >
             <% slice.each do |store| %>
@@ -241,9 +243,8 @@
               <div class="card-store-infos">
                 <div>
                   <h4><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h4>
-                  <p><%= store.address %></p>
-                  <p><%= store.distance_to([38.736946, -9.142685]).to_i %>km </p>
-                </div>
+                  <p><%= store.address %><strong style="color:orange"> (<%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km away)</strong></p>
+              </div>
               </div>
             </div>
             <% end %>
