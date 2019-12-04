@@ -6,5 +6,4 @@ class Order < ApplicationRecord
   has_one :review
 
   monetize :amount_cents
-
 end
