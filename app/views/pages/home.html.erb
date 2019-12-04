@@ -19,6 +19,7 @@
 
 </div>
 
+<div class="container-home" id="big-container-home">
 
 <div class="container-home">
     <h2 class="text-center"> Get local products in your town:</h2>
@@ -859,6 +860,7 @@
         <% end %>
 
       </div>
+      <br>
       <!--/.Slides-->
       <%= link_to "See all the stores in Lyon", :controller => "stores", :query => "lyon" , class:"btn-localisation"%>
 
@@ -871,4 +873,5 @@
 
     <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
+</div>
 </div>
