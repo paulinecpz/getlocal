@@ -100,10 +100,9 @@
                 <td scope="col-3" style="font-size: 18px"><%= product.name %></td>
                 <td scope="col-2" class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
                 <% if product.discount.blank? %>
+                <% product.discount = 0 %>
                   <td scope="col-3" class="text-center" style="color: orange"></td>
                 <% else %>
-                  <% if product.discount.blank? %>
-                  <% product.discount = 0 %>
                   <td scope="col-3" class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
                   <% end %>
                 <% end %>
