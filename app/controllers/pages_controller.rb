@@ -17,8 +17,9 @@ class PagesController < ApplicationController
     store_from_fruits_ids = Product.where(category_id: 92).pluck(:store_id)
     @stores_fruits = @stores.where(id: store_from_fruits_ids)
 
+    @stores_best_rated = policy_scope(Store).order(:created_at)
 
-    @stores_best_rated = policy_scope(Store).where(stars: 5)
+    # @stores_best_rated = policy_scope(Store).where(stars: 5)
   end
 
   def dashboard
