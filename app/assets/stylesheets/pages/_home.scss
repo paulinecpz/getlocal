@@ -87,12 +87,13 @@ font-size: 20px
 }
 
 #card-home-store-section{
-  height: 380px
+  height: 380px;
 
 }
 
 .selection-store-card{
   height: 310px
+
 }
 
 .selection-store-card > img{
@@ -165,6 +166,15 @@ font-size: 20px
 // .mb-4:hover .selection-store-card{
 //   height: 150px
 // }
+
+.mb-4:hover .card-body{
+  // font-size: 25px;
+  // background-color: white;
+  background-color: orange;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px
+
+}
 
 #big-container-home{
 background-color: white;
@@ -273,4 +283,30 @@ a:hover {
 .my-4 h4:after {
   left: 0.5em;
   margin-right: -50%;
+}
+
+
+.orange-line:before,
+.orange-line:after {
+  background-color: orange;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.orange-line:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.orange-line:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.orange {
+  color:orange
 }

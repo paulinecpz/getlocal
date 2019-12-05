@@ -291,6 +291,27 @@ h4:after {
   margin-right: -50%;
 }
 
+
+.orange-line:before,
+.orange-line:after {
+  background-color: orange;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.orange-line:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.orange-line:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
 .container-getlocal h2{
   overflow: hidden;
   text-align: center;
