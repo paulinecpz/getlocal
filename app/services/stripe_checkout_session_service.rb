@@ -2,6 +2,6 @@ class StripeCheckoutSessionService
   def call(event)
     order = Order.find_by(checkout_session_id: event.data.object.id)
     order.update(state: 'paid')
-    order.user.cart_product_orders.update_all(order: order)
+    order.user.cart_product_orders.update_all(order_id: order.id)
   end
 end
