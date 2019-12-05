@@ -9,5 +9,7 @@
   <div class="card-map-infos">
     <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
     <p><%= store.address %></p>
+    <p><strong><% store.categories.uniq.each_with_index do |cat, index| %>
+    <%= " / " unless index == 0%><%= cat.name %><% end %></strong></p>
   </div>
 </div>

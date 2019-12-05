@@ -38,7 +38,7 @@
 }
 
 .card-map > img {
-  height: 70%;
+  height: 60%;
   width: 100%;
   object-fit: cover;
   border-top-radius: 20px
@@ -50,7 +50,9 @@
   position: relative;
 }
 
-
+.card-map-infos p {
+  margin: 0;
+}
 .card-map-infos h2 {
   font-size: 16px;
   font-weight: bold;

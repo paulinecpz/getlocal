@@ -219,7 +219,7 @@ store =Store.create(name: "Marché Alimentaire", address: "86-88 Boulevard Yves 
 
  # Barcelona
 
-store = Store.create(name: "Supermercado Fino", address:"Gran Via de les Corts Catalanes, 749, Barcelona, Spain", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", user:User.all.sample)
+store = Store.create(name: "Supermercado Fino", address:"Carrer del Taulat, 81, 08005 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
