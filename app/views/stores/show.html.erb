@@ -126,9 +126,7 @@
         <% @store.store_reviews.each do |review| %>
         <%= render "store_reviews/show", store_review: review %>
         <% end %>
-        <% if @user_stores.include? @store %>
         <%= render "store_reviews/form", store: @store, store_review: @store_review %>
-        <% end %>
       </div>
       <div class= "store-section">
         <div class= "title-store-section">
