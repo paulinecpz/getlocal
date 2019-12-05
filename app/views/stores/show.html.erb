@@ -4,34 +4,31 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 ​
-
 <div class="background-container">
-​<div class ="container-getlocal">
-  <h2 class="text-center" id="store-title"><%= @store.name.capitalize %></h2>
-
-  ​<div class="container-inside-getlocal" id="container-flex">
-
-    <div class="products">
-      <% if @store.is_owner?(current_user) %>
-      <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
-      <% end %>
-      </h2>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <% if @store.pictures.any? %>  ​
+  ​<div class ="container-getlocal">
+    <h2 class="text-center" id="store-title"><%= @store.name.capitalize %></h2>
+    ​<div class="container-inside-getlocal" id="container-flex">
+      <div class="products">
+        <% if @store.is_owner?(current_user) %>
+        <%= link_to 'Manage', store_manager_store_path(@store), class: "btn btn-outline-success" %>
+        <% end %>
+        </h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <% if @store.pictures.any? %>  ​
             <% @store.pictures.each_with_index do |picture, index| %>
-              <div class="carousel-item <%= 'active' if index == 0 %>" id="carousel-item-show<%= index + 1%>">
-                <div class="d-block w-100">
-                  <%= cl_image_tag(picture.photo) %>
-                </div>
+            <div class="carousel-item <%= 'active' if index == 0 %>" id="carousel-item-show<%= index + 1%>">
+              <div class="d-block w-100">
+                <%= cl_image_tag(picture.photo) %>
               </div>
+            </div>
             <% end %>
-          <% else %>
+            <% else %>
             <div class="carousel-item" id="carousel-item-show1">
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", class: "d-block w-100"%>
             </div>
@@ -41,78 +38,56 @@
             <div class="carousel-item" id="carousel-item-show3">
               <img src="https://images.unsplash.com/photo-1485637701894-09ad422f6de6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1320&q=80" class="d-block w-100" alt="...">
             </div>
-          <% end %>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      ​
-      ​
-      ​
-      <!-- nav bar infos -->
-      <div id="navbar-product-infos">
-        <nav id="navbar-example2" class="navbar navbar-light bg-light">
-          <ul class="nav nav-pills">
-            <div id="titles-product-infos">
-              <li class="nav-item">
-                <a class="nav-link  link-green" href="#products">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#reviews">Reviews</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#more-info">Information</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"style="background-color: transparent;" href="#location">Location</a>
-              </li>
-            </div>
-          </ul>
-        </nav>
-      </div>
-      ​     ​
-      ​
-      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-        <div class= "store-section">
-          <div class= "title-store-section">
-            <span class="content-title-store-section"><h4 id="products">Products Available</h4></span>
+            <% end %>
           </div>
-          <% @store.categories.uniq.each do |cat| %>
-          <table class="table" id="product-table">
-            <tr>
-              <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cat.url %>')">
-                <%= cat.name %>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        ​
+        ​
+        ​
+        <!-- nav bar infos -->
+        <div id="navbar-product-infos">
+          <nav id="navbar-example2" class="navbar navbar-light bg-light">
+            <ul class="nav nav-pills">
+              <div id="titles-product-infos">
+                <li class="nav-item">
+                  <a class="nav-link  link-green" href="#products">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#reviews">Reviews</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#more-info">Information</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"style="background-color: transparent;" href="#location">Location</a>
+                </li>
               </div>
-            </tr>
-            <thead>
+            </ul>
+          </nav>
+        </div>
+        ​     ​
+        ​
+        <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+          <div class= "store-section">
+            <div class= "title-store-section">
+              <span class="content-title-store-section"><h4 id="products">Products Available</h4></span>
+            </div>
+            <% @store.categories.uniq.each do |cat| %>
+            <table class="table" id="product-table">
               <tr>
-                <th scope="col-3" >Product</th>
-                <th scope="col-2" class="text-center">Price</th>
-                <th scope="col-3" class="text-center">GetLocal Discount</th>
-                <th scope="col-1" class="text-center">Stock</th>
-                <th scope="col-3" class="text-center">➕</th>
+                <div class="card-category-products" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cat.url %>')">
+                  <%= cat.name %>
+                </div>
               </tr>
-            </thead>
-            <tbody>
-              <% cat.products.where(store: @store).each do |product| %>
-              <tr>
-                <td scope="col-3" style="font-size: 18px"><%= product.name.capitalize %></td>
-                <td scope="col-2" class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
-                <% if product.discount.blank? %>
-                  <td scope="col-3" class="text-center" style="color: orange"></td>
-                <% else %>
-                  <td scope="col-3" class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
-                  <% end %>
 
-                <td scope="col-1" class="text-center"><%= product.stock %></td>
-                <td scope="col-3" class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
-              </tr>
               <% end %>
               <% end %>
             </tbody>
@@ -176,35 +151,33 @@
           <div class="table-responsive">
             <table class="table table-striped">
               <h3 class="text-center" style ="color:green"><strong>Your Cart</strong></h3>
+
               <thead>
                 <tr>
-                  <th class="col-3">Product</th>
-                  <th class="text-center col-2">Quantity</th>
-                  <th class="text-right col-3">Price</th>
-                  <th class="text-center col-4"> </th>
+                  <th scope="col-3" >Product</th>
+                  <th scope="col-2" class="text-center">Price</th>
+                  <th scope="col-3" class="text-center">GetLocal Discount</th>
+                  <th scope="col-1" class="text-center">Stock</th>
+                  <th scope="col-3" class="text-center">➕</th>
                 </tr>
               </thead>
               <tbody>
-                <%= simple_form_for @order do |f| %>
-                  <% if current_user.product_orders.any? %>
-                    <% current_user.product_orders.each do |item| %>
-
-                      <tr id="product_order_<%= item.id %>">
-                        <%= render 'product_orders/product_order_row', product_order: item %>
-
-                      </tr>
-                      <%= f.hidden_field :product_order_ids, multiple: true , value: item.id %>
-                    <% end %>
+                <% cat.products.where(store: @store).each do |product| %>
+                <tr>
+                  <td scope="col-3" style="font-size: 18px"><%= product.name.capitalize %></td>
+                  <td scope="col-2" class="text-center"><%= humanized_money_with_symbol(product.price)%></td>
+                  <% if product.discount.blank? %>
+                  <td scope="col-3" class="text-center" style="color: orange"></td>
                   <% else %>
-                    <tr>
-                      <td colspan="4"><p class="text-center">Your cart is empty</p></td>
-                    </tr>
+                  <td scope="col-3" class="text-center" style="color: orange"><strong>- <%= (product.discount*100).round(0)%> %</strong></td>
+                  <% end %>
+                  <td scope="col-1" class="text-center"><%= product.stock %></td>
+                  <td scope="col-3" class="text-center"><%= link_to "Add to my cart", store_product_product_orders_path(@store, product), method: :post ,class:"btn btn-success"%></td>
+                </tr>
+                <% end %>
                 <% end %>
               </tbody>
             </table>
-              <%= f.submit class: "btn-block btn-success btn", id: 'checkout-button', value: "Checkout"%>
-            <% end %>
-            <%#= link_to 'Checkout', orders_path, class: 'btn btn-outline-success', method: :post %>
           </div>
         </div>
       </div>
@@ -266,24 +239,198 @@
               <% if cl_image_tag store.pictures.present? %>
               <% store.pictures.each do |picture| %>
               <%= cl_image_tag(picture.photo) %>
-              <% end %>
-              <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-              <% end %>
-              <div class="card-store-infos">
-                <div>
-                  <h4><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h4>
-                  <p><%= store.address %><strong style="color:orange"> (<%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km away)</strong></p>
-              </div>
-              </div>
+
+          <div class= "store-section">
+            <div class= "title-store-section">
+              <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
             </div>
+            <div id="reviews-show">
+              <% @store.store_reviews.each do |review| %>
+              <%= render "store_reviews/show", store_review: review %>
+
+              <% end %>
+            </div>
+            <% if current_user.present? %>
+            <%= render "store_reviews/form", store: @store, store_review: @store_review %>
             <% end %>
           </div>
-        </div>
-        <% end %>
+          <div class= "store-section">
+            <div class= "title-store-section">
+              <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
+            </div>
+            <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
+            <p><strong>Website: </strong><%= @store.website %></p>
+            <p><strong>Phone number: </strong><%= @store.phone %></p>
+            <p><strong>Schedule: </strong></p>
+            <!--Schedule Table-->
+            <table class="table table-hover table-fixed" id="schedule">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Opening hour</th>
+                  <th>Closing hour</th>
+                </tr>
+                <tbody>
+                  <tr>
+                    <th scope="row">Monday</th>
+                    <td>10am</td>
+                    <td>20pm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tuesday</th>
+                    <td>10am</td>
+                    <td>20pm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Wednesday</th>
+                    <td>10am</td>
+                    <td>20pm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Thursday</th>
+                    <td>10am</td>
+                    <td>20pm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Friday</th>
+                    <td>10am</td>
+                    <td>20pm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Saturday</th>
+                    <td>10am</td>
+                    <td>18pm</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Sunday</th>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                  </tr>
+                </tbody>
+              </thead>
+            </table>
+          </div>
+          <div class= "store-section">
+            <div class= "title-store-section">
+              <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
+            </div>
+            <!-- map -->
+            <div class= "store-section">
+              <div class= "title-store-section">
+                <span class="content-title-store-section"><h4 id="location">Location</h4></span>
+              </div>
+              <p><strong>Address: </strong><%= @store.address %></p>
+              <% if @store.distance_to([38.736946, -9.142685]).to_i < 10 %>
+              <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(1) %> km </strong>away from your current location</p>
+              <% else %>
+              <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %> km </strong>away from your current location</p>
+              <% end %>
+              <p><div
+                id="map"
+                data-markers="<%= @markers.to_json %>"
+                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
+              </div></p>
+              <div class=" text-center"><%= link_to "Get directions", "http://maps.google.com/maps?q=#{@store.address}",target: "_blank",class:"btn btn-success text-center"%>
+              </div>
+            </div>
+          </div>
+          <!-- ​CART -->
+          <div class="container col-3" id="container-sticky">
+            ​<%# unless @store.is_owner?(current_user) %>
+            <% if current_user.present? %>
+            <div class="row" id="center-content">
+              <div class="col-12 ml-3">
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <h3 class="text-center" style ="color:green"><strong>Your Cart</strong></h3>
+                    <thead>
+                      <tr>
+                        <th class="col-3">Product</th>
+                        <th class="text-center col-2">Quantity</th>
+                        <th class="text-right col-3">Price</th>
+                        <th class="text-center col-4"> </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <%= simple_form_for @order do |f| %>
+                      <% if current_user.product_orders.any? %>
+                      <% current_user.product_orders.each do |item| %>
+                      <tr id="product_order_<%= item.id %>">
+                        <%= render 'product_orders/product_order_row', product_order: item %>
+                      </tr>
+                      <%= f.hidden_field :product_order_ids, multiple: true , value: item.id %>
+                      <% end %>
+                      <% else %>
+                      <tr>
+                        <td colspan="4"><p class="text-center">Your cart is empty</p></td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                  <%= f.submit class: "btn-block btn-success btn", id: 'checkout-button', value: "Checkout"%>
+                  <% end %>
+                  <%#= link_to 'Checkout', orders_path, class: 'btn btn-outline-success', method: :post %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        ​</div>
       </div>
+      <!--Carousel Wrapper-->
+      <br>
+      <div class="container-getlocal">
+        <!--     <div class="container-getlocal">
+          -->    <h4 style="color:orange">Other GetLocal stores you might like:</h4>
+          <!--Carousel Wrapper-->
+          <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+            <!--Controls-->
+            <div class="controls-top">
+              <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+              <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+            </div>
+            <!--/.Controls-->
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+              <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+              <li data-target="#multi-item-example" data-slide-to="1"></li>
+              <li data-target="#multi-item-example" data-slide-to="2"></li>
+            </ol>
+            <!--/.Indicators-->
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox" >
+              <!--First slide-->
+              <% @stores_near.each_slice(4).with_index do |slice, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+                <div class="row" >
+                  <% slice.each do |store| %>
+                  <div class="card-store mb-3 mr-3 ml-3" id="card-store-similar">
+                    <% if cl_image_tag store.pictures.present? %>
+                    <% store.pictures.each do |picture| %>
+                    <%= cl_image_tag(picture.photo) %>
+                    <% end %>
+                    <% else %>
+                    <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+                    <% end %>
+                    <div class="card-store-infos">
+                      <div>
+                        <h4><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h4>
+                        <p><%= store.address %><strong style="color:orange"> (<%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km away)</strong></p>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        <!-- </div>
+      --></div>
+      <br>
     </div>
   </div>
      <br>
 </div>
 </div>
+
