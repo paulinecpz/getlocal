@@ -66,7 +66,7 @@ puts("creating stores and users")
 # veggie
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500012/photo-1542838132-92c53300491e_zq2xn5.jpg"
 
-# 
+#
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/porto_hjxm5j.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/london_awgoc3.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/photo-1563649685437-a79731028cd1_dkrw5z.jpg"
@@ -318,7 +318,7 @@ store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, 
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user:User.all.sample)
+store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
