@@ -16,14 +16,13 @@
             </tr>
           </thead>
           <tbody>
-            <% current_user.products.each do |product| %>
+            <% current_user.product_orders.each do |product_order| %>
             <tr>
-              <td><%= product.name %>-- <%= product.store.name %></td>
-              <td><%= product.product_orders.last.quantity %></td>
-              <td><%= humanized_money_with_symbol(product.price)%></td>
-                <% product.discount = 0 if product.discount.blank? %>
-              <td><%= (product.discount*100).round(0)%> %</td>
-              <td><%= humanized_money_with_symbol product.price - (product.price*product.discount) %></td>
+              <td><%= product_order.product.name %>-- <%= product_order.product.store.name %></td>
+              <td><%= product_order.quantity %></td>
+              <td><%= humanized_money_with_symbol(product_order.product.price)%></td>
+              <td><%= product_order.product.discount.blank? ? 0 : (product_order.product.discount*100).round(0)%> %</td>
+              <td><%= humanized_money_with_symbol(product_order.total_price) %></td>
             </tr>
             <% end %>
           </tbody>

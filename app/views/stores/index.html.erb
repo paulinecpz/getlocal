@@ -12,10 +12,10 @@
           <%= submit_tag "Search", class: "btn btn-success"%>
           <% end %>
           </div>
-          <h3 class= "text-center ml-4">or</h3>
-          <div class="text-center ml-2" id="geolocation">
+<!--           <h3 class= "text-center ml-4">or</h3>
+ -->          <div class="text-center ml-2" id="geolocation">
             <%= form_tag stores_path, method: :get do %>
-            <%= submit_tag "See all the local stores Around You!", class: "btn-localisation" %>
+            <%= submit_tag "Geolocate me!", class: "btn-localisation" %>
             <% end %>
           </div>
         </div>
@@ -38,7 +38,12 @@
           <div>
             <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
             <p><%= store.address %></p>
-          </div>
+
+            <p><strong><% store.categories.uniq.each do |cat| %>
+            <%= "#{cat.name}  "%><% end %></strong></p>
+            
+<!--             <p> <strong><%= store.categories.first.name %></strong></p>
+ -->          </div>
           <div class= 'distance-orange'>
             <p>⚑</p>
             <% if store.distance_to([38.736946, -9.142685]).to_i < 10 %>
@@ -57,8 +62,8 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <h3 class= "text-center">Explore the GetLocal map</h3>
-    </div>
+<!--       <h3 class= "text-center">Explore the GetLocal map</h3>
+ -->    </div>
   </div>
 </div>
 
