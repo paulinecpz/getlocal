@@ -3,65 +3,149 @@
 <head>
   <title>Oops! The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .navbar-lewagon {
+      justify-content: space-between;
+      background: white;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .navbar-lewagon .navbar-collapse {
+      flex-grow: 0;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .navbar-lewagon .navbar-brand img {
+      width: 50px;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    #getlocal {
+      width: 120px;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      // height: 70px;
+      z-index:3;
+    }
+
+    .user-image {
+        width: 100px;
+        height: 100px;
+        display: block;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        align-text: center;
+        text-align: center;
+        margin: 0 40px;
+      }
+
+    #my-orders-navbar {
+      margin-left: 0;
+      text-decoration: none;
+    }
+    .background-container {
+      width: 100%;
+      height: 100%;
+      background: url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80) no-repeat fixed center center ;
+      background-color: rgba(255,255,255,0.2);
+      background-blend-mode: lighten;
+      margin: 0px;
+      padding: 0px;
+      margin-top: -22px;
+
+        }
+
+    .container-getlocal{
+      background-color: white;
+       width: 1200px;
+      margin: auto;
+      padding: 20px 20px;
+      border-radius: 20px;
+      margin-top: 20px
+    }
+
+    .container-inside-getlocal {
+      background-color: white;
+       width: 1200px;
+      margin: auto;
+      padding: 0px 0px;
+
+    }
+
+    .container-getlocal h2{
+      font-size: 38px;
+      font-weight: bold;
+      color: green;
+    }
+
+    .banner-payment {
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      height: 700px;
+    }
+
+    .banner-payment h1 {
+      margin: 0;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 32px;
+      font-weight: bold;
+      padding-top: 60px;
+    }
+    .banner-card-payment {
+      background: white;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 600px;
+      border-radius: 10px;
+
+    }
+    #store-manager-link {
+      color: orange;
+      font-weight: bold;
+      font-size: 20px;
+
+    }
+
+
   </style>
 </head>
+<body>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <a class="navbar-brand" href="#">
+      <img src="https://github.com/paulinecpz/GETLOCAL/blob/master/app/assets/images/logo.jpg?raw=true" />
+  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://wwww.get-local.store">Home</a>
+        </li>
+
+      </ul>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+
+  <div class="banner-payment" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+    <div class="container d-flex justify-content-around">
+      <h1>Oops! It looks like you are lost! (404)<br><a href="https://wwww.get-local.store" id="store-manager-link">Click here to go back to GetLocal</a></h1>
+      <br>
+      </div>
+    </div>
+
+
+</div>
 </body>
 </html>
