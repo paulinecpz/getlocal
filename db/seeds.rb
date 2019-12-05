@@ -496,6 +496,36 @@ fish = ["prawns", "crab", "mussels", "oysters", "scallops", "clams", "tuna", "sa
   # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_fish.sample )
 end
 
+# Fruit
+
+fruit = ["Banana", "Orange", "Pear", "Apple", "Strawberry", "Blackberry", "Pineapple", "Cherry", "Fig", "Lime", "Lemon", "Melon", "Quince", "Blueberry", "Nut", "Peach", "Pomegrenate", "Tangerine",
+ "Grape"]
+40.times do
+   product_fish = Product.create!(name: fruit.sample,
+    price: rand(1.5..4).to_f.round(1),
+    stock: rand(5..20),
+    discount: discount.sample,
+    store: Store.all.sample,
+    category: Category.find_by_name("Fruit")
+    )
+ end
+
+
+# Vegetables
+
+vegetables = ["Carrot", "Eggplant", "Pea", "Pumpkin", "Cress", "Lettuce", "Broccoli", "Rucula", "Spinach", "Cauliflower", "Pepper", "Garlic", "Parsley", "Tomato",
+"Beet", "Ginger", "Cucumber", "Onion", "Coriander", "Potato", "Mint"]
+40.times do
+   product_fish = Product.create!(name: vegetables.sample,
+    price: rand(1.5..4).to_f.round(1),
+    stock: rand(5..20),
+    discount: discount.sample,
+    store: Store.all.sample,
+    category: Category.find_by_name("Vegetables")
+    )
+ end
+
+
 meat = ["beef", "lamb", "veal", "chipolata", "chorizo","pork", "steak", "sausage", "bacon", "chicken", "turkey", "duck", "emu", "gigot", "mutton", "ribs", "salami", "tournedos"]
 40.times do
    product_meat = Product.create!(name: meat.sample,
