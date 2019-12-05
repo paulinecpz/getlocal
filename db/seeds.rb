@@ -82,6 +82,7 @@ puts("creating stores and users")
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/IMG_20160506_100303_suw10j.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/mercearia-do-campo-esplanada-4ba40_clnnmn.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/4758732_orig_hjmx2r.jpg"
+
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/1902508_xvsmhf.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/mercearia-prado-a-cidade-na-ponta-dos-dedos-de-sancha-trindade-sancha-co44-610x396_jxpdzt.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/DdCnVWbXcAUZY8-_xaknwn.jpg"
@@ -94,21 +95,88 @@ puts("creating stores and users")
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/12366807LM-MERCEARIA-CASA-DIOGO-5_i6qzgj.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/mercearia-social-pf_mqhsqn.jpg"
 "https://res.cloudinary.com/mathieufontaine/image/upload/v1575498991/image_drbe81.jpg"
-  # pictures_array.each do | picture |
-  #   store = Store.create!(name: Faker::Company.name,
-  #     address: Faker::Address.full_address,
-  #     description: Faker::Restaurant.description,
-  #     website: Faker::Internet.url,
-  #     phone: Faker::PhoneNumber.phone_number_with_country_code,
-  #     # picture: pictures.sample,
-  #     longitude: Faker::Address.longitude,
-  #     latitude: Faker::Address.latitude,
-  #     user: User.all.sample
-  #     )
-  #   Picture.create(remote_photo_url: picture, store: store)
 
-  # end
+# Lisbon
 
+store = Store.create(name: "Mercearia Santa Catarina", address: "Rua Joaquim Bonifácio 21, 1150-115 Lisbon" ,description: "Local small store focused on selling fresh biological products, concerned about local producers and sustentability", website: "www.merceariascatarina.pt", phone:"+351 213 487 133", user:User.all.sample)
+# rand(1..5).times do
+  store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/fixedw_large_4x_awviag.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/sign29_z9m6hw.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/image-2_gghoxn.jpg")
+# end
+store = Store.create(name: "Mini Mercado da Teresa", address: "Rua Latino Coelho 89A, 1050-134 Lisbon", description: "Biological Products directly from local producers from the center of Portugal. We care about our customers and selling the best fresh products", website: "www.mercadodateresa.pt", phone:"+351 219 951 882", user:User.all.sample)
+# rand(1..5).times do
+  store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/DdCnVWbXcAUZY8-_xaknwn.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/blog_5c65c1ccee2f6_591_1_frcqfn.png")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/image-1_j0i7mw.jpg")
+# end"
+
+store = Store.create(name: "Canto Saudavel", address: "Avenida Duque de Ávila 141B, 1050-053 Lisbon", description: "Local store in the city center of Lisbon. We sell biological products, we care about the local producers and we work directly with the best products to offer our clients", website: "www.cantosaudavel.pt", phone:"+351 214 232 431", user:User.all.sample)
+# rand(1..5).times do
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575498991/image_drbe81.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/mercearia-social-pf_mqhsqn.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/12366807LM-MERCEARIA-CASA-DIOGO-5_i6qzgj.jpg")
+
+# end
+store = Store.create(name: "Mercearia Criativa", address: "Avenida Fontes Pereira de Melo 42-E, Lisbon", description:"Small local store focused on selling Portuguese local products", website: "www.merceariacriativa.pt", phone:"+351 216 458 943", user:User.all.sample)
+# rand(1..5).times do
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/5848027_nj5nr9.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/mercearia-prado-a-cidade-na-ponta-dos-dedos-de-sancha-trindade-sancha-co44-610x396_jxpdzt.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/fish-lisbon_t3ykzm.jpg")
+
+
+store = Store.create(name: "ReFood", address: "Calçada Galvão E, 1300-011 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.refood.pt", phone:"+351 214 376 821", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Conveniência Capaz", address: "R. da Junqueira 472, 1300-341 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.capazstores.pt", phone:"+351 211 112 321", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Gourmeceria", address: "Av. Frei Miguel Contreiras 14, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gourmeceria.pt", phone:"+351 212 355 659", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Glood Areeiro", address: "Av. de Roma 23, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gloodlx.pt", phone:"+351 217 476 881", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Mercearia Nacional", address: "Av. Elias Garcia 98, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercearianacional.pt", phone:"+351 211 488 743", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Rota Gourmet", address: "Rua do Loreto n 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.rotagourmet.pt", phone:"+351 213 677 821", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Prado Mercearia", address: "R. Pedras Negras 35, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.pradomercearia.pt", phone:"+351 212 334 451", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Conserveira de Lisboa", address: "Rua dos Bacalhoeiros 34, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.conserveiralisboa.pt", phone:"+351 211 872 991", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Delidelux", address: "R. Alexandre Herculano 15A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.delidelux.pt", phone:"+351 211 498 021", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Pérola Jovem", address: "R. das Gáveas 44, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.perolajovem.pt", phone:"+351 211 498 021", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Mercado Fresco", address: "Tv. do Monte 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadofresco.pt", phone:"+351 211 497 772", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.favarica.pt", phone:"+351 211 787 911", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
+store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user:User.all.sample)
+# rand(1..5).times do
+  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# end
 
  # London
 
@@ -248,81 +316,6 @@ store =Store.create(name: "La Casita",address: "Carrer de Sicília, 212, 08013 B
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
 
-# Lisbon
-
-store = Store.create(name: "Mercearia Santa Catarina", address: "Calçada do Combro 38G, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.merceariascatarina.pt", phone:"+351 213 487 133", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Mini Mercado da Teresa", address: "Travessa da Água da Flor 28, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadodateresa.pt", phone:"+351 219 951 882", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Canto Saudavel", address: "Rua Limoeiro 10, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.cantosaudavel.pt", phone:"+351 214 232 431", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 4A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.merceariacriativa.pt", phone:"+351 216 458 943", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-# store = Store.create(name: "WineOff", address: "Tv. Giestal 36 B, 1300-278 Lisboa, Portugal", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
-# # rand(1..5).times do
-#   Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# # end
-store = Store.create(name: "ReFood", address: "Calçada Galvão E, 1300-011 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.refood.pt", phone:"+351 214 376 821", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Conveniência Capaz", address: "R. da Junqueira 472, 1300-341 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.capazstores.pt", phone:"+351 211 112 321", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Gourmeceria", address: "Av. Frei Miguel Contreiras 14, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gourmeceria.pt", phone:"+351 212 355 659", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Glood Areeiro", address: "Av. de Roma 23, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gloodlx.pt", phone:"+351 217 476 881", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Mercearia Nacional", address: "Av. Elias Garcia 98, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercearianacional.pt", phone:"+351 211 488 743", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Rota Gourmet", address: "Rua do Loreto n 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.rotagourmet.pt", phone:"+351 213 677 821", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Prado Mercearia", address: "R. Pedras Negras 35, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.pradomercearia.pt", phone:"+351 212 334 451", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Conserveira de Lisboa", address: "Rua dos Bacalhoeiros 34, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.conserveiralisboa.pt", phone:"+351 211 872 991", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Delidelux", address: "R. Alexandre Herculano 15A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.delidelux.pt", phone:"+351 211 498 021", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Pérola Jovem", address: "R. das Gáveas 44, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.perolajovem.pt", phone:"+351 211 498 021", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Mercado Fresco", address: "Tv. do Monte 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadofresco.pt", phone:"+351 211 497 772", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.favarica.pt", phone:"+351 211 787 911", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
-
 
 # porto
 
@@ -399,45 +392,7 @@ store = Store.create(name: "Mercadinho dos Açores", address: "Rua da Alegria 25
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
 
-
-# Review
-
-# StoreReview.create(content: "Super fresh vegetables. I especially love their carrots. I definitely recommend this store if you are looking for good local products!" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Everything is fresh in this store from the veggies to fruit, i recommend this one" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Os produtos mais frescos que vai encontrar aqui perto, otimo atendimento e a fruta é do melhor.Recomendo a todos" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Not bad, the products could be better, at least the it looks super clean" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "The best store in the neighborhood, i only bought some vegetables, but everything looks super fresh" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "I hated this store, the owner is super rude, and the fruit doesn't look very fresh. I dont recommend it to anyone" , stars: 1, store: store, user: user )
-# StoreReview.create(content: "I'm only giving to stars beacuse of the treatment we had, the owner is badle regarded" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "Super cool store, i loved it" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Store with an old air but don't be fooled because the products are the freshest" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "Very good regional products especially the jams" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "One of the worst stores I can remember, could have more variety of products" , stars: 1, store: store, user: user )
-# StoreReview.create(content: "I've been to better stores, but I've been to worse, I leave 3 stars" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "Super cool store, i loved it. The freshest vegetables i'v find so far" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "I can't tell you how much i love this store, its where i buy all the fruit" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Don't go on this store, i've never seen anything like that" , stars: 1, store: store, user: user )
-# StoreReview.create(content: "If you want fruit with dust, this is the right store for you" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "I don't recommend this store to anyone" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "IFollow my advice and dont visit this grocery store" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "All normal, I have nothing to point" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "The products could be fresher, but worth for the friendliness of the owner" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: user )
-
-
-
-
-
 stores_names = ["Fresh Mart", "Natural Foods" ,"Meat & More","El Comida Stores","Elgin’s Pantry","The Perfect Pantry","George’s Convenience","Quick Corner Mart","Bill’s Bakery & Grocery","The Food Plaza","Fred’s Family Mart","The Grocery Gals","Au Natural Foods","Vinny’s Value Foods","Epic Groceries","The Grocery Green","The Potato Patch","Organic Aisles","All Organic","Awesome Organics","Fresh Mart","Food Selectors","The Jolly Belly","Ocean Market","The Fresh Apron","Nana’s Provisions","Rise & Shine","Earth’s Favour","Flavours of the World","Ethnic Kitchen","The Banana Box","Lucky Grocers","Green Eaters","Gil’s Grocerama","The Potato Bin","Nice Neighbors","Friendly Fare","Brass Tack Foods","Extra Victuals"]
-# 40.times do
-#     Picture.create!(
-#       photo: pictures.sample,
-#       store_id: store_ids.sample
-#       )
-#   end
-
-
-# Review.create(content: "Super fresh vegetables. I especially love their carrots. I definitely recommend this store if you are looking for good local products!" , stars: 5, store: store, user: user )
 
 puts("create categories")
 
@@ -460,12 +415,7 @@ discount=["", 0.05, 0.10, 0.20, 0.30, 0.40, 0.50]
     category: Category.find_by_name("Fruits")
     )
 
-  #   order = Order.create(state: "pending", amount: 2, user:User.all.sample)
-  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_fruits.sample )
 end
-
-
-# store = Store.create(name: "Paulo Store", address:"Rua do Paulo", picture:"https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", state: "default", user_id: user.id)
 
 60.times do
   product_veggie = Product.create!(name: Faker::Food.vegetables,
@@ -476,12 +426,9 @@ end
     category: Category.find_by_name("Vegetables")
     )
 
-  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
-  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_veggie.sample )
-
 end
 
-fish = ["prawns", "crab", "mussels", "oysters", "scallops", "clams", "tuna", "sardines", "mackerel", "cod", "rainbow trout
+fish = ["Prawns", "Crab", "Mussels", "Oysters", "Scallops", "Clams", "Tuna", "Sardines", "Mackerel", "Cod", "Rainbow Trout
 ", "Red Snapper", "Bass", "Swordfish", "Catfish", "Anchovy", "Halibut"]
 40.times do
    product_fish = Product.create!(name: fish.sample,
@@ -492,11 +439,9 @@ fish = ["prawns", "crab", "mussels", "oysters", "scallops", "clams", "tuna", "sa
     category: Category.find_by_name("Fish")
     )
 
-  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
-  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_fish.sample )
 end
 
-meat = ["beef", "lamb", "veal", "chipolata", "chorizo","pork", "steak", "sausage", "bacon", "chicken", "turkey", "duck", "emu", "gigot", "mutton", "ribs", "salami", "tournedos"]
+meat = ["Beef", "Lamb", "Veal", "Chipolata", "Chorizo","Pork", "Steak", "Sausage", "Bacon", "Chicken", "Turkey", "Duck", "Emu", "Gigot", "Mutton", "Ribs", "Salami", "Tournedos"]
 40.times do
    product_meat = Product.create!(name: meat.sample,
     price: rand(1.5..4),
@@ -506,8 +451,6 @@ meat = ["beef", "lamb", "veal", "chipolata", "chorizo","pork", "steak", "sausage
     category: Category.find_by_name("Meat")
     )
 
-  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
-  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_meat.sample )
 end
 
 40.times do
@@ -519,42 +462,14 @@ end
     category: Category.find_by_name("Other")
     )
 
-  #  order = Order.create(state: "pending", amount: 2, user:User.all.sample)
-  # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_other.sample )
 end
-
-
 
 User.create(first_name: "Paulo", last_name: "Lewagon", email:"paulo@paulo.com", password:"password", role: "admin")
 User.create(first_name: "Pauline", last_name: "Lewagon", email:"pauline@pauline.com", password:"password", role: "admin")
 User.create(first_name: "Mathieu", last_name: "Lewagon", email:"mathieu@mathieu.com", password:"password", role: "admin")
 User.create(first_name: "Eduardo", last_name: "Lewagon", email:"edu@edu.com", password:"password", role: "admin")
 
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
 
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
 
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
 puts("seed finished")
 
