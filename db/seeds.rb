@@ -163,7 +163,7 @@ store =Store.create(name: "Extra Frais", address:"79 Rue de Seine, 75006 Paris F
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store =Store.create(name: "Alimentation générale", address: "67 Boulevard Saint-Marcel, 75013 Paris France", description:Faker::Restaurant.description, website:"www.alimentation-generale.com", phone:"01 20 41 23 73 92", user:User.all.sample)
+store =Store.create(name: "Produits du jardin", address: "67 Boulevard Saint-Marcel, 75013 Paris France", description:Faker::Restaurant.description, website:"www.alimentation-generale.com", phone:"01 20 41 23 73 92", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
@@ -243,7 +243,7 @@ store =Store.create(name: "La Concepció Market",address: "Carrer d'Aragó, 313,
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store =Store.create(name: "Alimentación General",address: "Carrer de Sicília, 212, 08013 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
+store =Store.create(name: "La Casita",address: "Carrer de Sicília, 212, 08013 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
