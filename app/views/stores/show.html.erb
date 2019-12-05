@@ -234,8 +234,8 @@
               </thead>
               <tbody>
                 <%= simple_form_for @order do |f| %>
-                  <% if current_user.product_orders.any? %>
-                    <% current_user.product_orders.each do |item| %>
+                  <% if current_user.cart_product_orders.any? %>
+                    <% current_user.cart_product_orders.each do |item| %>
 
                       <tr id="product_order_<%= item.id %>">
                         <%= render 'product_orders/product_order_row', product_order: item %>

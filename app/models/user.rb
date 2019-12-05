@@ -28,4 +28,8 @@ class User < ApplicationRecord
     end
     stores
   end
+
+  def cart_product_orders
+    product_orders.where(order: nil)
+  end
 end
