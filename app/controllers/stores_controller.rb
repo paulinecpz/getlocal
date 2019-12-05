@@ -156,7 +156,7 @@ class StoresController < ApplicationController
   end
 
   def update_map
-    @markers = @stores.map do |store|
+    @markers = @stores.where.not(latitude: nil).map do |store|
     {
       lat: store.latitude,
       lng: store.longitude,

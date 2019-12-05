@@ -4,17 +4,17 @@ class PagesController < ApplicationController
   def home
     @stores = policy_scope(Store).order(:created_at)
     @stores_near = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)    
-    @stores_lisbon = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where("address ILIKE ?", "%Lisbon")
-    @stores_porto = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where("address ILIKE ?", "%Porto")
-    @stores_paris = policy_scope(Store).where("address ILIKE ?", "%Paris").geocoded.near([38.736946, -9.142685],40000,  :order => :distance)
-    @stores_lyon = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where("address ILIKE ?", "%Lyon")
-    @stores_london = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where("address ILIKE ?", "%london")
-    @stores_barcelona = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where("address ILIKE ?", "%Barcelona")
+    @stores_lisbon = policy_scope(Store).where("address ILIKE ?", "%Lisbon%").limit(6)
+    @stores_porto = policy_scope(Store).where("address ILIKE ?", "%Porto%").limit(6)
+    @stores_paris = policy_scope(Store).where("address ILIKE ?", "%Paris%").limit(6)
+    @stores_lyon = policy_scope(Store).where("address ILIKE ?", "%Lyon%").limit(6)
+    @stores_london = policy_scope(Store).where("address ILIKE ?", "%london%").limit(6)
+    @stores_barcelona = policy_scope(Store).where("address ILIKE ?", "%Barcelona%").limit(6)
 
-  	store_from_vegetable_ids = Product.where(category_id: 61).pluck(:store_id)
+  	store_from_vegetable_ids = Product.joins(:category).where("categories.name = ?", "Vegetables").pluck(:store_id)
     @stores_vegetables = @stores.where(id: store_from_vegetable_ids)
 
-    store_from_fruits_ids = Product.where(category_id: 92).pluck(:store_id)
+    store_from_fruits_ids = Product.joins(:category).where("categories.name = ?", "Fruits").where(category_id: 92).pluck(:store_id)
     @stores_fruits = @stores.where(id: store_from_fruits_ids)
 
     @stores_best_rated = policy_scope(Store).order(:created_at)
