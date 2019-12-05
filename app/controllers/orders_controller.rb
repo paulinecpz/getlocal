@@ -21,26 +21,12 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new
     @order.user = current_user
-    # @order = Order.find(params[:id])
-    # current_user.order = @order
-    amount = 0
-    quantity = 0
-    create_product_orders
-    current_user.product_orders.each do |item|
-      item.product.discount = 0 if item.product.discount.blank?
-      final_price = (item.product.price - (item.product.price * item.product.discount))
-      amount += final_price
-      quantity += item.quantity
-    end
-    @order.quantity = quantity
-
-    @order.amount = amount
-
-    @order.save
+    @order.quantity = current_user.product_orders.sum(:quantity)
+    @order.amount = current_user.product_orders.map(&:total_price).sum
+    
     authorize @order
-    # @order = Order.find(params[:order_id])
-    # @order = Order.create!(amount: 0, state: 'pending', user_id: current_user)
-    # redirect_to order_path(@order)
+    
+    @order.save!
 
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -86,7 +72,6 @@ class OrdersController < ApplicationController
       product_order.order = @order
       product_order.save
     end
-
   end
 
   def set_order
