@@ -176,13 +176,7 @@
       </div>
       <!--/.Controls-->
 
-      <!--Indicators-->
-      <ol class="carousel-indicators">
-        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
-        <li data-target="#multi-item-example" data-slide-to="1"></li>
-        <li data-target="#multi-item-example" data-slide-to="2"></li>
-      </ol>
-      <!--/.Indicators-->
+
 
       <!--Slides-->
       <div class="carousel-inner" role="listbox" style="height:400px">
@@ -210,7 +204,7 @@
                            <%= link_to store.name.capitalize, store_path(store)%>
                            <div class= 'distance-orange'>
                              <% if store.distance_to([38.736946, -9.142685]).to_i < 10 %>
-                                 <p>⚑ <%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km</p>
+                                 <p >⚑ <%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km</p>
                              <% else %>  
                                  <p>⚑< <%= store.distance_to([38.736946, -9.142685]).to_i %> km</p>
                              <% end %>
