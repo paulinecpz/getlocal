@@ -21,8 +21,8 @@
               <td><%= product.product.name %> - <strong> <%= link_to product.product.store.name, store_path(product.product.store) %></strong></td>
               <td><%= product.quantity %> </td>
               <td><%= product.product.price %>€</td>
-              <td><strong><%= link_to "Let's go!", store_path(product.product.store) %></strong></td>
-              <td><strong><%= link_to 'Write a review', store_path(product.product.store) %></strong></td>
+              <td><strong><%= link_to "Let's go!", store_path(product.product.store, :anchor => "location"), class: "btn btn-outline-success" %></strong></td>
+              <td><strong><%= link_to 'Write a review', store_path(product.product.store, :anchor => "reviews"), class: "btn btn-outline-success" %></strong></td>
 
 
             </tr>

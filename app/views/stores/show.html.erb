@@ -87,6 +87,71 @@
                   <%= cat.name %>
                 </div>
               </tr>
+
+              <% end %>
+              <% end %>
+            </tbody>
+          </table>
+
+        </div>
+<!--         Reviews -->
+        <div class= "store-section">
+          <div class= "title-store-section">
+            <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
+          </div>
+
+        <div id="reviews-show">
+        <% @store.store_reviews.each do |review| %>
+        <%= render "store_reviews/show", store_review: review %>
+        <% end %>
+        </div>
+
+        <% if current_user.present? %>
+        <%= render "store_reviews/form", store: @store, store_review: @store_review %>
+        <% end %>
+      </div>
+
+      <div class= "store-section">
+        <div class= "title-store-section">
+          <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
+        </div>
+
+        <p class="text-justify"><strong>Description: </strong><%= @store.description %></p>
+        <p><strong>Website: </strong><%= @store.website %></p>
+        <p><strong>Phone number: </strong><%= @store.phone %></p>
+      </div>
+      <!-- map -->
+      <div class= "store-section">
+        <div class= "title-store-section">
+          <span class="content-title-store-section"><h4 id="location">Location</h4></span>
+        </div>
+        <p><strong>Address: </strong><%= @store.address %></p>
+        <% if @store.distance_to([38.736946, -9.142685]).to_i < 10 %>
+          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(1) %> km </strong>away from your current location</p>
+        <% else %>
+          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %> km </strong>away from your current location</p>
+        <% end %>
+        <p><div
+          id="map"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" style= "height:400px">
+        </div></p>
+        <div class=" text-center"><%= link_to "Get directions", "http://maps.google.com/maps?q=#{@store.address}",target: "_blank",class:"btn btn-success text-center"%>
+        </div>
+      </div>
+    </div>
+</div>
+    <!-- ​CART -->
+
+    <div class="container col-3" id="container-sticky">
+      ​<%# unless @store.is_owner?(current_user) %>
+      <% if current_user.present? %>
+      <div class="row" id="center-content">
+        <div class="col-12 ml-3">
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <h3 class="text-center" style ="color:green"><strong>Your Cart</strong></h3>
+
               <thead>
                 <tr>
                   <th scope="col-3" >Product</th>
@@ -114,6 +179,67 @@
               </tbody>
             </table>
           </div>
+        </div>
+      </div>
+    </div>
+    <% else %>
+    <div class="row" id="center-content">
+      <div class="col-12 ml-3">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <h3 class="text-center" style ="color:green"><strong>Your Cart</strong></h3>
+            <thead>
+              <tr>
+                <th class="col-3">Product</th>
+                <th class="text-center col-2">Quantity</th>
+                <th class="text-right col-3">Price</th>
+                <th class="text-center col-4"> </th>
+              </tr>
+            </thead>
+            <tbody>
+    <tr>
+      <td colspan="4"><p class="text-center">Your cart is empty</p></td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+    <% end %>
+  ​</div>
+</div>
+
+  <!--Carousel Wrapper-->
+
+ <div class="container-getlocal">
+    <h4 style="color:orange">Other GetLocal stores you might like:</h4>
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+      <!--Controls-->
+      <div class="controls-top">
+        <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+        <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      </div>
+      <!--/.Controls-->
+      <!--Indicators-->
+      <ol class="carousel-indicators">
+        <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+        <li data-target="#multi-item-example" data-slide-to="1"></li>
+        <li data-target="#multi-item-example" data-slide-to="2"></li>
+      </ol>
+      <!--/.Indicators-->
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox" >
+        <!--First slide-->
+        <% @stores_near.each_slice(4).with_index do |slice, index| %>
+        <div class="carousel-item <%= 'active' if index == 0 %>">
+          <div class="row" >
+            <% slice.each do |store| %>
+            <div class="card-store mb-3 mr-3 ml-3" id="card-store-similar">
+              <% if cl_image_tag store.pictures.present? %>
+              <% store.pictures.each do |picture| %>
+              <%= cl_image_tag(picture.photo) %>
+
           <div class= "store-section">
             <div class= "title-store-section">
               <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
@@ -121,6 +247,7 @@
             <div id="reviews-show">
               <% @store.store_reviews.each do |review| %>
               <%= render "store_reviews/show", store_review: review %>
+
               <% end %>
             </div>
             <% if current_user.present? %>
@@ -303,3 +430,7 @@
       <br>
     </div>
   </div>
+     <br>
+</div>
+</div>
+
