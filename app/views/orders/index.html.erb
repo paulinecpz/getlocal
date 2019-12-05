@@ -7,6 +7,7 @@
         <table class="table">
           <thead>
             <tr>
+              <th></th>
               <th scope="col">Order Nr</th>
               <th scope="col">State</th>
               <th scope="col">Quantity</th>
@@ -16,7 +17,8 @@
           <tbody>
             <% @orders.where(state: :paid).each do |order| %>
             <tr>
-              <td class="text"><%= order.id %></td>
+              <td class="text"><%= link_to 'Check my order', order_path(order.id) %></td>
+              <td class="text"><%= link_to order.id, order_path(order.id) %></td>
               <td class="text"><%= order.state %></td>
               <td class="text"><%= order.quantity %></td>
               <td class="text"><%= order.amount_cents/100.00 %>€</td>
@@ -37,6 +39,7 @@
      <table class="table">
        <thead>
          <tr>
+          <th></th>
            <th scope="col">Order Nr</th>
            <th scope="col">State</th>
            <th scope="col">Quantity</th>
@@ -46,6 +49,7 @@
        <tbody>
          <% @orders.where(state: :picked).each do |order| %>
          <tr>
+          <td class="text"><%= link_to 'Check my order', order_path(order.id) %></td>
            <td class="text"><%= order.id %></td>
            <td class="text"><%= order.state %></td>
            <td class="text"><%= order.quantity %></td>
