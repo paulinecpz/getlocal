@@ -23,24 +23,25 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active" id="carousel-item-show1">
-            <div class="d-block w-100">
-              <% if @store.pictures.present? %>
-              ​
-              <% @store.pictures.each do |picture| %>
-              <%= cl_image_tag(picture.photo) %>
-              <% end %>
-              <% else %>
+          <% if @store.pictures.any? %>  ​
+            <% @store.pictures.each_with_index do |picture, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>" id="carousel-item-show<%= index + 1%>">
+                <div class="d-block w-100">
+                  <%= cl_image_tag(picture.photo) %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="carousel-item" id="carousel-item-show1">
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80", class: "d-block w-100"%>
-              <% end %>
             </div>
-          </div>
-          <div class="carousel-item" id="carousel-item-show2">
-            <img src="https://images.unsplash.com/photo-1567306295427-94503f8300d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1326&q=80" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item" id="carousel-item-show3">
-            <img src="https://images.unsplash.com/photo-1485637701894-09ad422f6de6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1320&q=80" class="d-block w-100" alt="...">
-          </div>
+            <div class="carousel-item" id="carousel-item-show2">
+              <img src="https://images.unsplash.com/photo-1567306295427-94503f8300d7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1326&q=80" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" id="carousel-item-show3">
+              <img src="https://images.unsplash.com/photo-1485637701894-09ad422f6de6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1320&q=80" class="d-block w-100" alt="...">
+            </div>
+          <% end %>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
