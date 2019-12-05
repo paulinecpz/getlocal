@@ -23,9 +23,9 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.quantity = current_user.product_orders.sum(:quantity)
     @order.amount = current_user.product_orders.map(&:total_price).sum
-    
+
     authorize @order
-    
+
     @order.save!
 
     session = Stripe::Checkout::Session.create(
@@ -41,6 +41,7 @@ class OrdersController < ApplicationController
     )
 
     @order.update(checkout_session_id: session.id)
+    current_user.product_orders.destroy
     redirect_to new_order_payment_path(@order)
   end
 

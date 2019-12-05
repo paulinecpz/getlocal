@@ -119,6 +119,7 @@
           </table>
 
         </div>
+<!--         Reviews -->
         <div class= "store-section">
           <div class= "title-store-section">
             <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
@@ -134,6 +135,7 @@
         <%= render "store_reviews/form", store: @store, store_review: @store_review %>
         <% end %>
       </div>
+
       <div class= "store-section">
         <div class= "title-store-section">
           <span class="content-title-store-section"><h4 id="more-info">Information</h4></span>
@@ -162,8 +164,8 @@
         <div class=" text-center"><%= link_to "Get directions", "http://maps.google.com/maps?q=#{@store.address}",target: "_blank",class:"btn btn-success text-center"%>
         </div>
       </div>
-
     </div>
+</div>
     <!-- ​CART -->
 
     <div class="container col-3" id="container-sticky">
@@ -207,15 +209,37 @@
         </div>
       </div>
     </div>
+    <% else %>
+    <div class="row" id="center-content">
+      <div class="col-12 ml-3">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <h3 class="text-center" style ="color:green"><strong>Your Cart</strong></h3>
+            <thead>
+              <tr>
+                <th class="col-3">Product</th>
+                <th class="text-center col-2">Quantity</th>
+                <th class="text-right col-3">Price</th>
+                <th class="text-center col-4"> </th>
+              </tr>
+            </thead>
+            <tbody>
+    <tr>
+      <td colspan="4"><p class="text-center">Your cart is empty</p></td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
     <% end %>
   ​</div>
 </div>
 
   <!--Carousel Wrapper-->
-<br>
-  <div class="container-getlocal">
-<!--     <div class="container-getlocal">
- -->    <h4 style="color:orange">Other GetLocal stores you might like:</h4>
+
+ <div class="container-getlocal">
+    <h4 style="color:orange">Other GetLocal stores you might like:</h4>
     <!--Carousel Wrapper-->
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
       <!--Controls-->
@@ -259,9 +283,7 @@
         <% end %>
       </div>
     </div>
-<!-- </div>
- --></div>
+  </div>
      <br>
-
 </div>
 </div>
