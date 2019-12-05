@@ -121,7 +121,7 @@ class StoresController < ApplicationController
         @orders = current_user.orders
       end
 
-    @stores_near = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)    
+    @stores_lisbon = policy_scope(Store).where("address ILIKE ?", "%Lisbon%").limit(8)
 
     @store_review = StoreReview.new
 
