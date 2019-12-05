@@ -42,8 +42,7 @@
             <p><strong><% store.categories.uniq.each do |cat| %>
             <%= "#{cat.name}  "%><% end %></strong></p>
             
-<!--             <p> <strong><%= store.categories.first.name %></strong></p>
- -->          </div>
+         </div>
           <div class= 'distance-orange'>
             <p>⚑</p>
             <% if store.distance_to([38.736946, -9.142685]).to_i < 10 %>

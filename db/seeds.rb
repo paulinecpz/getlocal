@@ -239,7 +239,7 @@ store =Store.create(name: "El Mercado",address: "Plaça d'Espanya, Barcelona, Sp
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store =Store.create(name: "La Concepció Market",address: "Carrer d'Aragó, 313, 317, 08009 Barcelona, Spain" description:Faker::Restaurant.description, website:"www.concepcio.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
+store =Store.create(name: "La Concepció Market",address: "Carrer d'Aragó, 313, 317, 08009 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.concepcio.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
@@ -315,7 +315,7 @@ store = Store.create(name: "Mercado Fresco", address: "Tv. do Monte 11, Lisbon, 
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
 store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.favarica.pt", phone:"+351 211 787 911", user:User.all.sample)
-# rand(1..5).times do, Portugal
+# rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
 store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user:User.all.sample)
