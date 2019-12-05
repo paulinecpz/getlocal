@@ -266,10 +266,10 @@ store = Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "WineOff", address: "Tv. Giestal 36 B, 1300-278 Lisboa, Portugal", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-# end
+# store = Store.create(name: "WineOff", address: "Tv. Giestal 36 B, 1300-278 Lisboa, Portugal", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
+# # rand(1..5).times do
+#   Picture.create(remote_photo_url: pictures_array.sample, store: store)
+# # end
 store = Store.create(name: "ReFood", address: "Calçada Galvão E, 1300-011 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.refood.pt", phone:"+351 214 376 821", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
@@ -326,7 +326,7 @@ store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Por
 
 # porto
 
-store = Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso, 4000-041 Porto, Portugal", description:Faker::Restaurant.description, website: "www.canela&maça.pt", phone:"+351 221 245 149", user:User.all.sample)
+store = Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso, Porto, Portugal", description:Faker::Restaurant.description, website: "www.canela&maça.pt", phone:"+351 221 245 149", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
@@ -370,7 +370,7 @@ store = Store.create(name: "Maçaroca", address: "R. do Bonjardim 496A, Porto, P
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end
-store = Store.create(name: "Joaninha", address: "Campo dos Mártires da Pátria 170, Porto, Portugal", description:Faker::Restaurant.description, website: "www.joaninhapadaria.pt", phone:"+351 221 876 913", user:User.all.sample)
+store = Store.create(name: "Joaninha", address: "Rua dos Caldeireiros 136, Porto, Portugal", description:Faker::Restaurant.description, website: "www.joaninhapadaria.pt", phone:"+351 221 876 913", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # end

@@ -96,8 +96,8 @@
 
     <!--Carousel Wrapper-->
 
-  <div class="container my-4">
-    <h4 style="color:green">⭐️ Discover the GetLocal  <strong>selection</strong> ⭐️ </h4>
+  <div class="container my-5">
+    <h4 id="orange-line" style="color:orange">⭐️ Discover the GetLocal  <strong>selection</strong> ⭐️ </h4>
 
     <!--Carousel Wrapper-->
     <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
@@ -128,8 +128,8 @@
               <% slice.each do |store| %>
 
                   <div class="col-md-4">
-                    <div class="card mb-4" id="card-home-store-section">
-                      <div class = "selection-store-card">
+                    <div class="card mb-4" id="card-home-store-section" style ="border: 2px solid orange">
+                      <div class = "selection-store-card" >
                         <% if cl_image_tag store.pictures.present? %>
                         <% store.pictures.each do |picture| %>
                           <%= cl_image_tag(picture.photo) %>
@@ -140,7 +140,7 @@
                       </div>
 
                       <div class="card-body text-center">
-                           <%= link_to store.name.capitalize, store_path(store)%>
+                           <%= link_to store.name.capitalize, store_path(store), class:"orange"%>
 
 <!--                         <p class="card-text"><%=store.address%></p>
  -->                        
@@ -195,7 +195,7 @@
               <% slice.each do |store| %>
 
                   <div class="col-md-4">
-                    <div class="card mb-4" id="card-home-store-section">
+                    <div class="card mb-4" id="card-home-store-section" style ="border: 1px solid lightgrey">
                       <div class = "selection-store-card">
                         <% if cl_image_tag store.pictures.present? %>
                         <% store.pictures.each do |picture| %>
@@ -208,7 +208,13 @@
 
                       <div class="card-body text-center">
                            <%= link_to store.name.capitalize, store_path(store)%>
-
+                           <div class= 'distance-orange'>
+                             <% if store.distance_to([38.736946, -9.142685]).to_i < 10 %>
+                                 <p>⚑ <%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km</p>
+                             <% else %>  
+                                 <p>⚑< <%= store.distance_to([38.736946, -9.142685]).to_i %> km</p>
+                             <% end %>
+                           </div>
 <!--                         <p class="card-text"><%=store.address%></p>
  -->                        
                       </div>
