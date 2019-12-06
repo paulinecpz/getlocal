@@ -306,7 +306,7 @@
       <!--Slides-->
       <div class="carousel-inner" role="listbox" >
         <!--First slide-->
-        <% @stores_near.each_slice(4).with_index do |slice, index| %>
+        <% @stores_lisbon.each_slice(4).with_index do |slice, index| %>
         <div class="carousel-item <%= 'active' if index == 0 %>">
           <div class="row" >
             <% slice.each do |store| %>
@@ -322,6 +322,8 @@
                 <div>
                   <h4><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h4>
                   <p><%= store.address %><strong style="color:orange"> (<%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km away)</strong></p>
+                  <p><strong><% store.categories.uniq.each_with_index do |cat, index| %>
+                  <%= " / " unless index == 0%><%= cat.name %><% end %></strong></p>
               </div>
               </div>
             </div>
