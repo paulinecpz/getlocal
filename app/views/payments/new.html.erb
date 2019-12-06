@@ -11,27 +11,27 @@
               <th scope="col">Product</th>
               <th scope="col">Quantity</th>
               <th scope="col">Price</th>
-              <th scope="col">GetLocal Discount</th>
-              <th scope="col">Final Price</th>
+              <th scope="col" class="text-center">GetLocal Discount</th>
+              <th scope="col" class="text-center">Final Price</th>
             </tr>
           </thead>
           <tbody>
-            <% current_user.product_orders.each do |product_order| %>
+            <% current_user.cart_product_orders.each do |product_order| %>
             <tr>
               <td><%= product_order.product.name %>-- <%= product_order.product.store.name %></td>
-              <td><%= product_order.quantity %></td>
-              <td><%= humanized_money_with_symbol(product_order.product.price)%></td>
-              <td><%= product_order.product.discount.blank? ? 0 : (product_order.product.discount*100).round(0)%> %</td>
-              <td><%= humanized_money_with_symbol(product_order.total_price) %></td>
+              <td class="text-center"><%= product_order.quantity %></td>
+              <td class="text-center"><%= humanized_money_with_symbol(product_order.product.price)%></td>
+              <td class="text-center"><%= product_order.product.discount.blank? ? 0 : (product_order.product.discount*100).round(0)%> %</td>
+              <td class="text-center"><%= humanized_money_with_symbol(product_order.total_price) %></td>
             </tr>
             <% end %>
           </tbody>
           <tr>
             <td><strong>Total</strong></td>
-            <td><strong><%= @order.quantity %></strong></td>
+            <td class="text-center"><strong><%= @order.quantity %></strong></td>
+            <td ></td>
             <td></td>
-            <td></td>
-            <td><strong><%= humanized_money_with_symbol @order.amount %></strong></td>
+            <td class="text-center"><strong><%= humanized_money_with_symbol @order.amount %></strong></td>
           </tr>
         </table>
 

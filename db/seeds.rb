@@ -8,6 +8,7 @@
 require 'faker'
 
 puts("deleting stores")
+StoreReview.destroy_all
 ProductOrder.destroy_all
 Order.destroy_all
 User.destroy_all
@@ -281,22 +282,94 @@ store =Store.create(name: "La Casita",address: "Carrer de Sicília, 212, 08013 B
 
 # Lisbon
 
+# User.create(first_name: "Ricardo", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Marcos", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Rafael", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Christophe", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Paul", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Bernard", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Paula", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Pepito", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Rodriguez", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Fernando", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Jean-Michel", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Marta", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Ana", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Ines", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Catarina", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Joana", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Emilia", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Fernanda", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Manuela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Rita", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Rafaela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Bianca", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Alice", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Isabela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Carolina", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Roberta", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Roberto", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Pedro", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Joao", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Mario", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Andre", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Diogo", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Daniel", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Daniela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Luis", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Luisa", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Mateus", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Zoe", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Jacqueline", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Sharon", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Emily", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Oliver", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Carlos", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+# User.create(first_name: "Carla", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
+
+100.times do
+    User.create!(
+      email: Faker::Internet.email,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      password: "password",
+      photo: Faker::Avatar.image(slug: "my-own-slug", bgset: "bg1")
+      )
+  end
+
 store = Store.create(name: "Mercearia Santa Catarina", address: "Calçada do Combro 38G, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.merceariascatarina.pt", phone:"+351 213 487 133", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
+  StoreReview.create(content: "All normal, I have nothing to point" , stars: 3, store: store, user: User.all.sample )
+  StoreReview.create(content: "The products could be fresher, but worth for the friendliness of the owner" , stars: 3, store: store, user: User.all.sample )
+  StoreReview.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: User.all.sample )
+
 # end
 store = Store.create(name: "Mini Mercado da Teresa", address: "Travessa da Água da Flor 28, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadodateresa.pt", phone:"+351 219 951 882", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
+  StoreReview.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "Really nice place, with good product" , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Love this place, I go there every week!" , stars: 5, store: store, user: User.all.sample )
+
 # end
 store = Store.create(name: "Canto Saudavel", address: "Rua Limoeiro 10, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.cantosaudavel.pt", phone:"+351 214 232 431", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
+  StoreReview.create(content: "I AM IN LOVE WITH THIS STORE" , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Really cool place, I recommend it" , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "My favorite local product are here !" , stars: 5, store: store, user: User.all.sample )
+
 # end
 store = Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 4A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.merceariacriativa.pt", phone:"+351 216 458 943", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: pictures_array.sample, store: store)
+  StoreReview.create(content: "It is okay but the service is not very good" , stars: 2, store: store, user: User.all.sample )
+  StoreReview.create(content: "I highly recommend this place" , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "The products are really fresh and good." , stars: 5, store: store, user: User.all.sample )
+
 # end
+
 # store = Store.create(name: "WineOff", address: "Tv. Giestal 36 B, 1300-278 Lisboa, Portugal", description:Faker::Restaurant.description, website: "www.wineoff.pt", phone:"+351 212 471 722", user:User.all.sample)
 # # rand(1..5).times do
 #   Picture.create(remote_photo_url: pictures_array.sample, store: store)
@@ -305,54 +378,106 @@ store = Store.create(name: "ReFood", address: "Calçada Galvão E, 1300-011 Lisb
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1567306295427-94503f8300d7_nil6tx.jpg", store: store)
 # end
+  StoreReview.create(content: "Awesome place! I love it." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good but good be cleaner" , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "Love this place although it is always packed" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Conveniência Capaz", address: "R. da Junqueira 472, 1300-341 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.capazstores.pt", phone:"+351 211 112 321", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1533264533981-8aead62802fd_rb1dip.jpg", store: store)
+# end
+  StoreReview.create(content: "this is bull shit store, people are really not nice" , stars: 1, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "Love this place !" , stars: 5, store: store, user: User.all.sample )
+
 # end
 store = Store.create(name: "Gourmeceria", address: "Av. Frei Miguel Contreiras 14, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gourmeceria.pt", phone:"+351 212 355 659", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1516594798947-e65505dbb29d_modeg1.jpg", store: store)
 # end
+  StoreReview.create(content: "This is the best local store I have in my neighborhood, I highly recommend it!" , stars: 5, store: store, user: User.all.sample)
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "This place is awesome ! I looooooove it" , stars: 5, store: store, user: User.all.sample )
+# end
 store = Store.create(name: "Glood Areeiro", address: "Av. de Roma 23, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gloodlx.pt", phone:"+351 217 476 881", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/1902508_xvsmhf.jpg", store: store)
+# end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 # end
 store = Store.create(name: "Mercearia Nacional", address: "Av. Elias Garcia 98, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercearianacional.pt", phone:"+351 211 488 743", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574339/sarona-market-stalls_c1mkgt.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Rota Gourmet", address: "Rua do Loreto n 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.rotagourmet.pt", phone:"+351 213 677 821", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1485637701894-09ad422f6de6_jeahi9.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Prado Mercearia", address: "R. Pedras Negras 35, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.pradomercearia.pt", phone:"+351 212 334 451", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/4758732_orig_hjmx2r.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Conserveira de Lisboa", address: "Rua dos Bacalhoeiros 34, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.conserveiralisboa.pt", phone:"+351 211 872 991", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574341/shutterstock_451641727_j6nmc1.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Delidelux", address: "R. Alexandre Herculano 15A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.delidelux.pt", phone:"+351 211 498 021", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/mercearia-do-campo-esplanada-4ba40_clnnmn.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Pérola Jovem", address: "R. das Gáveas 44, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.perolajovem.pt", phone:"+351 211 498 021", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499270/prado-mercearia-a-cidade-na-ponta-dos-dedos-de-sancha-trindade_sw5k40.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Mercado Fresco", address: "Tv. do Monte 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadofresco.pt", phone:"+351 211 497 772", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/IMG_20160506_100303_suw10j.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.favarica.pt", phone:"+351 211 787 911", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499266/CasaMacario-010-Convida-2019maio-Lisboa_zgcu3h.jpg", store: store)
 # end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/fish-lisbon_t3ykzm.jpg", store: store)
-# end
+  StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
+  StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
+  StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
+
 
 
 # porto
@@ -361,88 +486,93 @@ store = Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574341/lau-instacart-alyse-2_xsuv7g.jpg", store: store)
 # end
+  StoreReview.create(content: "I don't recommend this store to anyone" , stars: 2, store: store, user: User.all.sample )
+
 store = Store.create(name: "Portus Sabor", address: "Av. dos Aliados 166, Porto, Portugal", description:Faker::Restaurant.description, website: "www.portusabor.pt", phone:"+351 221 478 198", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/porto_hjxm5j.jpg", store: store)
 # end
+  StoreReview.create(content: "If you want fruit with dust, this is the right store for you" , stars: 2, store: store, user: User.all.sample )
+
 store = Store.create(name: "Frutaria do Bairro", address: "R. Formosa 300, Porto, Portugal", description:Faker::Restaurant.description, website: "www.frutariadobairro.pt", phone:"+351 221 235 872", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574341/ebcd5c9efdc743d83d29e2b571c0feb36478d7dc_akfqns.jpg", store: store)
 # end
+  StoreReview.create(content: "Don't go on this store, i've never seen anything like that" , stars: 1, store: store, user: User.all.sample )
+
 store = Store.create(name: "Mercado da Ribeira", address: "R. de Cândido dos Reis 58, Porto, Portugal", description:Faker::Restaurant.description, website: "www.mercadoribeiro.pt", phone:"+351 221 456 343", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575090/peixaria3-edit_ucmjtx.jpg", store: store)
 # end
+  StoreReview.create(content: "I can't tell you how much i love this store, its where i buy all the fruit" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Mercearia do Amial", address: "R. do Amial 926, Porto, Portugal", description:Faker::Restaurant.description, website: "www.frutadoamial.pt", phone:"+351 221 785 772", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/fresh-produce-at-japanese-grocery-store_xiynmg.jpg", store: store)
 # end
+  StoreReview.create(content: "Super cool store, i loved it. The freshest vegetables i'v find so far" , stars: 4, store: store, user: User.all.sample )
+
 store = Store.create(name: "Porto Organico", address: "R. de Clemente Meneres 65, Porto, Portugal", description:Faker::Restaurant.description, website: "www.portoorganico.pt", phone:"+351 221 784 112", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/grocery-store-waste-1200x600_cfpuyy.jpg", store: store)
 # end
+  StoreReview.create(content: "I've been to better stores, but I've been to worse, I leave 3 stars" , stars: 3, store: store, user: User.all.sample )
+
 store = Store.create(name: "Folha de Oliveira", address: "Tv. de Cedofeita 24, Porto, Portugal", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/epicerie-fine-avec-plein_rqlh9j.jpg".sample, store: store)
 # end
+  StoreReview.create(content: "One of the worst stores I can remember, could have more variety of products" , stars: 1, store: store, user: User.all.sample )
+
 store = Store.create(name: "Mercearia das Flores", address: "R. Formosa 353, Porto, Portugal", description:Faker::Restaurant.description, website: "www.merceariaflores.pt", phone:"+351 221 991 973", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/wet-rack-800x600_mhanjp.jpg", store: store)
 # end
+  StoreReview.create(content: "Store with an old air but don't be fooled because the products are the freshest" , stars: 4, store: store, user: User.all.sample )
+
 store = Store.create(name: "Maçaroca", address: "R. do Bonjardim 496A, Porto, Portugal", description:Faker::Restaurant.description, website: "www.macaroca.pt", phone:"+351 221 443 213", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/zpz3_t0wvog.jpg", store: store)
 # end
+  StoreReview.create(content: "I hated this store, the owner is super rude, and the fruit doesn't look very fresh. I dont recommend it to anyone" , stars: 1, store: store, user: User.all.sample )
+
 store = Store.create(name: "Joaninha", address: "Rua dos Caldeireiros 136, Porto, Portugal", description:Faker::Restaurant.description, website: "www.joaninhapadaria.pt", phone:"+351 221 876 913", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/63733190_dd671788a3_b_qk4nf8.jpg", store: store)
 # end
+  StoreReview.create(content: "I'm only giving to stars beacuse of the treatment we had, the owner is badle regarded" , stars: 2, store: store, user: User.all.sample )
+
 store = Store.create(name: "A Pérola do Bolhão", address: "R. Formosa 279, Porto, Portugal", description:Faker::Restaurant.description, website: "www.perolabolhao.pt", phone:"+351 221 455 638", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575090/7081_lo3d8174-mario-rodrigues_sbwuxv.jpg", store: store)
 # end
+  StoreReview.create(content: "The best store in the neighborhood, i only bought some vegetables, but everything looks super fresh" , stars: 4, store: store, user: User.all.sample )
+
 store = Store.create(name: "Casa Cerdeira", address: "Rua de Santa Catarina 533, Porto, Portugal", description:Faker::Restaurant.description, website: "www.casacerdeira.pt", phone:"+351 221 881 753", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/redmeatcounter600_d3pdwd.jpg", store: store)
 # end
+  StoreReview.create(content: "Not bad, the products could be better, at least the it looks super clean" , stars: 3, store: store, user: User.all.sample )
+
 store = Store.create(name: "Mercearia Belo Sabor", address: "R. de Belomonte 44, Porto, Portugal", description:Faker::Restaurant.description, website: "www.belosabor.pt", phone:"+351 223 712 866", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: p"https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/GettyImages-5218116791-5923a6b93df78cf5faca90c5_dqgz6a.jpg", store: store)
 # end
+  StoreReview.create(content: "Os produtos mais frescos que vai encontrar aqui perto, otimo atendimento e a fruta é do melhor.Recomendo a todos" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Seramota", address: "R. de Sá da Bandeira 343, Porto, Portugal", description:Faker::Restaurant.description, website: "www.seramota.pt", phone:"+351 224 599 862", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/800px_COLOURBOX26401389_kzw3p0.jpg", store: store)
 # end
+  StoreReview.create(content: "Everything is fresh in this store from the veggies to fruit, i recommend this one" , stars: 5, store: store, user: User.all.sample )
+
 store = Store.create(name: "Moinho Velho", address: "Rua de Fernandes Tomás 508, Porto, Portugal", description:Faker::Restaurant.description, website: "www.moinhovelho.pt", phone:"+351 221 857 432", user:User.all.sample)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/Butchery-business_lxx8sg.jpg", store: store)
 # end
+StoreReview.create(content: "Super fresh vegetables. I especially love their carrots. I definitely recommend this store if you are looking for good local products!" , stars: 5, store: store, user: User.all.sample )
 
 
-
-# Review
-
-# StoreReview.create(content: "Super fresh vegetables. I especially love their carrots. I definitely recommend this store if you are looking for good local products!" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Everything is fresh in this store from the veggies to fruit, i recommend this one" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Os produtos mais frescos que vai encontrar aqui perto, otimo atendimento e a fruta é do melhor.Recomendo a todos" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Not bad, the products could be better, at least the it looks super clean" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "The best store in the neighborhood, i only bought some vegetables, but everything looks super fresh" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "I hated this store, the owner is super rude, and the fruit doesn't look very fresh. I dont recommend it to anyone" , stars: 1, store: store, user: user )
-# StoreReview.create(content: "I'm only giving to stars beacuse of the treatment we had, the owner is badle regarded" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "Super cool store, i loved it" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Store with an old air but don't be fooled because the products are the freshest" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "Very good regional products especially the jams" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "One of the worst stores I can remember, could have more variety of products" , stars: 1, store: store, user: user )
-# StoreReview.create(content: "I've been to better stores, but I've been to worse, I leave 3 stars" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "Super cool store, i loved it. The freshest vegetables i'v find so far" , stars: 4, store: store, user: user )
-# StoreReview.create(content: "I can't tell you how much i love this store, its where i buy all the fruit" , stars: 5, store: store, user: user )
-# StoreReview.create(content: "Don't go on this store, i've never seen anything like that" , stars: 1, store: store, user: user )
-# StoreReview.create(content: "If you want fruit with dust, this is the right store for you" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "I don't recommend this store to anyone" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "IFollow my advice and dont visit this grocery store" , stars: 2, store: store, user: user )
-# StoreReview.create(content: "All normal, I have nothing to point" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "The products could be fresher, but worth for the friendliness of the owner" , stars: 3, store: store, user: user )
-# StoreReview.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: user )
 
 
 
@@ -516,6 +646,36 @@ fish = ["prawns", "crab", "mussels", "oysters", "scallops", "clams", "tuna", "sa
   # ProductOrder.create(quantity: 2, user:User.all.sample, product: product_fish.sample )
 end
 
+# Fruit
+
+fruit = ["Banana", "Orange", "Pear", "Apple", "Strawberry", "Blackberry", "Pineapple", "Cherry", "Fig", "Lime", "Lemon", "Melon", "Quince", "Blueberry", "Nut", "Peach", "Pomegrenate", "Tangerine",
+ "Grape"]
+40.times do
+   product_fish = Product.create!(name: fruit.sample,
+    price: rand(1.5..4).to_f.round(1),
+    stock: rand(5..20),
+    discount: discount.sample,
+    store: Store.all.sample,
+    category: Category.find_by_name("Fruits")
+    )
+ end
+
+
+# Vegetables
+
+vegetables = ["Carrot", "Eggplant", "Pea", "Pumpkin", "Cress", "Lettuce", "Broccoli", "Rucula", "Spinach", "Cauliflower", "Pepper", "Garlic", "Parsley", "Tomato",
+"Beet", "Ginger", "Cucumber", "Onion", "Coriander", "Potato", "Mint"]
+40.times do
+   product_fish = Product.create!(name: vegetables.sample,
+    price: rand(1.5..4).to_f.round(1),
+    stock: rand(5..20),
+    discount: discount.sample,
+    store: Store.all.sample,
+    category: Category.find_by_name("Vegetables")
+    )
+ end
+
+
 meat = ["beef", "lamb", "veal", "chipolata", "chorizo","pork", "steak", "sausage", "bacon", "chicken", "turkey", "duck", "emu", "gigot", "mutton", "ribs", "salami", "tournedos"]
 40.times do
    product_meat = Product.create!(name: meat.sample,
@@ -550,31 +710,5 @@ User.create(first_name: "Pauline", last_name: "Lewagon", email:"pauline@pauline.
 User.create(first_name: "Mathieu", last_name: "Lewagon", email:"mathieu@mathieu.com", password:"password", role: "admin")
 User.create(first_name: "Eduardo", last_name: "Lewagon", email:"edu@edu.com", password:"password", role: "admin")
 
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-# ProductOrder.create(quantity: 1, product: Product.all.sample, order: Order.all.sample)
-
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
-# Order.create(user: User.all.sample, state: 'paid')
 puts("seed finished")
 

@@ -7,24 +7,22 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Directions</th>
-              <th>Review</th>
+              <th class="text-center">Product</th>
+              <th class="text-center">Quantity</th>
+              <th class="text-center">Price</th>
+              <th class="text-center">Directions</th>
+              <th class="text-center">Review</th>
 
             </tr>
           </thead>
           <tbody>
-            <% current_user.product_orders.each do |product| %>
+            <% @order.product_orders.each do |product| %>
             <tr>
               <td><%= product.product.name %> - <strong> <%= link_to product.product.store.name, store_path(product.product.store) %></strong></td>
-              <td><%= product.quantity %> </td>
-              <td><%= product.product.price %>€</td>
-              <td><strong><%= link_to "Let's go!", store_path(product.product.store, :anchor => "location"), class: "btn btn-outline-success" %></strong></td>
-              <td><strong><%= link_to 'Write a review', store_path(product.product.store, :anchor => "reviews"), class: "btn btn-outline-success" %></strong></td>
-
-
+              <td class="text-center"><%= product.quantity %> </td>
+              <td class="text-center"><%= product.product.price %>€</td>
+              <td class="text-center"><strong><%= link_to "Let's go!", store_path(product.product.store, :anchor => "location"), class: "btn btn-outline-success" %></strong></td>
+              <td class="text-center"><strong><%= link_to 'Write a review', store_path(product.product.store, :anchor => "reviews"), class: "btn btn-outline-success" %></strong></td>
             </tr>
             <% end %>
             <tr>
