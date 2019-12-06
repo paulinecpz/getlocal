@@ -119,22 +119,6 @@
           </table>
 
         </div>
-<!--         Reviews -->
-        <div class= "store-section">
-          <div class= "title-store-section">
-            <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
-          </div>
-
-        <div id="reviews-show">
-        <% @store.store_reviews.each do |review| %>
-        <%= render "store_reviews/show", store_review: review %>
-        <% end %>
-        </div>
-
-        <% if current_user.present? %>
-        <%= render "store_reviews/form", store: @store, store_review: @store_review %>
-        <% end %>
-      </div>
 
       <div class= "store-section">
         <div class= "title-store-section">
@@ -212,8 +196,26 @@
         <div class=" text-center"><%= link_to "Get directions", "http://maps.google.com/maps?q=#{@store.address}",target: "_blank",class:"btn btn-success text-center"%>
         </div>
       </div>
+
+        <div class= "store-section">
+          <div class= "title-store-section">
+            <span class="content-title-store-section"><h4 id="reviews">Reviews</h4></span>
+          </div>
+
+        <div id="reviews-show">
+        <% @store.store_reviews.each do |review| %>
+        <%= render "store_reviews/show", store_review: review %>
+        <% end %>
+        </div>
+
+        <% if current_user.present? %>
+        <%= render "store_reviews/form", store: @store, store_review: @store_review %>
+        <% end %>
+      </div>
     </div>
 </div>
+
+
     <!-- ​CART -->
 
     <div class="container col-3" id="container-sticky">
