@@ -1,11 +1,9 @@
 <div class="card-map">
-     <% if cl_image_tag store.pictures.present? %>
-      <% store.pictures.each do |picture| %>
-      <%= cl_image_tag(picture.photo) %>
-      <% end %>
-      <% else %>
-      <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-      <% end %>
+<% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
   <div class="card-map-infos">
     <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
     <p><%= store.address %></p>

@@ -130,13 +130,11 @@
                   <div class="col-md-4">
                     <div class="card mb-4" id="card-home-store-section" style ="border: 2px solid orange">
                       <div class = "selection-store-card" >
-                        <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
+                      <% if cl_image_tag store.pictures.any? %>
+                        <%= cl_image_tag(store.pictures.first.photo) %>
+                      <% else %>
                         <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+                      <% end %>
                       </div>
 
                       <div class="card-body text-center">
@@ -191,13 +189,11 @@
                   <div class="col-md-4">
                     <div class="card mb-4" id="card-home-store-section" style ="border: 1px solid lightgrey">
                       <div class = "selection-store-card">
-                        <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+      <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
                       <div class="card-body text-center">
@@ -264,13 +260,11 @@
                     <div class="card mb-4">
 
                       <div class = "selection-store-card" >
-                      <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+<% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
@@ -332,13 +326,11 @@
                     <div class="card mb-4">
 
                       <div class = "selection-store-card">
-                       <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+ <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
@@ -402,13 +394,11 @@
                     <div class="card mb-4">
 
                       <div class = "selection-store-card">
-                       <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+ <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
@@ -472,13 +462,11 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
-                       <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+ <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
@@ -544,13 +532,11 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
-                       <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+ <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
@@ -617,13 +603,11 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
-                       <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+ <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
@@ -689,13 +673,11 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
-                       <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+ <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
@@ -761,13 +743,11 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
-                       <% if cl_image_tag store.pictures.present? %>
-                        <% store.pictures.each do |picture| %>
-                          <%= cl_image_tag(picture.photo) %>
-                          <% end %>
-                        <% else %>
-                        <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
-                        <% end %>
+ <% if cl_image_tag store.pictures.any? %>
+              <%= cl_image_tag(store.pictures.first.photo) %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
+            <% end %>
                       </div>
 
 
