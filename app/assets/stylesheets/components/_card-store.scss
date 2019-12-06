@@ -60,12 +60,26 @@
 color: orange;
 font-weight: bold;
 width: auto;
-margin-left: 8px;
 text-align: center;
 font-size: 15px;
-margin-left: 120px
-
 }
+
+.distance-green{
+color: green;
+font-weight: bold;
+width: auto;
+text-align: center;
+font-size: 15px;
+}
+
+.distance-green:hover{
+color: white;
+font-weight: bold;
+width: auto;
+text-align: center;
+font-size: 15px;
+}
+
 .distance-orange-index{
 color: orange;
 font-weight: bold;
