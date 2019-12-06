@@ -199,10 +199,10 @@
           <span class="content-title-store-section"><h4 id="location">Location</h4></span>
         </div>
         <p><strong>Address: </strong><%= @store.address %></p>
-        <% if @store.distance_to([38.736946, -9.142685]).to_i < 10 %>
-          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_f.round(1) %> km </strong>away from your current location</p>
+        <% if @store.distance_to([38.726096, -9.145535]).to_i < 10 %>
+          <p>This store is located at <strong><%= @store.distance_to([38.726096, -9.145535]).to_f.round(1) %> km </strong>away from your current location</p>
         <% else %>
-          <p>This store is located at <strong><%= @store.distance_to([38.736946, -9.142685]).to_i %> km </strong>away from your current location</p>
+          <p>This store is located at <strong><%= @store.distance_to([38.726096, -9.145535]).to_i %> km </strong>away from your current location</p>
         <% end %>
         <p><div
           id="map"
@@ -321,7 +321,7 @@
               <div class="card-store-infos">
                 <div>
                   <h4><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h4>
-                  <p><%= store.address %><strong style="color:orange"> (<%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km away)</strong></p>
+                  <p><%= store.address %><strong style="color:orange"> (<%= store.distance_to([38.726096, -9.145535]).to_f.round(2) %> km away)</strong></p>
                   <p><strong><% store.categories.uniq.each_with_index do |cat, index| %>
                   <%= " / " unless index == 0%><%= cat.name %><% end %></strong></p>
               </div>
