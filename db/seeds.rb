@@ -296,9 +296,9 @@ store =Store.create(name: "La Casita",address: "Carrer de Sicília, 212, 08013 B
 
   store = Store.create(name: "Puro", address: "Rua Luciano Cordeiro 74A, 1150-217 Lisbon" ,description: "Store that sells local and fresh product from Lisbon area. We are eco-friendly and ocused on selling fresh biological products, also concerned about local producers and sustentability", website: "www.puro.pt", phone:"+351 213 487 133", user:User.first)
     # rand(1..5).times do
-    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/fixedw_large_4x_awviag.jpg")
-    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/sign29_z9m6hw.jpg")
-    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/image-2_gghoxn.jpg")
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575630282/47319815_2105742309739736_8260224589934624768_o_h0ki7x.jpg")
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575630282/slack-imgs-1_xal8fw.jpg")
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575630282/slack-imgs_xorni8.jpg")
     # end
 
 

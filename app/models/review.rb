@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :store
-  belongs_to :order, optional: true
+  belongs_to :order
 
   belongs_to :user
   validates :content, presence: true
