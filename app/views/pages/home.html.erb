@@ -1,7 +1,7 @@
 
 <div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
   <div class="container-home d-flex justify-content-around">
-    <h1>Get local products near you.</h1>
+    <h1 class="mt-3">Get local products near you.</h1>
     <div class="banner-home-card">
       <%= form_tag stores_path, method: :get do %>
       <%= select_tag(:category_id, options_from_collection_for_select(Category.all, "id", "name"), class: "custom-select", prompt: "Choose a category")%>
@@ -22,7 +22,7 @@
 <div class="container-home" id="big-container-home">
 
 <div class="container-home">
-    <h2 class="text-center"> Get local products in your town:</h2>
+    <h2 class="text-center"></h2>
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1549588246-9a455c9c788c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
     <%= link_to "Lisbon", :controller => "stores", :query => "lisbon"%>

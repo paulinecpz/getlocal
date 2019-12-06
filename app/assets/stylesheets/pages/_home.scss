@@ -58,10 +58,8 @@ font-size: 20px
 .card-home {
   width: 250px;
   border-radius: 20px;
-  box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 10px;
-  border: 2px solid green;
   background-color: white;
 }
 
@@ -150,7 +148,7 @@ font-size: 20px
   filter: grayscale(100%); /* FF 35+ */
 }
 
-.mb-4:hover .card-body{
+.mb-4:hover .card-body {
   // font-size: 25px;
   // background-color: white;
   background-color: orange;
@@ -159,13 +157,14 @@ font-size: 20px
 
 }
 
+
 .mb-4:hover .card-body a{
   color:white;
   font-size: 20px
 }
-// .mb-4:hover .selection-store-card{
-//   height: 150px
-// }
+.mb-4:hover .distance-green{
+  color:white;
+}
 
 
 #big-container-home{
