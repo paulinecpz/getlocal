@@ -40,43 +40,43 @@ puts("creating stores and users")
   end
 
 
-  pictures_array = []
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028163/ruiwryayaxzmkd9fndc0.jpg"
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028698/op7lrznw0sdtdmwaqkdz.jpg"
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028687/yuamzsw02c6umn3fujii.jpg"
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028650/tidoe3jbjzdcolvir7du.jpg"
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028644/yrkmcewm9wot4czkcz5c.jpg"
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028638/tj7yoprkuabwo4n1zox1.jpg"
+  # pictures_array = []
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028163/ruiwryayaxzmkd9fndc0.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028698/op7lrznw0sdtdmwaqkdz.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028687/yuamzsw02c6umn3fujii.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028650/tidoe3jbjzdcolvir7du.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028644/yrkmcewm9wot4czkcz5c.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028638/tj7yoprkuabwo4n1zox1.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028634/x5mcffwqpduiglfs8s6a.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028634/x5mcffwqpduiglfs8s6a.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028585/gjfm2sxwxailqklqrdbl.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028585/gjfm2sxwxailqklqrdbl.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028535/cjtc7wghezmbvxfumhnt.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028535/cjtc7wghezmbvxfumhnt.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028530/imy4dsb3sqdfjxlr0ea5.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028530/imy4dsb3sqdfjxlr0ea5.jpg"
 
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028520/ptexbfup5ntptalrkpho.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028520/ptexbfup5ntptalrkpho.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028510/cnni67g1gpwujxjva0dt.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028510/cnni67g1gpwujxjva0dt.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028504/m6rbso7pmeqh0wjoebza.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028504/m6rbso7pmeqh0wjoebza.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028491/y4pl5qdidsvb2kno8k6n.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028491/y4pl5qdidsvb2kno8k6n.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028481/qkdik4vpfm9td8bgdly3.jpg"
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028476/plloxt6ryeimtibkz89q.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028481/qkdik4vpfm9td8bgdly3.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028476/plloxt6ryeimtibkz89q.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028469/db1v1hswheo26nnyclg6.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028469/db1v1hswheo26nnyclg6.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028462/q6qcenkly9c9bvitzgam.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028462/q6qcenkly9c9bvitzgam.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028343/prxo1fh61fu7dxslsj7q.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028343/prxo1fh61fu7dxslsj7q.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028338/w5wcteurtmxfc6u00tmt.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028338/w5wcteurtmxfc6u00tmt.jpg"
 
-  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg"
+  # pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg"
 
 
 # "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1567306295427-94503f8300d7_nil6tx.jpg"
@@ -293,33 +293,55 @@ store =Store.create(name: "La Casita",address: "Carrer de Sicília, 212, 08013 B
       )
   end
 
-store = Store.create(name: "Mercearia Santa Catarina", address: "Calçada do Combro 38G, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.merceariascatarina.pt", phone:"+351 213 487 133", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+
+  store = Store.create(name: "Puro", address: "Rua Luciano Cordeiro 74A, 1150-217 Lisbon" ,description: "Store that sells local and fresh product from Lisbon area. We are eco-friendly and ocused on selling fresh biological products, also concerned about local producers and sustentability", website: "www.puro.pt", phone:"+351 213 487 133", user:User.first)
+    # rand(1..5).times do
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/fixedw_large_4x_awviag.jpg")
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/sign29_z9m6hw.jpg")
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/image-2_gghoxn.jpg")
+    # end
+
+
+
+  store = Store.create(name: "Mercearia Santa Catarina", address: "Rua Joaquim Bonifácio 21, 1150-115 Lisbon" ,description: "Local small store focused on selling fresh biological products, concerned about local producers and sustentability", website: "www.merceariascatarina.pt", phone:"+351 213 487 133", user:User.all.sample)
+    # rand(1..5).times do
+      store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/fixedw_large_4x_awviag.jpg")
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/sign29_z9m6hw.jpg")
+    store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/image-2_gghoxn.jpg")
+    # end
   StoreReview.create(content: "All normal, I have nothing to point" , stars: 3, store: store, user: User.all.sample )
   StoreReview.create(content: "The products could be fresher, but worth for the friendliness of the owner" , stars: 3, store: store, user: User.all.sample )
   StoreReview.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: User.all.sample )
 
 # end
-store = Store.create(name: "Mini Mercado da Teresa", address: "Travessa da Água da Flor 28, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadodateresa.pt", phone:"+351 219 951 882", user:User.all.sample)
-# rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
-  StoreReview.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: User.all.sample )
+store = Store.create(name: "Mini Mercado da Teresa", address: "Rua Latino Coelho 89A, 1050-134 Lisbon", description: "Biological Products directly from local producers from the center of Portugal. We care about our customers and selling the best fresh products", website: "www.mercadodateresa.pt", phone:"+351 219 951 882", user:User.all.sample)
+ # rand(1..5).times do
+   store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/DdCnVWbXcAUZY8-_xaknwn.jpg")
+ store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/blog_5c65c1ccee2f6_591_1_frcqfn.png")
+ store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/image-1_j0i7mw.jpg")
+ # end"
+  StoreReview.create(content: "One of the best grocery stores I have ever entered, distinguished by the quality of the products" , stars: 4, store: store, user: User.first )
   StoreReview.create(content: "Really nice place, with good product" , stars: 5, store: store, user: User.all.sample )
   StoreReview.create(content: "Love this place, I go there every week!" , stars: 5, store: store, user: User.all.sample )
 
 # end
-store = Store.create(name: "Canto Saudavel", address: "Rua Limoeiro 10, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.cantosaudavel.pt", phone:"+351 214 232 431", user:User.all.sample)
+store = Store.create(name: "Canto Saudavel", address: "Avenida Duque de Ávila 141B, 1050-053 Lisbon", description: "Local store in the city center of Lisbon. We sell biological products, we care about the local producers and we work directly with the best products to offer our clients", website: "www.cantosaudavel.pt", phone:"+351 214 232 431", user:User.all.sample)
 # rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575498991/image_drbe81.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/mercearia-social-pf_mqhsqn.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499263/12366807LM-MERCEARIA-CASA-DIOGO-5_i6qzgj.jpg")
+# end
   StoreReview.create(content: "I AM IN LOVE WITH THIS STORE" , stars: 5, store: store, user: User.all.sample )
   StoreReview.create(content: "Really cool place, I recommend it" , stars: 5, store: store, user: User.all.sample )
   StoreReview.create(content: "My favorite local product are here !" , stars: 5, store: store, user: User.all.sample )
 
 # end
-store = Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 4A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.merceariacriativa.pt", phone:"+351 216 458 943", user:User.all.sample)
+store = Store.create(name: "Mercearia Criativa", address: "Avenida Fontes Pereira de Melo 42-E, Lisbon", description:"Small local store focused on selling Portuguese local products", website: "www.merceariacriativa.pt", phone:"+351 216 458 943", user:User.all.sample)
 # rand(1..5).times do
-  Picture.create(remote_photo_url: pictures_array.sample, store: store)
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499264/5848027_nj5nr9.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/mercearia-prado-a-cidade-na-ponta-dos-dedos-de-sancha-trindade-sancha-co44-610x396_jxpdzt.jpg")
+store.pictures.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/fish-lisbon_t3ykzm.jpg")
+
   StoreReview.create(content: "It is okay but the service is not very good" , stars: 2, store: store, user: User.all.sample )
   StoreReview.create(content: "I highly recommend this place" , stars: 5, store: store, user: User.all.sample )
   StoreReview.create(content: "The products are really fresh and good." , stars: 5, store: store, user: User.all.sample )
@@ -330,7 +352,7 @@ store = Store.create(name: "Mercearia Criativa", address: "Av. Guerra Junqueiro 
 # # rand(1..5).times do
 #   Picture.create(remote_photo_url: pictures_array.sample, store: store)
 # # end
-store = Store.create(name: "ReFood", address: "Calçada Galvão E, 1300-011 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.refood.pt", phone:"+351 214 376 821", user:User.all.sample)
+store = Store.create(name: "ReFood", address: "Calçada Galvão E, 1300-011 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.refood.pt", phone:"+351 214 376 821", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1567306295427-94503f8300d7_nil6tx.jpg", store: store)
 # end
@@ -338,16 +360,16 @@ store = Store.create(name: "ReFood", address: "Calçada Galvão E, 1300-011 Lisb
   StoreReview.create(content: "Very good but good be cleaner" , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "Love this place although it is always packed" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Conveniência Capaz", address: "R. da Junqueira 472, 1300-341 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.capazstores.pt", phone:"+351 211 112 321", user:User.all.sample)
+store = Store.create(name: "Conveniência Capaz", address: "R. da Junqueira 472, 1300-341 Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.capazstores.pt", phone:"+351 211 112 321", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1533264533981-8aead62802fd_rb1dip.jpg", store: store)
 # end
-  StoreReview.create(content: "this is bull shit store, people are really not nice" , stars: 1, store: store, user: User.all.sample )
+  StoreReview.create(content: "this is bull shit store, people are really not nice" , stars: 1, store: store, user: User.first )
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "Love this place !" , stars: 5, store: store, user: User.all.sample )
 
 # end
-store = Store.create(name: "Gourmeceria", address: "Av. Frei Miguel Contreiras 14, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gourmeceria.pt", phone:"+351 212 355 659", user:User.all.sample)
+store = Store.create(name: "Gourmeceria", address: "Av. Frei Miguel Contreiras 14, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gourmeceria.pt", phone:"+351 212 355 659", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1516594798947-e65505dbb29d_modeg1.jpg", store: store)
 # end
@@ -355,7 +377,7 @@ store = Store.create(name: "Gourmeceria", address: "Av. Frei Miguel Contreiras 1
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "This place is awesome ! I looooooove it" , stars: 5, store: store, user: User.all.sample )
 # end
-store = Store.create(name: "Glood Areeiro", address: "Av. de Roma 23, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gloodlx.pt", phone:"+351 217 476 881", user:User.all.sample)
+store = Store.create(name: "Glood Areeiro", address: "Av. de Roma 23, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.gloodlx.pt", phone:"+351 217 476 881", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/1902508_xvsmhf.jpg", store: store)
 # end
@@ -363,7 +385,7 @@ store = Store.create(name: "Glood Areeiro", address: "Av. de Roma 23, Lisbon, Po
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 # end
-store = Store.create(name: "Mercearia Nacional", address: "Av. Elias Garcia 98, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercearianacional.pt", phone:"+351 211 488 743", user:User.all.sample)
+store = Store.create(name: "Mercearia Nacional", address: "Av. Elias Garcia 98, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercearianacional.pt", phone:"+351 211 488 743", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574339/sarona-market-stalls_c1mkgt.jpg", store: store)
 # end
@@ -371,7 +393,7 @@ store = Store.create(name: "Mercearia Nacional", address: "Av. Elias Garcia 98, 
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Rota Gourmet", address: "Rua do Loreto n 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.rotagourmet.pt", phone:"+351 213 677 821", user:User.all.sample)
+store = Store.create(name: "Rota Gourmet", address: "Rua do Loreto n 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.rotagourmet.pt", phone:"+351 213 677 821", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1485637701894-09ad422f6de6_jeahi9.jpg", store: store)
 # end
@@ -379,7 +401,7 @@ store = Store.create(name: "Rota Gourmet", address: "Rua do Loreto n 11, Lisbon,
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Prado Mercearia", address: "R. Pedras Negras 35, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.pradomercearia.pt", phone:"+351 212 334 451", user:User.all.sample)
+store = Store.create(name: "Prado Mercearia", address: "R. Pedras Negras 35, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.pradomercearia.pt", phone:"+351 212 334 451", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/4758732_orig_hjmx2r.jpg", store: store)
 # end
@@ -387,7 +409,7 @@ store = Store.create(name: "Prado Mercearia", address: "R. Pedras Negras 35, Lis
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Conserveira de Lisboa", address: "Rua dos Bacalhoeiros 34, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.conserveiralisboa.pt", phone:"+351 211 872 991", user:User.all.sample)
+store = Store.create(name: "Conserveira de Lisboa", address: "Rua dos Bacalhoeiros 34, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.conserveiralisboa.pt", phone:"+351 211 872 991", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574341/shutterstock_451641727_j6nmc1.jpg", store: store)
 # end
@@ -395,7 +417,7 @@ store = Store.create(name: "Conserveira de Lisboa", address: "Rua dos Bacalhoeir
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Delidelux", address: "R. Alexandre Herculano 15A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.delidelux.pt", phone:"+351 211 498 021", user:User.all.sample)
+store = Store.create(name: "Delidelux", address: "R. Alexandre Herculano 15A, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.delidelux.pt", phone:"+351 211 498 021", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/mercearia-do-campo-esplanada-4ba40_clnnmn.jpg", store: store)
 # end
@@ -403,7 +425,7 @@ store = Store.create(name: "Delidelux", address: "R. Alexandre Herculano 15A, Li
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Pérola Jovem", address: "R. das Gáveas 44, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.perolajovem.pt", phone:"+351 211 498 021", user:User.all.sample)
+store = Store.create(name: "Pérola Jovem", address: "R. das Gáveas 44, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.perolajovem.pt", phone:"+351 211 498 021", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499270/prado-mercearia-a-cidade-na-ponta-dos-dedos-de-sancha-trindade_sw5k40.jpg", store: store)
 # end
@@ -411,7 +433,7 @@ store = Store.create(name: "Pérola Jovem", address: "R. das Gáveas 44, Lisbon,
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Mercado Fresco", address: "Tv. do Monte 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadofresco.pt", phone:"+351 211 497 772", user:User.all.sample)
+store = Store.create(name: "Mercado Fresco", address: "Tv. do Monte 11, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.mercadofresco.pt", phone:"+351 211 497 772", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499265/IMG_20160506_100303_suw10j.jpg", store: store)
 # end
@@ -419,7 +441,7 @@ store = Store.create(name: "Mercado Fresco", address: "Tv. do Monte 11, Lisbon, 
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.favarica.pt", phone:"+351 211 787 911", user:User.all.sample)
+store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.favarica.pt", phone:"+351 211 787 911", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575499266/CasaMacario-010-Convida-2019maio-Lisboa_zgcu3h.jpg", store: store)
 # end
@@ -427,7 +449,7 @@ store = Store.create(name: "Fava Rica", address: "Av. Conde Valbom 124, Lisbon, 
   StoreReview.create(content: "Very good." , stars: 4, store: store, user: User.all.sample )
   StoreReview.create(content: "I have been looking for a place like this for a long time and this one is really great" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user:User.all.sample)
+store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Portugal", description:Faker::Restaurant.description, website: "www.avomoleiro.pt", phone:"+351 211 431 221", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/fish-lisbon_t3ykzm.jpg", store: store)
   StoreReview.create(content: "This store is really good, there is everything I need it is perfect." , stars: 5, store: store, user: User.all.sample )
@@ -438,91 +460,91 @@ store = Store.create(name: "Avô Moleiro", address: "R. Viriato 14C, Lisbon, Por
 
 # porto
 
-store = Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso, Porto, Portugal", description:Faker::Restaurant.description, website: "www.canela&maça.pt", phone:"+351 221 245 149", user:User.all.sample)
+store = Store.create(name: "Canela e Maça", address: "191 R. de Santo Ildefonso, Porto, Portugal", description:Faker::Restaurant.description, website: "www.canela&maça.pt", phone:"+351 221 245 149", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574341/lau-instacart-alyse-2_xsuv7g.jpg", store: store)
 # end
   StoreReview.create(content: "I don't recommend this store to anyone" , stars: 2, store: store, user: User.all.sample )
 
-store = Store.create(name: "Portus Sabor", address: "Av. dos Aliados 166, Porto, Portugal", description:Faker::Restaurant.description, website: "www.portusabor.pt", phone:"+351 221 478 198", user:User.all.sample)
+store = Store.create(name: "Portus Sabor", address: "Av. dos Aliados 166, Porto, Portugal", description:Faker::Restaurant.description, website: "www.portusabor.pt", phone:"+351 221 478 198", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/porto_hjxm5j.jpg", store: store)
 # end
   StoreReview.create(content: "If you want fruit with dust, this is the right store for you" , stars: 2, store: store, user: User.all.sample )
 
-store = Store.create(name: "Frutaria do Bairro", address: "R. Formosa 300, Porto, Portugal", description:Faker::Restaurant.description, website: "www.frutariadobairro.pt", phone:"+351 221 235 872", user:User.all.sample)
+store = Store.create(name: "Frutaria do Bairro", address: "R. Formosa 300, Porto, Portugal", description:Faker::Restaurant.description, website: "www.frutariadobairro.pt", phone:"+351 221 235 872", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574341/ebcd5c9efdc743d83d29e2b571c0feb36478d7dc_akfqns.jpg", store: store)
 # end
   StoreReview.create(content: "Don't go on this store, i've never seen anything like that" , stars: 1, store: store, user: User.all.sample )
 
-store = Store.create(name: "Mercado da Ribeira", address: "R. de Cândido dos Reis 58, Porto, Portugal", description:Faker::Restaurant.description, website: "www.mercadoribeiro.pt", phone:"+351 221 456 343", user:User.all.sample)
+store = Store.create(name: "Mercado da Ribeira", address: "R. de Cândido dos Reis 58, Porto, Portugal", description:Faker::Restaurant.description, website: "www.mercadoribeiro.pt", phone:"+351 221 456 343", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575090/peixaria3-edit_ucmjtx.jpg", store: store)
 # end
   StoreReview.create(content: "I can't tell you how much i love this store, its where i buy all the fruit" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Mercearia do Amial", address: "R. do Amial 926, Porto, Portugal", description:Faker::Restaurant.description, website: "www.frutadoamial.pt", phone:"+351 221 785 772", user:User.all.sample)
+store = Store.create(name: "Mercearia do Amial", address: "R. do Amial 926, Porto, Portugal", description:Faker::Restaurant.description, website: "www.frutadoamial.pt", phone:"+351 221 785 772", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/fresh-produce-at-japanese-grocery-store_xiynmg.jpg", store: store)
 # end
   StoreReview.create(content: "Super cool store, i loved it. The freshest vegetables i'v find so far" , stars: 4, store: store, user: User.all.sample )
 
-store = Store.create(name: "Porto Organico", address: "R. de Clemente Meneres 65, Porto, Portugal", description:Faker::Restaurant.description, website: "www.portoorganico.pt", phone:"+351 221 784 112", user:User.all.sample)
+store = Store.create(name: "Porto Organico", address: "R. de Clemente Meneres 65, Porto, Portugal", description:Faker::Restaurant.description, website: "www.portoorganico.pt", phone:"+351 221 784 112", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/grocery-store-waste-1200x600_cfpuyy.jpg", store: store)
 # end
   StoreReview.create(content: "I've been to better stores, but I've been to worse, I leave 3 stars" , stars: 3, store: store, user: User.all.sample )
 
-store = Store.create(name: "Folha de Oliveira", address: "Tv. de Cedofeita 24, Porto, Portugal", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user:User.all.sample)
+store = Store.create(name: "Folha de Oliveira", address: "Tv. de Cedofeita 24, Porto, Portugal", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/epicerie-fine-avec-plein_rqlh9j.jpg", store: store)
 # end
   StoreReview.create(content: "One of the worst stores I can remember, could have more variety of products" , stars: 1, store: store, user: User.all.sample )
 
-store = Store.create(name: "Mercearia das Flores", address: "R. Formosa 353, Porto, Portugal", description:Faker::Restaurant.description, website: "www.merceariaflores.pt", phone:"+351 221 991 973", user:User.all.sample)
+store = Store.create(name: "Mercearia das Flores", address: "R. Formosa 353, Porto, Portugal", description:Faker::Restaurant.description, website: "www.merceariaflores.pt", phone:"+351 221 991 973", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/wet-rack-800x600_mhanjp.jpg", store: store)
 # end
   StoreReview.create(content: "Store with an old air but don't be fooled because the products are the freshest" , stars: 4, store: store, user: User.all.sample )
 
-store = Store.create(name: "Maçaroca", address: "R. do Bonjardim 496A, Porto, Portugal", description:Faker::Restaurant.description, website: "www.macaroca.pt", phone:"+351 221 443 213", user:User.all.sample)
+store = Store.create(name: "Maçaroca", address: "R. do Bonjardim 496A, Porto, Portugal", description:Faker::Restaurant.description, website: "www.macaroca.pt", phone:"+351 221 443 213", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/zpz3_t0wvog.jpg", store: store)
 # end
   StoreReview.create(content: "I hated this store, the owner is super rude, and the fruit doesn't look very fresh. I dont recommend it to anyone" , stars: 1, store: store, user: User.all.sample )
 
-store = Store.create(name: "Joaninha", address: "Rua dos Caldeireiros 136, Porto, Portugal", description:Faker::Restaurant.description, website: "www.joaninhapadaria.pt", phone:"+351 221 876 913", user:User.all.sample)
+store = Store.create(name: "Joaninha", address: "Rua dos Caldeireiros 136, Porto, Portugal", description:Faker::Restaurant.description, website: "www.joaninhapadaria.pt", phone:"+351 221 876 913", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/63733190_dd671788a3_b_qk4nf8.jpg", store: store)
 # end
   StoreReview.create(content: "I'm only giving to stars beacuse of the treatment we had, the owner is badle regarded" , stars: 2, store: store, user: User.all.sample )
 
-store = Store.create(name: "A Pérola do Bolhão", address: "R. Formosa 279, Porto, Portugal", description:Faker::Restaurant.description, website: "www.perolabolhao.pt", phone:"+351 221 455 638", user:User.all.sample)
+store = Store.create(name: "A Pérola do Bolhão", address: "R. Formosa 279, Porto, Portugal", description:Faker::Restaurant.description, website: "www.perolabolhao.pt", phone:"+351 221 455 638", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575090/7081_lo3d8174-mario-rodrigues_sbwuxv.jpg", store: store)
 # end
   StoreReview.create(content: "The best store in the neighborhood, i only bought some vegetables, but everything looks super fresh" , stars: 4, store: store, user: User.all.sample )
 
-store = Store.create(name: "Casa Cerdeira", address: "Rua de Santa Catarina 533, Porto, Portugal", description:Faker::Restaurant.description, website: "www.casacerdeira.pt", phone:"+351 221 881 753", user:User.all.sample)
+store = Store.create(name: "Casa Cerdeira", address: "Rua de Santa Catarina 533, Porto, Portugal", description:Faker::Restaurant.description, website: "www.casacerdeira.pt", phone:"+351 221 881 753", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/redmeatcounter600_d3pdwd.jpg", store: store)
 # end
   StoreReview.create(content: "Not bad, the products could be better, at least the it looks super clean" , stars: 3, store: store, user: User.all.sample )
 
-store = Store.create(name: "Mercearia Belo Sabor", address: "R. de Belomonte 44, Porto, Portugal", description:Faker::Restaurant.description, website: "www.belosabor.pt", phone:"+351 223 712 866", user:User.all.sample)
+store = Store.create(name: "Mercearia Belo Sabor", address: "R. de Belomonte 44, Porto, Portugal", description:Faker::Restaurant.description, website: "www.belosabor.pt", phone:"+351 223 712 866", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/GettyImages-5218116791-5923a6b93df78cf5faca90c5_dqgz6a.jpg", store: store)
 # end
   StoreReview.create(content: "Os produtos mais frescos que vai encontrar aqui perto, otimo atendimento e a fruta é do melhor.Recomendo a todos" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Seramota", address: "R. de Sá da Bandeira 343, Porto, Portugal", description:Faker::Restaurant.description, website: "www.seramota.pt", phone:"+351 224 599 862", user:User.all.sample)
+store = Store.create(name: "Seramota", address: "R. de Sá da Bandeira 343, Porto, Portugal", description:Faker::Restaurant.description, website: "www.seramota.pt", phone:"+351 224 599 862", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/800px_COLOURBOX26401389_kzw3p0.jpg", store: store)
 # end
   StoreReview.create(content: "Everything is fresh in this store from the veggies to fruit, i recommend this one" , stars: 5, store: store, user: User.all.sample )
 
-store = Store.create(name: "Moinho Velho", address: "Rua de Fernandes Tomás 508, Porto, Portugal", description:Faker::Restaurant.description, website: "www.moinhovelho.pt", phone:"+351 221 857 432", user:User.all.sample)
+store = Store.create(name: "Moinho Velho", address: "Rua de Fernandes Tomás 508, Porto, Portugal", description:Faker::Restaurant.description, website: "www.moinhovelho.pt", phone:"+351 221 857 432", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/Butchery-business_lxx8sg.jpg", store: store)
 # end
