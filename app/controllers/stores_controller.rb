@@ -19,7 +19,7 @@ class StoresController < ApplicationController
 
     if params[:query].present?
       condition = "address @@ :query OR name @@ :query"
-      @stores = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance).where(condition, query: "%#{params[:query]}%")
+      @stores = policy_scope(Store).geocoded.near([38.726096, -9.145535], 40000, :order => :distance).where(condition, query: "%#{params[:query]}%")
 
       # @stores = policy_scope(Store).where(id: store_from_category_ids)(condition, query: "%#{params[:query]}%")
 
@@ -27,7 +27,7 @@ class StoresController < ApplicationController
 
 
     else
-      # @stores = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)    
+      # @stores = policy_scope(Store).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)
     @stores = policy_scope(Store).order(:name)
     update_map
 
@@ -35,7 +35,7 @@ class StoresController < ApplicationController
 
     if params[:category_id].present?
       store_from_category_ids = Product.where(category_id: params[:category_id]).pluck(:store_id)
-      @stores = @stores.where(id: store_from_category_ids).geocoded.near([38.736946, -9.142685],40000,  :order => :distance)
+      @stores = @stores.where(id: store_from_category_ids).geocoded.near([38.726096, -9.145535],40000,  :order => :distance)
 
       update_map
 

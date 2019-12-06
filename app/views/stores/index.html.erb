@@ -15,7 +15,7 @@
 <!--           <h3 class= "text-center ml-4">or</h3>
  -->          <div class="text-center ml-2" id="geolocation">
             <%= form_tag stores_path, method: :get do %>
-            <%= submit_tag "Geolocate me!", class: "btn-localisation" %>
+            <%= submit_tag "Find my position", class: "btn-localisation" %>
             <% end %>
           </div>
         </div>
@@ -41,10 +41,10 @@
               </div>
               <div class= 'distance-orange-index'>
                 <p>⚑</p>
-                <% if store.distance_to([38.736946, -9.142685]).to_i < 10 %>
-                    <p><%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km</p>
+                <% if store.distance_to([38.726096, -9.145535]).to_i < 10 %>
+                    <p><%= store.distance_to([38.726096, -9.145535]).to_f.round(2) %> km</p>
                 <% else %>
-                    <p><%= store.distance_to([38.736946, -9.142685]).to_i %> km</p>
+                    <p><%= store.distance_to([38.726096, -9.145535]).to_i %> km</p>
                 <% end %>
               </div>
             </div>

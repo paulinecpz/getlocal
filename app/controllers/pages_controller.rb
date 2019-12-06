@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @stores = policy_scope(Store).order(:created_at)
-    @stores_near = policy_scope(Store).geocoded.near([38.736946, -9.142685],10,  :order => :distance)   
+    @stores_near = policy_scope(Store).geocoded.near([38.726096, -9.145535],10,  :order => :distance)
     @stores_lisbon = policy_scope(Store).where("address ILIKE ?", "%Lisbon%").limit(6)
     @stores_porto = policy_scope(Store).where("address ILIKE ?", "%Porto%").limit(6)
     @stores_paris = policy_scope(Store).where("address ILIKE ?", "%Paris%").limit(6)
