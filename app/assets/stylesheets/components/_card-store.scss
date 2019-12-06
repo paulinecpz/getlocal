@@ -13,7 +13,7 @@
   box-shadow: 0 0 2px rgba(0,0,0,0.2);
   position: relative;
   z-index: 1;
-  height: 300px;
+  height: auto;
   width: 400px;
   border-radius: 20px;
 }
@@ -59,11 +59,20 @@
 .distance-orange{
 color: orange;
 font-weight: bold;
-width: 80px;
+width: auto;
 margin-left: 8px;
 text-align: center;
 font-size: 15px;
 margin-left: 120px
+
+}
+.distance-orange-index{
+color: orange;
+font-weight: bold;
+width: auto;
+margin-left: 8px;
+text-align: center;
+font-size: 15px;
 
 }
 
@@ -132,4 +141,8 @@ font-size: 16px
   z-index: 2;
   background: black;
   opacity: 0;
+}
+
+.card-store-text {
+  width: auto;
 }

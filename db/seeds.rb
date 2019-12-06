@@ -34,48 +34,49 @@ puts("creating stores and users")
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       password: "password",
-      photo: Faker::Avatar.image(slug: "my-own-slug", bgset: "bg1")
+      photo: Faker::Avatar.image(slug: "my-own-slug", bgset: "bg1"),
+      role: 'store_manager'
       )
   end
 
 
-#   pictures_array = []
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028163/ruiwryayaxzmkd9fndc0.jpg"
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028698/op7lrznw0sdtdmwaqkdz.jpg"
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028687/yuamzsw02c6umn3fujii.jpg"
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028650/tidoe3jbjzdcolvir7du.jpg"
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028644/yrkmcewm9wot4czkcz5c.jpg"
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028638/tj7yoprkuabwo4n1zox1.jpg"
+  pictures_array = []
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028163/ruiwryayaxzmkd9fndc0.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028698/op7lrznw0sdtdmwaqkdz.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028687/yuamzsw02c6umn3fujii.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028650/tidoe3jbjzdcolvir7du.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028644/yrkmcewm9wot4czkcz5c.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028638/tj7yoprkuabwo4n1zox1.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028634/x5mcffwqpduiglfs8s6a.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028634/x5mcffwqpduiglfs8s6a.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028585/gjfm2sxwxailqklqrdbl.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028585/gjfm2sxwxailqklqrdbl.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028535/cjtc7wghezmbvxfumhnt.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028535/cjtc7wghezmbvxfumhnt.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028530/imy4dsb3sqdfjxlr0ea5.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028530/imy4dsb3sqdfjxlr0ea5.jpg"
 
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028520/ptexbfup5ntptalrkpho.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028520/ptexbfup5ntptalrkpho.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028510/cnni67g1gpwujxjva0dt.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028510/cnni67g1gpwujxjva0dt.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028504/m6rbso7pmeqh0wjoebza.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028504/m6rbso7pmeqh0wjoebza.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028491/y4pl5qdidsvb2kno8k6n.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028491/y4pl5qdidsvb2kno8k6n.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028481/qkdik4vpfm9td8bgdly3.jpg"
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028476/plloxt6ryeimtibkz89q.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028481/qkdik4vpfm9td8bgdly3.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028476/plloxt6ryeimtibkz89q.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028469/db1v1hswheo26nnyclg6.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028469/db1v1hswheo26nnyclg6.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028462/q6qcenkly9c9bvitzgam.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028462/q6qcenkly9c9bvitzgam.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028343/prxo1fh61fu7dxslsj7q.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028343/prxo1fh61fu7dxslsj7q.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028338/w5wcteurtmxfc6u00tmt.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028338/w5wcteurtmxfc6u00tmt.jpg"
 
-#   pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg"
+  pictures_array << "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg"
 
 
 # "https://res.cloudinary.com/mathieufontaine/image/upload/v1575573793/photo-1567306295427-94503f8300d7_nil6tx.jpg"
@@ -143,71 +144,71 @@ puts("creating stores and users")
 
  # London
 
-store =Store.create(name: "Finer Foods", address:"Lambeth, London SE1 7PB, England", description:"We only sell fresh products with great quality, at affordable prices. All our products come from the local producers in the region", website:"www.Finer-Foods.com", phone:"+44 18 7153 1234", user:User.all.sample)
+store =Store.create(name: "Finer Foods", address:"Lambeth, London SE1 7PB, England", description:"We only sell fresh products with great quality, at affordable prices. All our products come from the local producers in the region", website:"www.Finer-Foods.com", phone:"+44 18 7153 1234", user: User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/london_awgoc3.jpg", store: store)
 # end
-store =Store.create(name: "Goodness Grocery", address: "51 Shaftesbury Ave, Soho, London W1D 6BA England", description:Faker::Restaurant.description, website:"www.Goodness-Grocery.com", phone:"+44 20 4123 7392", user:User.all.sample)
+store =Store.create(name: "Goodness Grocery", address: "51 Shaftesbury Ave, Soho, London W1D 6BA England", description:Faker::Restaurant.description, website:"www.Goodness-Grocery.com", phone:"+44 20 4123 7392", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028687/yuamzsw02c6umn3fujii.jpg", store: store)
 # end
-store =Store.create(name: "Fast And Fresh", address: "Belvedere Rd, Lambeth, London SE1 8XX England", description:Faker::Restaurant.description, website: "www.fastNfresh.com", phone:"+44 22 0284 1473", user:User.all.sample)
+store =Store.create(name: "Fast And Fresh", address: "Belvedere Rd, Lambeth, London SE1 8XX England", description:Faker::Restaurant.description, website: "www.fastNfresh.com", phone:"+44 22 0284 1473", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028638/tj7yoprkuabwo4n1zox1.jpg", store: store)
 # end
-store =Store.create(name: "Family’S Own Grocery", address: "32 London Bridge St, London SE1 9SG England", description:Faker::Restaurant.description, website: "www.OwnGrocery.com", phone:"+44 84 3658 0922", user:User.all.sample)
+store =Store.create(name: "Family’S Own Grocery", address: "32 London Bridge St, London SE1 9SG England", description:Faker::Restaurant.description, website: "www.OwnGrocery.com", phone:"+44 84 3658 0922", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028650/tidoe3jbjzdcolvir7du.jpg", store: store)
 # end
-store =Store.create(name: "Proud Produce",address: "150 London Wall, Barbican, London EC2Y 5HN England", description:Faker::Restaurant.description, website:"www.ProudProduce.com", phone:"+44 29 4453 9726",user:User.all.sample)
+store =Store.create(name: "Proud Produce",address: "150 London Wall, Barbican, London EC2Y 5HN England", description:Faker::Restaurant.description, website:"www.ProudProduce.com", phone:"+44 29 4453 9726",user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028644/yrkmcewm9wot4czkcz5c.jpg", store: store)
 # end
-store =Store.create(name: "Oragnics",address: "Gracechurch St, Langbourn, London EC3V 1LT England", description:Faker::Restaurant.description, website:"www.organics.com", phone:"+44 29 4453 9726",user:User.all.sample)
+store =Store.create(name: "Oragnics",address: "Gracechurch St, Langbourn, London EC3V 1LT England", description:Faker::Restaurant.description, website:"www.organics.com", phone:"+44 29 4453 9726",user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028163/ruiwryayaxzmkd9fndc0.jpg", store: store)
 # end
 
  # Paris
 
-store =Store.create(name: "Nos producteurs", address:"97 Place de la Madeleine, 75008 Paris  France", description:Faker::Restaurant.description, website:"www.nos-producteurs.com", phone:"+33 34 45 53 12 34", user:User.all.sample)
+store =Store.create(name: "Nos producteurs", address:"97 Place de la Madeleine, 75008 Paris  France", description:Faker::Restaurant.description, website:"www.nos-producteurs.com", phone:"+33 34 45 53 12 34", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028327/fzjl0igfmqtaybitdsjl.jpg", store: store)
 # end
-store =Store.create(name: "Marché aux Fruits", address: "90 rue La Boétie, 75008 Paris France", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.com", phone:"01 20 41 23 73 92", user:User.all.sample)
+store =Store.create(name: "Marché aux Fruits", address: "90 rue La Boétie, 75008 Paris France", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.com", phone:"01 20 41 23 73 92", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028585/gjfm2sxwxailqklqrdbl.jpg", store: store)
 # end
-store =Store.create(name: "C'est Bon c'est Bio", address: "129 Rue de Grenelle, 75007 Paris France", description:Faker::Restaurant.description, website: "www.cestbio.com", phone:"01 22 02 84 14 73", user:User.all.sample)
+store =Store.create(name: "C'est Bon c'est Bio", address: "129 Rue de Grenelle, 75007 Paris France", description:Faker::Restaurant.description, website: "www.cestbio.com", phone:"01 22 02 84 14 73", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028535/cjtc7wghezmbvxfumhnt.jpg", store: store)
 # end
-store =Store.create(name: "Epicerie Fine", address: "176 Rue Montmartre, 75002 Paris France", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", user:User.all.sample)
+store =Store.create(name: "Epicerie Fine", address: "176 Rue Montmartre, 75002 Paris France", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028634/x5mcffwqpduiglfs8s6a.jpg", store: store)
 # end
-store =Store.create(name: "Mes Beaux Légumes",address: "Place Georges-Pompidou, 75004 Paris France", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.com", phone:"01 29 44 53 97 26", user:User.all.sample)
+store =Store.create(name: "Mes Beaux Légumes",address: "Place Georges-Pompidou, 75004 Paris France", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.com", phone:"01 29 44 53 97 26", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028504/m6rbso7pmeqh0wjoebza.jpg", store: store)
 # end
 
-store =Store.create(name: "Extra Frais", address:"79 Rue de Seine, 75006 Paris France", description:Faker::Restaurant.description, website:"www.extra-frais.com", phone:"+33 34 45 53 12 34", user:User.all.sample)
+store =Store.create(name: "Extra Frais", address:"79 Rue de Seine, 75006 Paris France", description:Faker::Restaurant.description, website:"www.extra-frais.com", phone:"+33 34 45 53 12 34", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574339/istockphoto-1048084286-170667a_bm6uqp.jpg", store: store)
 # end
-store =Store.create(name: "Produits du jardin", address: "67 Boulevard Saint-Marcel, 75013 Paris France", description:Faker::Restaurant.description, website:"www.alimentation-generale.com", phone:"01 20 41 23 73 92", user:User.all.sample)
+store =Store.create(name: "Produits du jardin", address: "67 Boulevard Saint-Marcel, 75013 Paris France", description:Faker::Restaurant.description, website:"www.alimentation-generale.com", phone:"01 20 41 23 73 92", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575519/file_jyzego.jpg", store: store)
 # end
-store =Store.create(name: "Bio Attitude", address: "35 Rue au Maire, 75003 Paris France", description:Faker::Restaurant.description, website: "www.bio-attitude.com", phone:"01 22 02 84 14 73", user:User.all.sample)
+store =Store.create(name: "Bio Attitude", address: "35 Rue au Maire, 75003 Paris France", description:Faker::Restaurant.description, website: "www.bio-attitude.com", phone:"01 22 02 84 14 73", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028510/cnni67g1gpwujxjva0dt.jpg", store: store)
 # end
-store =Store.create(name: "L'Epicerie de Jean", address: "61 Rue Léon Frot, 75011 Paris France", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", user:User.all.sample)
+store =Store.create(name: "L'Epicerie de Jean", address: "61 Rue Léon Frot, 75011 Paris France", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.com", phone:"+33 84 36 58 09 22", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028698/op7lrznw0sdtdmwaqkdz.jpg", store: store)
 # end
-store =Store.create(name: "Quatre Saisons",address: "11 Rue de Castellane, 75008 Paris France", description:Faker::Restaurant.description, website:"www.qutre-saisons.com", phone:"01 29 44 53 97 26", user:User.all.sample)
+store =Store.create(name: "Quatre Saisons",address: "11 Rue de Castellane, 75008 Paris France", description:Faker::Restaurant.description, website:"www.qutre-saisons.com", phone:"01 29 44 53 97 26", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028520/ptexbfup5ntptalrkpho.jpg", store: store)
 # end
@@ -215,35 +216,35 @@ store =Store.create(name: "Quatre Saisons",address: "11 Rue de Castellane, 75008
 
  # Lyon
 
-store =Store.create(name: "La Main Verte", address:"221 Rue Garibaldi, 69003 Lyon France", description:Faker::Restaurant.description, website:"www.nos-producteurs.fr", phone:"03 64 75 53 02 34", user:User.all.sample)
+store =Store.create(name: "La Main Verte", address:"221 Rue Garibaldi, 69003 Lyon France", description:Faker::Restaurant.description, website:"www.nos-producteurs.fr", phone:"03 64 75 53 02 34", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500012/photo-1542838132-92c53300491e_zq2xn5.jpg", store: store)
 # end
-store =Store.create(name: "Le Coin Oragnic", address: "23 Rue Molière, 69006 Lyon France", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.fr", phone:"+33 60 41 53 74 02", user:User.all.sample)
+store =Store.create(name: "Le Coin Oragnic", address: "23 Rue Molière, 69006 Lyon France", description:Faker::Restaurant.description, website:"www.Marché-aux-Fruits.fr", phone:"+33 60 41 53 74 02", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/photo-1459663148042-6d8cb9340411_s10qyj.jpg", store: store)
 # end
-store =Store.create(name: "Produits Locaux", address: "107 Rue Boileau, 69006 Lyon France", description:Faker::Restaurant.description, website: "www.cestbio.fr", phone:"03 22 02 84 14 73", user:User.all.sample)
+store =Store.create(name: "Produits Locaux", address: "107 Rue Boileau, 69006 Lyon France", description:Faker::Restaurant.description, website: "www.cestbio.fr", phone:"03 22 02 84 14 73", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028462/q6qcenkly9c9bvitzgam.jpg", store: store)
 # end
-store =Store.create(name: "Bouchon Lyonnais", address: "5 Place d'Arsonval, 69003 Lyon France", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.fr", phone:"+33 94 36 38 09 22", user:User.all.sample)
+store =Store.create(name: "Bouchon Lyonnais", address: "5 Place d'Arsonval, 69003 Lyon France", description:Faker::Restaurant.description, website: "www.Epicerie-Fine.fr", phone:"+33 94 36 38 09 22", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028469/db1v1hswheo26nnyclg6.jpg", store: store)
 # end
-store =Store.create(name: "Le Marché Local", address: "5 Rue Bonnefoi, 69003 Lyon France", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.fr", phone:"03 29 24 53 92 36", user:User.all.sample)
+store =Store.create(name: "Le Marché Local", address: "5 Rue Bonnefoi, 69003 Lyon France", description:Faker::Restaurant.description, website:"www.mes-beaux-legumes.fr", phone:"03 29 24 53 92 36", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/lyon_j65umo.jpg", store: store)
 # end
-store =Store.create(name: "Mieux Manger", address: "Quai Victor Augagneur, 69003 Lyon France", description:Faker::Restaurant.description, website: "www.Mieux-Manger.fr", phone:"+33 94 36 38 09 22", user:User.all.sample)
+store =Store.create(name: "Mieux Manger", address: "Quai Victor Augagneur, 69003 Lyon France", description:Faker::Restaurant.description, website: "www.Mieux-Manger.fr", phone:"+33 94 36 38 09 22", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575028338/w5wcteurtmxfc6u00tmt.jpg", store: store)
 # end
-store =Store.create(name: "Grand Frais", address: "77-89 Rue Tête d'Or, 69006 Lyon France", description:Faker::Restaurant.description, website:"www.grandfrais.fr", phone:"03 29 24 53 92 36", user:User.all.sample)
+store =Store.create(name: "Grand Frais", address: "77-89 Rue Tête d'Or, 69006 Lyon France", description:Faker::Restaurant.description, website:"www.grandfrais.fr", phone:"03 29 24 53 92 36", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575519/1520269201_000_1020QL_qijsa9.jpg", store: store)
 # end
-store =Store.create(name: "Marché Alimentaire", address: "86-88 Boulevard Yves Farge, 69007 Lyon France", description:Faker::Restaurant.description, website:"www.marche-alimentaire.fr", phone:"03 29 24 53 92 36", user:User.all.sample)
+store =Store.create(name: "Marché Alimentaire", address: "86-88 Boulevard Yves Farge, 69007 Lyon France", description:Faker::Restaurant.description, website:"www.marche-alimentaire.fr", phone:"03 29 24 53 92 36", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/photo-1563649685437-a79731028cd1_dkrw5z.jpg", store: store)
 # end
@@ -251,81 +252,36 @@ store =Store.create(name: "Marché Alimentaire", address: "86-88 Boulevard Yves 
 
  # Barcelona
 
-store = Store.create(name: "Supermercado Fino", address:"Carrer del Taulat, 81, 08005 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", user:User.all.sample)
+store = Store.create(name: "Supermercado Fino", address:"Carrer del Taulat, 81, 08005 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.SupermercadoFino.es", phone:"+34 54 75 43 02 88", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575519/market-5-800x581_algxll.jpg", store: store)
 # end
-store =Store.create(name: "El comida Stores", address: "Passeig de Sant Joan, 108, Barcelona, Spain", description:Faker::Restaurant.description, website:"www.comida-stores.es", phone:"+34 88 41 53 35 02", user:User.all.sample)
+store =Store.create(name: "El comida Stores", address: "Passeig de Sant Joan, 108, Barcelona, Spain", description:Faker::Restaurant.description, website:"www.comida-stores.es", phone:"+34 88 41 53 35 02", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575519/image_dqce9m.jpg", store: store)
 # end
-store =Store.create(name: "Mercat del Ninot", address: "Carrer de Mallorca, 401, Barcelona, Spain", description:Faker::Restaurant.description, website: "www.mercat-ninot.es", phone:"+34 57 63 84 75 04", user:User.all.sample)
+store =Store.create(name: "Mercat del Ninot", address: "Carrer de Mallorca, 401, Barcelona, Spain", description:Faker::Restaurant.description, website: "www.mercat-ninot.es", phone:"+34 57 63 84 75 04", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575519/bangkok-food-market.jpg_qklary.jpg", store: store)
 # end
-store =Store.create(name: "Mis verduras", address: "Carrer Nou de la Rambla, 3-5, Barcelona, Spain", description:Faker::Restaurant.description, website: "www.mis-verduras.es", phone:"+34 94 96 38 09 13", user:User.all.sample)
+store =Store.create(name: "Mis verduras", address: "Carrer Nou de la Rambla, 3-5, Barcelona, Spain", description:Faker::Restaurant.description, website: "www.mis-verduras.es", phone:"+34 94 96 38 09 13", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575520/vendor-duck-eggs-2019-slide_mrgln0.jpg", store: store)
 # end
-store =Store.create(name: "El Mercado",address: "Plaça d'Espanya, Barcelona, Spain", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
+store =Store.create(name: "El Mercado",address: "Plaça d'Espanya, Barcelona, Spain", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575500509/barca_amjkla.jpg", store: store)
 # end
-store =Store.create(name: "La Concepció Market",address: "Carrer d'Aragó, 313, 317, 08009 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.concepcio.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
+store =Store.create(name: "La Concepció Market",address: "Carrer d'Aragó, 313, 317, 08009 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.concepcio.es", phone:"+34 29 00 53 53 22", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575575737/PASILLO_qqrjzw.jpg", store: store)
 # end
-store =Store.create(name: "La Casita",address: "Carrer de Sicília, 212, 08013 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", user:User.all.sample)
+store =Store.create(name: "La Casita",address: "Carrer de Sicília, 212, 08013 Barcelona, Spain", description:Faker::Restaurant.description, website:"www.el-mercado.es", phone:"+34 29 00 53 53 22", user:User.first)
 # rand(1..5).times do
   Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/Passing-Movie-Film-Set-Filming-Locations-Brooklyn-Alexander-Skarsgard-NYC-9_kquzby.jpg", store: store)
 # end
 
 # Lisbon
-
-# User.create(first_name: "Ricardo", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Marcos", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Rafael", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Christophe", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Paul", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Bernard", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Paula", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Pepito", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Rodriguez", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Fernando", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Jean-Michel", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Marta", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Ana", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Ines", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Catarina", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Joana", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Emilia", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Fernanda", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Manuela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Rita", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Rafaela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Bianca", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Alice", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Isabela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Carolina", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Roberta", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Roberto", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Pedro", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Joao", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Mario", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Andre", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Diogo", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Daniel", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Daniela", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Luis", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Luisa", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Mateus", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Zoe", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Jacqueline", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Sharon", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Emily", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Oliver", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Carlos", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
-# User.create(first_name: "Carla", last_name: "Lewagon", email:"ricardo@g.com", password:"password", role: "user")
 
 100.times do
     User.create!(
@@ -520,7 +476,7 @@ store = Store.create(name: "Porto Organico", address: "R. de Clemente Meneres 65
 
 store = Store.create(name: "Folha de Oliveira", address: "Tv. de Cedofeita 24, Porto, Portugal", description:Faker::Restaurant.description, website: "www.folhadeoliveira.pt", phone:"+351 221 223 432", user:User.all.sample)
 # rand(1..5).times do
-  Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/epicerie-fine-avec-plein_rqlh9j.jpg".sample, store: store)
+  Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/epicerie-fine-avec-plein_rqlh9j.jpg", store: store)
 # end
   StoreReview.create(content: "One of the worst stores I can remember, could have more variety of products" , stars: 1, store: store, user: User.all.sample )
 
@@ -556,7 +512,7 @@ store = Store.create(name: "Casa Cerdeira", address: "Rua de Santa Catarina 533,
 
 store = Store.create(name: "Mercearia Belo Sabor", address: "R. de Belomonte 44, Porto, Portugal", description:Faker::Restaurant.description, website: "www.belosabor.pt", phone:"+351 223 712 866", user:User.all.sample)
 # rand(1..5).times do
-  Picture.create(remote_photo_url: p"https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/GettyImages-5218116791-5923a6b93df78cf5faca90c5_dqgz6a.jpg", store: store)
+  Picture.create(remote_photo_url: "https://res.cloudinary.com/mathieufontaine/image/upload/v1575574340/GettyImages-5218116791-5923a6b93df78cf5faca90c5_dqgz6a.jpg", store: store)
 # end
   StoreReview.create(content: "Os produtos mais frescos que vai encontrar aqui perto, otimo atendimento e a fruta é do melhor.Recomendo a todos" , stars: 5, store: store, user: User.all.sample )
 

@@ -33,19 +33,17 @@
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
             <% end %>
             <div class="card-store-infos">
-              <div>
+              <div class="card-store-text">
                 <h2><%= link_to store.name.capitalize, store_path(store), class: 'link-green' %></h2>
                 <p><%= store.address %></p>
-
                 <p><strong><% store.categories.uniq.each_with_index do |cat, index| %>
                 <%= " / " unless index == 0%><%= cat.name %><% end %></strong></p>
-                
-             </div>
-              <div class= 'distance-orange'>
+              </div>
+              <div class= 'distance-orange-index'>
                 <p>⚑</p>
                 <% if store.distance_to([38.736946, -9.142685]).to_i < 10 %>
                     <p><%= store.distance_to([38.736946, -9.142685]).to_f.round(2) %> km</p>
-                <% else %>  
+                <% else %>
                     <p><%= store.distance_to([38.736946, -9.142685]).to_i %> km</p>
                 <% end %>
               </div>
