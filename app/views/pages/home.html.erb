@@ -130,7 +130,7 @@
                   <div class="col-md-4">
                     <div class="card mb-4" id="card-home-store-section" style ="border: 2px solid orange">
                       <div class = "selection-store-card" >
-                      <% if cl_image_tag store.pictures.any? %>
+                      <% if store.pictures.any? %>
                         <%= cl_image_tag(store.pictures.first.photo) %>
                       <% else %>
                         <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -189,7 +189,7 @@
                   <div class="col-md-4">
                     <div class="card mb-4" id="card-home-store-section" style ="border: 1px solid lightgrey">
                       <div class = "selection-store-card">
-      <% if cl_image_tag store.pictures.any? %>
+      <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -260,7 +260,7 @@
                     <div class="card mb-4">
 
                       <div class = "selection-store-card" >
-                  <% if cl_image_tag store.pictures.any? %>
+                  <% if store.pictures.any? %>
                     <%= cl_image_tag(store.pictures.first.photo) %>
                     <% else %>
                       <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -325,7 +325,7 @@
                     <div class="card mb-4">
 
                       <div class = "selection-store-card">
- <% if cl_image_tag store.pictures.any? %>
+ <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -393,7 +393,7 @@
                     <div class="card mb-4">
 
                       <div class = "selection-store-card">
- <% if cl_image_tag store.pictures.any? %>
+ <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -461,7 +461,7 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
- <% if cl_image_tag store.pictures.any? %>
+ <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -531,7 +531,7 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
- <% if cl_image_tag store.pictures.any? %>
+ <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -602,7 +602,7 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
- <% if cl_image_tag store.pictures.any? %>
+ <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -672,7 +672,7 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
- <% if cl_image_tag store.pictures.any? %>
+ <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -742,7 +742,7 @@
                     <div class="card mb-4"  id="carousel-selection">
 
                       <div class = "selection-store-card" >
- <% if cl_image_tag store.pictures.any? %>
+ <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
@@ -778,7 +778,9 @@
 
       <h4><%= link_to "See all the Stores", stores_path, class:"btn btn-localisation"%></h4>
 
-
+      <div id="store-manager-link">
+        <%= link_to 'You own a store? Add it on GetLocal now!', new_store_path %>
+      </div>
     <div data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 </div>

@@ -8,12 +8,11 @@
 }
 
 .banner-home h1 {
-  margin: 0;
+  margin: 24px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
-  margin-left: -82px;
 
 }
 
@@ -28,8 +27,9 @@
   background: white;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   padding: 20px;
-  width: 500px;
+  width: 600px;
   border-radius: 10px;
+  margin: 24px
 }
 
 .banner-home-card #search-bar {
@@ -180,9 +180,9 @@ padding-top: 30px
 }
 
 .container-home{
-  width: 1200px;
+  // width: 1200px;
   margin: auto;
-  margin-bottom:100px;
+  margin-bottom:40px;
 }
 
 
@@ -300,4 +300,30 @@ a:hover {
 
 .orange {
   color:orange
+}
+
+
+
+#store-manager-link{
+  border: 2px solid green;
+  border-radius: 15px;
+  margin: 48px 56px 0 56px;
+  text-align: center
+}
+
+#store-manager-link a{
+  color: green;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 24px;
+  display: block;
+  font-size: 20px
+}
+
+#store-manager-link:hover{
+  background-color: green;
+}
+
+#store-manager-link:hover a{
+  color: white;
 }
