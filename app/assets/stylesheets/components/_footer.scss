@@ -2,10 +2,12 @@
   background: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  flex-flow: wrap
+
 }
 .footer-links {
   display: flex;
@@ -26,15 +28,3 @@
   color:#D6590F ;
 }
 
-#store-manager-link a{
-  color: green;
-  font-weight: bold;
-  font-size: 20px;
-
-}
-
-#store-manager-link a:hover{
-  font-size: 25px;
-  font-weight: bold;
-  text-decoration: none
-}

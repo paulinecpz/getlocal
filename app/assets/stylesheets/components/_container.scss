@@ -7,21 +7,24 @@
   margin: 0px;
   padding: 0px;
   margin-top: -22px;
+  margin-bottom: -22px;
 
+padding-bottom: 42px;
     }
 
 .container-getlocal{
   background-color: white;
-   width: 1200px;
-  margin: auto;
+   // width: 90%;
+  // margin: auto;
   padding: 20px 20px;
-  border-radius: 20px;
-  margin-top: 20px
+  // border-radius: 20px;
+  // margin-top: 20px;
+  margin-bottom: 24px;
 }
 
 .container-inside-getlocal {
   background-color: white;
-   width: 1200px;
+   width: 100%;
   margin: auto;
   padding: 0px 0px;
 
@@ -42,18 +45,24 @@
 
 #container-flex{
   display: flex;
-  width: 1160px;
+  width: 100%;
   padding: 0px;
 
 }
 
 #container-sticky{
   // width: 300px;
-  overflow: hidden;
+  // overflow: hidden;
   // position: sticky;
-  height: 100vh;
-  width: 100vh;
+  height: 100%;
+  width: 100%;
   position: sticky;
   top: 80px;
   padding: 0;
+  margin:-21px 8px 0px 16px;
+  flex: 1;
+}
+
+#center-content .table-responsive{
+  background-color: white;
 }

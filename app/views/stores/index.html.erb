@@ -1,8 +1,8 @@
 <div class="m-5 mb-5">
   <!-- Gmap -->
 
-      <div id="container_search">
-          <div>
+      <div class="search-card">
+          <div class="d-flex">
           <%= form_tag stores_path, method: :get do %>
           <%= text_field_tag :query,
           params[:query],
@@ -11,13 +11,14 @@
           %>
           <%= submit_tag "Search", class: "btn btn-success"%>
           <% end %>
-          </div>
 <!--           <h3 class= "text-center ml-4">or</h3>
- -->          <div class="text-center ml-2" id="geolocation">
+ -->          <div class="text-center" id="geolocation">
             <%= form_tag stores_path, method: :get do %>
             <%= submit_tag "Find my position", class: "btn-localisation" %>
             <% end %>
           </div>
+          </div>
+
         </div>
     <!--         <div>
       <h2 class= "text-center">Explore the GetLocal map</h2>
@@ -27,7 +28,7 @@
     <div class="cards-store" >
       <% @stores.each do |store| %>
           <div class="card-store">
-            <% if cl_image_tag store.pictures.any? %>
+            <% if store.pictures.any? %>
               <%= cl_image_tag(store.pictures.first.photo) %>
             <% else %>
               <%= image_tag "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"%>
