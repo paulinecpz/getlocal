@@ -76,6 +76,8 @@
   	}
 }
 
+/*search index*/
+
 @media (min-width: 100px) and (max-width: 600px) {
   .banner-home-card {
     // border-radius:0;
@@ -120,3 +122,37 @@
   	}
 
 }
+
+// shopping card show page //
+
+@media (max-width: 775px) {
+#container-flex {
+    display: unset;
+  }
+
+#card-mobile{
+    display:inline-block;
+
+  }
+#container-sticky {
+    display: none;
+    }
+}
+
+@media (min-width: 776px) and (max-width: 1000px) {
+    #container-sticky h3  {
+      font-size: 16px;
+    }
+    #container-sticky table  {
+      font-size: 12px;
+    }
+}
+
+// navbar show page //
+@media (max-width: 840px) {
+      #titles-product-infos .nav-item {
+      margin:0;
+      padding:0
+    }
+}
+
